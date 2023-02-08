@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40_if_else(성별)</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        select{
+            height: 30px;
+            width: 70px;
+        }
+        button{
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>if ~ else 조건문</h1>
+
+    <pre>
+        조건을 체크한 후 
+        true일때 처리할 명령문과 false일때 처리하는 명령문이 다를 경우에 사용
+    </pre>
+
+    <select>
+        <option value="male">남성</option>
+        <option value="female">여성</option>
+    </select>
+
+    <button>메세지 출력</button>
+
+    <script>
+        const $btn = document.querySelector('button');
+
+        $btn.addEventListener('click', function(){
+            const gender = document.querySelector('select').value;
+            
+            if(gender === 'male'){
+                alert('당신은 멋쟁이');
+            }
+            else{
+                alert('당신은 아름다운 숙녀');
+            }
+        });
+    </script>
+</body>
+</html>

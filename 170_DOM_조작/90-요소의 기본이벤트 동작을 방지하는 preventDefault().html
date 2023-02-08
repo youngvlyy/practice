@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90-요소의 기본이벤트 동작을 방지하는 preventDefault()</title>
+</head>
+<body>
+    <h1>이벤트 객체의 활용</h1>
+
+    <h2>앵커테그의 기본기능 작동방지</h2>
+    <p>
+        <a class="naver" href="http://naver.com">네이버 바로가기</a>
+    </p>
+
+    <script>
+        const $naver = document.querySelector('.naver');
+
+        $naver.addEventListener('click', function(evt){
+            console.log(evt);
+            evt.preventDefault();//앵커태그의 기본기능
+        });
+
+        
+    </script>
+</body>
+</html>

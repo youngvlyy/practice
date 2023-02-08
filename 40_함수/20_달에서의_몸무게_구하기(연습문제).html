@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_달에서의_몸무게_구하기(연습문제)</title>
+</head>
+<body>
+    <h1>달에서의 몸무게 구하기</h1>
+
+    <pre>
+        지구에서 100kg인 무게가 왜 달에서는 17kg이 되는 걸까요? 바로 중력 때문입니다.
+        달에서 당신의 몸무게는 얼마일까요?
+    </pre>
+
+    <button>몸무게 입력</button>
+    <h2>달에서의 몸무게는 <span class="weight">?</span></h2>
+
+
+    <script>
+     /*
+      사용자로부터 몸무게를 입력받습니다.
+
+      달의 중력은 지구의 17%입니다.
+      지구에서 몸무게가 100kg인 사람은 달에 가면 17kg 입니다.
+      당신의 몸무게는 달에서 얼마입니까?
+
+      button을 클릭하면 ?에 답이 나오게 하세요.
+    */
+
+    const $btn = document.querySelector('button');
+
+    $btn.addEventListener('click', function(){
+        const userWeight = parseInt(prompt('지구에서의 몸무게를 입력하시오,100'));
+        const moonWeight = userWeight * 0.17;
+
+        document.querySelector('.weight').textContent = moonWeight;
+    
+    })
+
+
+    </script>
+</body>
+</html>

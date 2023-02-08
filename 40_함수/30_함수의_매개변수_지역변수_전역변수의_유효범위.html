@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_함수의_매개변수_지역변수_전역변수의_유효범위</title>
+</head>
+
+<body>
+    <h1>매개변수, 지역변수, 전역변수, 유효범위</h1>
+
+    <pre>
+        1. 지역변수 - 함수 안에서 선언한 변수로서 함수 바깥에서 사용할 수 없다.
+        2. 매개변수 - 매개변수는 지역변수 개념이다.
+        3. 전역변수 - 함수 밖에서 선언한 변수인데, 함수에서 끌어다 사용할 수 있다.
+        4. 유효범위 - 변수가 영향을 끼치는 범위
+
+    </pre>
+    <hr>
+
+    <script>
+        /**
+        * 문제) 현재 나의 통장잔액은 3만원이다.
+        * 저금할 금액을 전달받아 합산해서 총액을 알려주는 함수를 선언하고 호출하고 싶다.
+        * 
+        * 콘솔창에 출력 => "현재 통장잔액은 35000원 입니다."
+        * 
+        * => 코딩시 필요한 변수는?
+        *    1. 함수변수명 : saveFn
+        *    2. 총액 : totMoney
+        *    3. 입금액 : money 
+        */
+        let totMoney = 30000; //전역변수
+        function saveFn(money){
+            let bonus = 100;
+            totMoney += money + bonus;
+            return document.write(`현재 통장잔액은 ${totMoney}원 입니다.<br>`);
+        }
+
+        //지역변수를 출력하려고 했으나 인식하지 못해 에러발생 - bonus is not defined
+        //console.log(`${bonus}`);
+
+        saveFn(5000);
+        saveFn(5000);
+
+    </script>
+</body>
+
+</html>

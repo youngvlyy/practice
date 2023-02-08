@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50_표현식함수_화살표함수</title>
+</head>
+<body>
+    <h1>표현식함수, 화살표함수</h1>
+
+    <pre>
+        1. 선언식함수(기명함수)
+        function sumFn(a,b){
+            console.log(a+b);
+        }
+
+        우리가 위와 같이 작성하면 JS해석기는 아래와 같이 '표현식 함수'로 변환한다.
+        
+        2.표현식함수는 변수에 익명함수를 할당하는 방식이다.
+        
+        const sumFn = function(a,b){
+            console.log(a+b);
+        }
+
+        3. 화살표 함수는 함수선언 방식을 간소화 함 
+
+        const sumFn = (a,b) => {};
+        const sumFn = a => {};
+
+    </pre>
+
+    <script>
+        //문제) 매개변수 a,b에 전달받은 두 값의 차를 출력하는 표현식함수 subFn을 선언하시오. 
+
+        function subFn(a,b){
+            console.log(a+b);
+            document.write(`${a}-${b}=${a - b}`);
+        };
+
+        subFn(300, 200);
+
+        //문제) 전달받은 두 값의 곱를 출력하는 화살표함수 mulFn을 선언하시오.
+
+        const mulFn = (a,b) =>{
+            console.log(`${a}*${b} = ${a*b}`);
+        }
+
+        mulFn(10, 7);
+    </script>
+</body>
+</html>

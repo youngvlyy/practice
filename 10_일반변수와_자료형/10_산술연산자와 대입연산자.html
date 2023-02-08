@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_산술연산자와 대입연산자</title>
+</head>
+<body>
+    <h1>+, -, *, /, % 연산자</h1> 
+
+    <pre></pre>
+    
+    <script>
+        const a = 100;
+        const b = 2;
+
+        let result = a + b ;
+        document.write(`a+b = ${result}`);
+        document.write(`<br>`);
+
+        result = a - b;
+        document.write(`a-b = ${result}`);
+        document.write(`<br>`);
+
+        result = a / b ;
+        document.write(`a/b = ${result}`);
+        document.write('<br>');
+
+        result = a % b ; // a를 b 로 나눴을 때 나머지
+        document.write(`a % b = ${result}` + '<br>');
+
+        result = a * b ; //64비트 부동소수점으로 처리
+        document.write(`a * b = ${result}` + '<br>');
+        
+    </script>
+</body>
+</html>

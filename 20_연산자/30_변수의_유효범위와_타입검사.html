@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_변수의_유효범위와_타입검사</title>
+</head>
+<body>
+    <h1>변수의 유효범위(scope)는 중괄호 단위</h1>
+    <h1>변수의 타입 검사는 typeof(변수명)</h1>
+    <script>
+        let nickname = '구름이';
+        console.log(nickname);
+
+        {
+            let nickname = '돌돌이';
+            console.log(nickname);
+
+            const age = 25;
+        }
+
+        console.log(nickname);
+        // console.log(age); //중괄호 안에서 선언한 변수를 중괄호 밖에서 가져다 쓸 수 없다.
+
+        /*
+            기본 데이터 타입 / 원시타입 / primitive Type
+            
+            number, string, boolean, null, undifined, symbol  
+        */
+
+        let weight = 80;
+        console.log(`weight 변수의 데이터 타입은 ${typeof (weight)}`);
+        
+            
+        
+
+    </script>
+</body>
+</html>

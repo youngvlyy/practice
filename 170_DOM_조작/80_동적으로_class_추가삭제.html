@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>80_동적으로_class_추가삭제</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    #light {
+      width: 240px;
+      height: 220px;
+      margin: 50px auto;
+      padding-bottom: 40px;
+      background-image: url(./../images/bulb_off.gif);
+      background-position: center 10px;
+      background-repeat: no-repeat;
+      /* border: 1px solid #000; */
+    }
+
+    #light.on {
+      background-image: url(./../images/bulb_on.gif);
+      box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.5);
+    }
+    #light.shadow {
+      box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.5);
+    }
+
+
+    button {
+      margin-top: 220px;
+      padding: 5px 7px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>동적으로 class 추가, 삭제</h1>
+
+  <p id="light" class="">
+    <button class="add">켜기</button>
+    <button class="remove">끄기</button>
+    <button class="toggle">켜기/끄기</button>
+    <button class="replace">교체</button>
+  </p>
+
+
+  <script>
+    const $light = document.getElementById('light');
+
+    const $add = document.querySelector('.add');
+    const $remove = document.querySelector('.remove');
+    const $toggle =document.querySelector('.toggle');
+    const $replace = document.querySelector('.replace');
+
+    //켜기
+    $add.addEventListener('click', function(){
+        $light.classList.add('on');
+    });
+
+    //끄기
+    $remove.addEventListener('click', function(){
+        $light.classList.remove('on');
+    });
+
+    //토글 = add + remove
+    $toggle.addEventListener('click',function(){
+        //사용법1 = add + remove
+        $light.classList.toggle('on');
+
+        //사용법2 = 강제로 추가, 강제로 삭제
+        //$light.classList.toggle('on',true); //강제로 on 추가
+        //$light.classList.toggle('on',false)//강제로 on 삭제
+
+
+        //사용법3 = 특정조건을 만족할때만 toggle한다.
+        const num = parseInt(prompt('1~10사이의 숫자를 입력하시오'));
+        
+        $light.classList.toggle('on',num > 5);
+    });
+
+    $replace.addEventListener('click', function(){
+        $light.classList.replace('on','shadow'); //(무엇을 , 어떻게)
+    });
+    
+  </script>
+</body>
+
+</html>

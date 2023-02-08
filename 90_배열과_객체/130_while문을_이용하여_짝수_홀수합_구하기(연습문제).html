@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>130_while문을_이용하여_짝수_홀수합_구하기(연습문제)</title>
+</head>
+<body>
+    <h1>1~100 사이의 짝수, 홀수 합 구하기</h1>
+
+    <script>
+        let oddSum = 0;//홀수합
+        let evenSum = 0;//짝수합
+
+        //while문을 이용해서 값 구하기
+        let i = 1
+        while(i <= 100){
+            oddSum += i;
+            i += 2;
+        };
+
+        let j = 0;
+        while(j <=  100){
+            evenSum += j
+            j += 2
+        }
+
+        
+        let n = 1;
+        while (n <= 100){
+            if(n%2 === 1){
+                oddSum += n;
+            }else{
+                evenSum += n ;
+            }
+            n++;
+        }
+
+
+        document.write(`홀수의 합 = ${oddSum} <br />`);//2500
+        document.write(`짝수의 합 = ${evenSum}`);//2550
+
+
+    </script>
+</body>
+</html>

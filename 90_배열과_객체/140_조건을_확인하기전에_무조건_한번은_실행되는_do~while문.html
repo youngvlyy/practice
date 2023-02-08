@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>140_조건을_확인하기전에_무조건_한번은_실행되는_do~while문</title>
+</head>
+<body>
+    <h1>do ~ while문</h1>
+
+    <pre>
+        조건을 확인하기 전에 무조건 한번은 실행됨
+
+        do{
+
+        }while(조건식);
+    </pre>
+
+    <hr>
+
+    <script>
+        let i=6;
+
+
+        //조건을 확인하기 전에 무조건 한번은 실행됨
+        do{
+            document.write(`i = ${i}<br>`);
+        }while(i < 5);
+
+        //do~while문으로 1~100까지의 합
+        let n = 1;
+        let sum = 0;
+
+        do{
+            sum += n;
+            n++;
+        }while(n <= 100);
+        console.log(`1~100까지의 합은 ${sum}}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_누적의개념과_복합대입연산자</title>
+</head>
+<body>
+    <h1>누적은 적금, 버카충과 같다.</h1>
+
+    <script>
+        let buscard = 1000;
+        //버스카드에 20000원을 충전하면 얼마? 
+
+        buscard = buscard + 20000;
+        buscard += 20000 //복합대입 연산자 +=
+        buscard = buscard - 6000; //35000
+        buscard -= 6000; //복합대입 연산자 -=
+        console.log(`buscard = ${buscard}`);
+
+
+
+    </script>
+</body>
+</html>

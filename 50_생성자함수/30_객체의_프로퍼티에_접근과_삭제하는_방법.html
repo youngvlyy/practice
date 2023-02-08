@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_객체의_프로퍼티에_접근과_삭제하는_방법</title>
+</head>
+<body>
+    <h1>객체와 프로퍼티</h1>
+
+    <pre>
+        1. 객체변수의 프로퍼티에 -(하이픈)이 포함되어 있으면 따옴표로 감싸야 한다.
+
+        2. 객체의 접근시 프로퍼티명에 -(하이픈)이 포함되어 있으면 []대괄호 표기법으로 접근해야 한다.
+
+        3. 객체의 프로퍼티를 삭제하는 방법 => delete 객체명.프로퍼티
+    </pre>
+
+    <hr>
+
+    <script>
+        const puppy = {
+            name : '구름이',
+            color : 'white',
+            'head-size': 'small'
+        };
+
+        //동적으로 프로퍼티 추가
+
+        puppy['eng-name'] = 'grumi';
+        puppy.age = 3
+
+        //객체의 프로퍼티에 접근
+        document.write(puppy.name + '<br>');
+        document.write(puppy['head-size']+ '<br>');
+        document.write(puppy['eng-name']+ '<br>');
+        document.write(puppy['eng-name']+ '<br>');
+
+        //객체의 프로퍼티 삭제
+        delete puppy.color;
+        delete puppy['head-size'];
+
+        console.log('puppy=', puppy);
+
+    </script>
+</body>
+</html>

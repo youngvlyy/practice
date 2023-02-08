@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20_join()메소드로_원소를_하나의_문자열로_연결하여_변환.html</title>
+</head>
+
+<body>
+  <h1>배열의 내용 출력</h1>
+
+  <pre>
+    배열의 원소를 하나의 문자열로 병합하는 .join()
+
+    형식 : 배열명.join('구분자');
+  </pre>
+
+  <h2>내가 좋아하는 자동차는 <span class="carlist">?</span></h2>
+
+  <script>
+    // 배열변수 car에 저장할 데이터
+    // BMW, 그랜저, 버스, 택시, 티볼리
+    const car = ['BMW', '그랜저', '버스', '택시', '티볼리'];
+
+    let str = '';//BMW, 그랜저, 버스, 택시, 티볼리
+
+    //방법1 - 반복문을 이용한 문자열 병합
+    // for (let i = 0; i < car.length; i++) {
+
+    //   if (i === car.length - 1) {
+    //     str += car[i];
+    //   } else {
+    //     str += car[i] + ', ';
+    //   }
+
+    // }
+
+
+    //방법2
+    str = car.join(', ');
+
+    console.log(`str = ${str}`);//str = BMW, 그랜저, 버스, 택시, 티볼리
+
+    document.querySelector('.carlist').textContent = str;
+
+  </script>
+</body>
+
+</html>

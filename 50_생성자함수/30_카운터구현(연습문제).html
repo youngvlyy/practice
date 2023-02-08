@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_카운터구현(연습문제)</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        h1{line-height: 100px; text-align: center;}
+
+        .cbox{
+            width: 150px;
+            border: 1px solid #000;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        .count{
+            font-weight: 300;
+            font-size: 30px;
+        }
+        p{
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        button{
+            width: 40px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>카운터 프로그램</h1>
+
+    <div class="cbox">
+        <p class="count">7</p>
+        <p>
+            <button class="plus">+</button>
+            <button class="minus">-</button>
+        </p>
+    </div>
+
+    <script>
+         /*
+            사용자는 + 버튼을 누른다. -> 이벤트구문
+
+            그러면 현재값을 가져와서 1을 더한다.
+                p.count 돔을 선택=>$count
+                $count.textContent 라고 하면 문자열 "7"로 가져온다.
+                따라서 1을 더하기 전에 연산가능한 숫자로 바꿔야 한다.
+
+            그 결과값을 출력한다.
+        */
+        // const plus = document.querySelector('.plus');
+        // const minus = document.querySelector('.minus');
+
+        // plus.addEventListener('click', function(){
+        //     const $count = parseInt(document.querySelector('.count').textContent) ;
+        //     const countset = $count + 1            
+            
+        //     document.querySelector('.count').textContent = countset;
+        // })
+
+        // minus.addEventListener('click', function(){
+        //     const $count = parseInt(document.querySelector('.count').textContent) ;
+        //     const countset = $count - 1            
+            
+        //     document.querySelector('.count').textContent = countset;
+        // })
+
+        //배열형식으로 선택됨
+        // const $btn =document.querySelectorAll('button');
+        // const $btnpuls = $btn[0];
+        // const $btnminus = $btn[1];
+
+        //queryselectorAll을 사용하면 배열형식으로 선택됨
+        const $btnpuls = document.querySelectorAll('button')[0];
+        const $btnminus = document.querySelectorAll('button')[1];
+        const $count = document.querySelector('.count');
+        //버튼에 대한 클릭이벤트 구문
+
+        $btnpuls.addEventListener('click', function(){
+            let num = parseInt($count.textContent);
+
+            num+=1
+
+            $count.textContent = num
+        })
+
+        $btnminus.addEventListener('click', function(){
+            let num = parseInt($count.textContent) ;
+            num--
+
+            $count.textContent = num;
+        })
+    </script>
+</body>
+</html>

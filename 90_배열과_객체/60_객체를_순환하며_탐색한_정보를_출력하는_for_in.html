@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60_객체를_순환하며_탐색한_정보를_출력하는_for_in</title>
+</head>
+<body>
+    <h1>객체를 탐색하는 for...in</h1>
+
+    <pre>
+
+        형식 : for(let 프로퍼티를 받을 변수명 in 객체변수명){
+
+        }
+    </pre>
+
+    <script>
+        const duly = {
+            name:'둘리',
+            age: 7,
+            hobby: '호이~!'
+        };
+
+        //문제) for~in 반복문을 이용하여 duly객체의 프로퍼티 값을 출력하시오.
+        for(let key in duly){
+            // console.log(duly[key]);
+            console.log(`${key}: ${duly[key]}`);
+        }
+    </script>
+</body>
+</html>

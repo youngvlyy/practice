@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>110-삼항연산자와 조건부렌더링</title>
+</head>
+<body>
+    <h1>삼항연산자와 조건부렌더링</h1>
+
+    <pre>
+        1.삼항연산자 - 간단한 if ~ else 구문의 약식 표현
+
+        if(조건식){
+            console.log('참');
+        }else{
+            console.log('거짓');
+        }
+
+        (조건식) ?  console.log('참') : console.log('거짓');
+
+    </pre>
+
+    <hr>
+
+    <script>
+        const age = parseInt(prompt('나이를 입력하세요'));
+
+        if(age>19){
+            alert('당신은 성인입니다.');
+        }else{
+            alert('당신은 미성년자 입니다.');
+        }
+
+        //활용1) 위 코드를 삼항연산자로 변환
+
+        (age>19) ? alert('당신은 성인입니다.') : alert('당신은 미성년자 입니다.');
+
+        //활용2) 변수에 어떤값을 대입할 때 사용
+        //identity 변수에 age 값의 조건에 따라 다른값을 저장(성인, 미성년자)
+        const identity = (age > 19) ? '성인' : '미성년자';
+        console.log(`identitiy = ${identity}`);
+    </script>
+
+    <hr>
+
+    <pre>
+        2.조건문 렌더링
+
+        && - 왼쪽의 조건이 참이면 반드시 오른쪽까지 검사해야하는 특성 이용
+
+        || - 왼쪽의 조건이 거짓이면 반드시 오른쪽까지 검사해야하는 특성 이용 참이면 오른쪽 검사 안함.
+
+
+    </pre>
+
+    <script>
+        //앞의 조건이 참일때 실행시키고 싶은 코드가 있다면 아래와 같이 작성
+        (age > 19) && console.log('이제부터는 투표를 할 수 있겠군요~!');
+
+        //앞의 조건이 거짓일 때 실행시키고 싶은 코드가 있을때 아래와 같이 작성
+        (age > 19) || console.log('아직은 투표에 참여할 수 없습니다.')
+    </script>
+</body>
+</html>

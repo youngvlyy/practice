@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_논리연산자</title>
+</head>
+<body>
+    <h1>&&(and의 개념), ||(or의 개념), !(not의 개념)</h1>
+
+    <script>
+        let result = null;
+
+        //and의 개념
+        result = true && true; // true
+        result = true && false; //false
+        result = false && false; //false
+
+        //or의 개념
+        result = true || true ;// true
+        result = true || false; // true
+        result = false || false ;//false
+
+        //not의 개념
+        result = !result; //true
+
+        console.log(`result = ${result}`);
+    </script>
+</body>
+</html>

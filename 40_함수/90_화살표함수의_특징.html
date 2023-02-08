@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90_화살표함수의_특징</title>
+</head>
+<body>
+    <h1>화살표함수의 특징</h1>
+
+    <pre>
+        1.매개변수가 1개이면 ()괄호 생략 가능
+
+        2.리턴이 바로 표현 가능하면 {return} 생략 가능
+    </pre>
+
+    <hr>
+
+    <script>
+        //1. 화살표함수 기본형
+        const breakfast = () => {
+            return '아침식사는 김치찌개';
+        };
+
+        document.write(breakfast());
+        document.write(`<br>`);
+
+        //2. 리턴 생략
+        const lunch = () => '점심엔 비빔밥';
+
+        document.write(lunch());
+        document.write(`<br>`);
+
+        //3. 매개변수가 1개일때 
+        const dinner = (props) => `저녁은 ${props}`; //매개변수가 하나일땐 괄호 생략 가능
+        document.write(dinner('스테이크'));
+    </script>
+</body>
+</html>

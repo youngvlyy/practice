@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>120_while문을_이용한_반복처리</title>
+</head>
+<body>
+    <h1>while 반복문은 조건식이 참일 때 실행됨</h1>
+
+    <pre>
+        let 바가지역할의 변수;
+        while(조건식){
+            실행코드;
+            증감식;
+        }
+
+        for(바가지역할의 변수;조건식;증감식){
+            실행코드; 
+        }
+
+    </pre>
+
+    <script>
+        //화면에 '아기공룡둘리' 문자열을 10번 출력하고 싶다.
+        // document.write('아기공룡둘리');
+
+        let i = 1;
+        while(i <= 10){
+            document.write(`${i}-아기공룡둘리<br>`);
+            i++;
+        }
+
+        //문제 1~100 까지의 함
+
+        let sum = 0;
+        let n = 1;
+        while(n <= 100){
+            sum += n
+            n++
+        };
+
+        console.log(`sum = ${sum}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100_switch문</title>
+</head>
+<body>
+    <h1>switch() 문은 다중 if문과 매우 비슷하다.</h1>
+
+    <pre>
+        범위에 대한 조건식은 사용할 수 없다.
+        비교할 변수의 값을 이용하여 분기처리 함.
+
+        switch(조건비교할 변수){
+            case 비교값1 : 
+                실행할 코드;
+                break;
+            
+            case 비교값1 : 
+                실행할 코드;
+                break;
+            
+            case 비교값1 : 
+                실행할 코드;
+                break;
+           
+            default:
+                실행할 코드;
+        }
+    </pre>
+
+
+    <script>
+        const hakjum = prompt('학점을 입력하세요(A,B,C)');
+
+        switch(hakjum){
+            case 'A':
+                document.write('당신의 점수는 90점 이상입니다.');
+                break;
+            case 'B':
+                document.write('당신의 점수는 80점 이상입니다.');
+                break;
+            case 'C':
+                document.write('당신의 점수는 70점 이상입니다.');
+                break;
+            default:
+                document.write('해당사항 없음');
+        }
+    </script>
+</body>
+</html>

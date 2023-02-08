@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60_리턴값이_있는_함수</title>
+</head>
+<body>
+    <h1>리턴값이 있는 함수</h1>
+
+    <pre>
+        return - 함수의 종료를 의미하며, 그 이후에 나오는 코드는 실행하지 않는다.
+        return 반환값 - 호출한 곳으로 '반환값'을 돌려보내면서 종료
+
+        리턴은 실행순서의 관점에서 보면 호출한 곳으로 돌아간다는 뜻으로 이해하면 됌.
+
+        <hr>
+
+        <script>
+            //문제1)두개의 값을 전달받아 곱을 리턴하는 함수 kobFn(a,b)를 선언하세요
+
+            const kobFn = function(a,b){
+                return a*b;
+            };
+
+            const result =  kobFn(7,111);
+            console.log(`result = ${result}<br>`);
+
+            //문제2) 두개의 수를 one, two에 전달받아 그 합을 return 하는 화살표함수 habFn를 선언하시오. 
+            const habFn = (one, two) => {
+                return one + two;
+            }
+            habFn(1,2);
+
+            //리턴받은 값을 sum 변수에 할당후 콘솔창에 "sum = 100" 과 같은 형식으로 출력하시오.
+
+            const sum = habFn(1,2);
+            console.log(`sum = ${sum}`);
+        </script>
+    </pre>
+</body>
+</html>
