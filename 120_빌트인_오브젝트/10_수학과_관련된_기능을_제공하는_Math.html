@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10_수학과_관련된_기능을_제공하는_Math</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10_수학과_관련된_기능을_제공하는_Math</title>
 </head>
+
 <body>
-    <h1>생성자함수의 이름으로 바로 사용하는 Math</h1>
+  <h1 style="margin-bottom: 20px;">생성자함수의 이름으로 바로 사용하는 Math</h1>
 
-    <script>
-        let result = 0;
 
-        result = Math.floor(3.9);//무조건 내림 (필수)
-        result = Math.ceil(3.1);//무조건 올림 (필수)
-        result = Math.round(3.2);//반올림(필수)
+  <script>
+    let result = 0;
 
-        result = Math.random();//0<x<1 사이의 소수점 난수 발생 (필수)
-        document.write(`result = ${result}`);
+    result = Math.floor(3.9);//무조건 내림(필수)
+    result = Math.ceil(3.1);//무조건 올림(필수)
+    result = Math.round(3.2);//반올림(필수)
 
-    </script>
+    result = Math.random();// 0<x<1 사이의 소수점 난수 발생(필수)
+
+    document.write(`result = ${result}`);
+
+    document.write('<br><br>');
+
+    //문제 - 0~10 사이의 정수중 하나를 램덤으로 추출
+    let nowIdx = Math.floor(Math.random() * 11);
+    document.write(`nowIdx = ${nowIdx}`);
+  </script>
 </body>
+
 </html>

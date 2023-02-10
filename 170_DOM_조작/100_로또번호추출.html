@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100_로또번호추출</title>
+    <style>
+        #wrap{
+            text-align: center;
+        }
+        button{
+            padding: 20px 35px;
+            font-size: 24px;
+        }
+        .result>.ball{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+            border-radius: 50%;
+            line-height: 80px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>일등 로또번호 추출하기</h1>
+        <button>START</button>
+
+        <p class="result">
+            <!-- <span class="ball">1</span>
+            <span class="ball">2</span>
+            <span class="ball">3</span>
+            <span class="ball">4</span>
+            <span class="ball">5</span>
+            <span class="ball">6</span> -->
+        </p>
+    </div>
+
+    <script>
+        const $btn = document.querySelector('button');
+        const $result = document.querySelector('.result');
+
+        $btn.addEventListener('click',function(){
+
+            //박스에 45개의 로또볼 준비
+            const ballBox = []; //[1,2,3,4, ...45];
+            for(let i=0; i<45; i++){
+                 ballBox.push(i)
+
+                 console.log(ballBox);
+            }
+
+            //추출한 로또볼을 저장할 변수 -로또용지
+            const lottoPaper = [];
+
+            for(let i= 0 ; i<6; i++){
+                //이전에 출력된 번호를 화면에서 제거하고 싶다면..
+                while($result.children.length>0){
+                    $result.removeChild($result.firstElementChild)
+                }
+
+                //랜덤으로 45개의 로또볼 중 한개에 해당하는 배열의 인덱스를 추출
+                const idx = Math.floor(Math.random()*ballBox.length);
+                console.log(idx);
+                
+                //이번에 추출한 로또볼번호
+                const ballNum = ballBox[idx];
+
+                //로또용지에 추출한 로또볼 번호를 추가
+                lottoPaper.push(ballNum);
+
+                //볼박스에 이번에 추출한 로또볼 제거
+                ballBox.splice(idx, 1);
+
+            }
+            //로또용지에 기록된 번호 6개를 웹페이지에 출력
+            for(let lottoNum of lottoPaper){
+                const span = document.createElement('span');
+                span.setAttribute('class','ball'); //span요소 생성
+                span.textContent = lottoNum; //class 속성 추가
+                $result.appendChild(span); //완성한 span 을 result의 마지막 자식으로 추가
+            }
+            console.log(lottoPaper);//[1,2,3,4,5,6]
+
+            // const ball = document.createElement('span');
+            // console.log(ball);
+        })
+
+    </script>
+</body>
+</html>
