@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node 속성</title>
+</head>
+<body>
+    <h1 id="title">Node 속성</h1>
+
+    <pre>
+        1. 엄밀히 말해서 태그는 3가지의 Node로 이루어져 있다.
+            1) 요소노드 -> elementNode
+            2) 속성노드 -> attributeNode
+            3) 텍스트노드 -> textNode
+        
+        2. textContent는 내용중 태그가 섞여있어도 태그로 인식하지 않음
+
+        3. innerHTML은 내용중 태그가 섞여 있으면 태그로 인식되어 출력됨
+            -xss 해킹공격에 취약하므로 가능한 사용하지 말자.
+
+        4. $h1.firstChild.nodeValue 에 대한 설명
+            텍스트노드는 요소노드의 첫번째 자식노드이므로, 내용을 가져오고 싶다면 반드시 .firstChild를 거쳐야 한다.
+    </pre>
+
+    <script>
+        //id를 이용해서 DOM을 선택
+        const $h1 = document.getElementById('title');
+
+        console.log($h1.nodeName);// H1
+        console.log($h1.nodeType); //1 -> element_node(태그)라는 뜻
+        console.log($h1.firstChild.nodeValue); // = $.textContent
+
+        //h1태그의 내용을 '노드의 속성'으로 변경
+        $h1.textContent = '노드의 속성';
+
+        //h1태그의 내용을 '<mark>노드의 속성 <mark>'으로 변경
+        $h1.innerHTML = '<mark>노드의 속성 <mark>';
+            console.log($h1.innerHTML);
+    </script>
+</body>
+</html>

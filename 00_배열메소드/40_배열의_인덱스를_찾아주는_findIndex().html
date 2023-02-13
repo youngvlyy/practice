@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40_배열의_인덱스를_찾아주는_findIndex()</title>
+</head>
+<body>
+    <h1>배열명.findIndex</h1>
+
+    <pre>
+        1. 조건에 맞는 데이터가 몇번째 원소인지 index값을 추출
+        2. 만약 조건에 맞는 데이터가 없으면 -1을 return
+        3. 조건에 맞는 데이터가 여러개일 경우 첫번째 요소에 대한 index를 반환
+    </pre>
+
+
+    <script>
+        const arrNum =[3,12,6,9,15];
+
+
+        //문제1 - 10보다 큰 값을 가진 첫번째 원소의 index를 구하시오
+        const resultIndex = arrNum.findIndex(function(item, idx, arr){
+            return item > 10;
+        });
+        document.write(`resultIndex = ${resultIndex}`);
+
+
+        const initialState = {
+            users : [
+              {
+                id:0,
+                username : "둘리",
+                email : "둘리@naver.com",
+                active : false
+              },
+              {
+                id:1,
+                username : "또치",
+                email : "또치@naver.com",
+                active : false
+              },
+              {
+                id:2,
+                username : "도우너",
+                email : "도우너@naver.com",
+                active : true      
+              }
+            ]
+        };
+
+        //문제2 - 사용자중 현재 active값이 true인 아이템의 index를 추출하시오.
+
+        const resultidex = initialState.users.findIndex(function(item, idx, arr){
+            return item.active === true ; //true 생략가능
+        }); 
+        document.write(`<br><br>찾아낸 인덱스값 = ${resultidex}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        img{
+            display: block;
+            width: 70%;
+            margin: 50px auto;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>클릭하면 복권 당첨~!</h1>
+    <button onclick="alert('1등 당첨~!')">추첨~!</button>
+    <img src="./../imges/happy.jpg" alt="" onclick="msgFn(msg)">
+
+    <pre>
+        1.이벤트 처리는 사용자의 특정 행위에 따라 반응하는 코드를 작성하는 것
+        2.이벤트핸들러 - 이벤트가 발생했을 때 실행될 함수코드 (예약의 개념)
+    </pre>
+
+    <!-- 문제) 이미지를 클릭했을 때 '새해 복 많이 받으세요~!' 알림 메세지를 출력하시오 -->
+
+    <script>
+        //alert(문자열 메세지)
+
+        // alert('1등 당첨~!');
+        let msg = '새해 복 많이 받으세요~!'
+        function msgFn(msg){
+            alert(msg);
+        }
+        
+    </script>
+</body>
+</html>

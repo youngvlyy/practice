@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_Truthy_Falsy</title>
+</head>
+<body>
+    <h1>Truthy Falsy</h1>
+
+    <pre>
+        Falsy한 값 - 불린타입으로 변환했을 때 false로 나오는 값들
+
+        대표적으로 null, undifined, 0 ,'',"", NaN(Not a Number)
+
+        2.truthy한 값 - 그 외의 모든값은 불린타입으로 변환했을 때 truthy 함.
+
+        3.'!!' 는 어떤 데이터를 불린 타입으로 변환해준다.
+    </pre>
+    <script>
+        document.write(`!!null 은 ${!!null}<br>`);
+        document.write(`!!undefined는 ${!!undefined}<br>`);
+        document.write(`!!0은 ${!!0}<br>`);
+        document.write(`!!''은 ${!!''}<br>`);
+        document.write(`!!NaN은 ${!!NaN}<br>`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30_게터와 세터를 포함된 생성자함수</title>
+</head>
+
+<body>
+  <h1>getter(), setter()를 포함한 생성자함수</h1>
+
+  <script>
+    function Profile(id, name) {
+      this.id = id;
+      this.name = name;
+    }
+
+    //id에 대한 게터
+    Profile.prototype.getId = function () {
+      return this.id;
+    };
+
+    //id에 대한 세터
+    Profile.prototype.setId = function (id) {
+      this.id = id;
+    };
+
+    //name에 대한 게터
+    Profile.prototype.getName = function () {
+      return this.name;
+    };
+
+    //name에 대한 세터
+    Profile.prototype.setName = function (name) {
+      this.name = name;
+    };
+
+    const hani = new Profile('hani', '하니');
+
+    hani.setId('duly')
+    console.log(hani.getId());
+
+    hani.setName('둘리');
+    console.log(hani.getName());
+
+  </script>
+</body>
+
+</html>

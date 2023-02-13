@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40_태그의_속성을_조작</title>
+    <style>
+        body{text-align: center;}
+        p{width: 450px; height: 200px; background-color: pink; margin: 0 auto 10px; display: flex; justify-content: center; align-items: center;}
+        button{padding: 10px 20px;}
+        #love{
+            background-image: url(https://bit.ly/3XeSrH4);
+            background-size: cover;
+        }
+        .stroke{
+            border: 5px solid #000;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>태그의 속성 제어</h1>
+    <p id="love" class="" title="Javascript">즐거운 자바스크립트</p>
+
+    <button>속성변환</button>
+
+    <pre>
+        같은의미 다른표현
+
+        * 태그의 속성 = attribute
+        * css 의 속성 = property
+
+        태그 = 선택자 = 요소 = Element = DOM = Node
+        
+    </pre>
+
+    <script>
+        const $btn = document.querySelector('button');
+        const $p = $btn.previousElementSibling;
+
+        //버튼에 대한 click 이벤트 구문
+
+        $btn.addEventListener('click', function(){
+
+            //속성추가 => 인라인 방식으로 추가됨
+            $p.setAttribute('style', 'color:blue');
+
+            //클래스 추가
+            $p.setAttribute('class','stroke');
+
+            //특정속성값 가져오기
+            alert($p.getAttribute('title'));
+            
+            //속성제거
+            $p.removeAttribute('id');
+
+            //속성이 있는지 확인
+            console.log($p.hasAttribute('id')); //false
+            console.log($p.hasAttribute('title'));//true
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>120_setTimeout()_setInterval()</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      text-align: center;
+    }
+
+    #wrap {
+      width: 85%;
+      max-width: 800px;
+      min-width: 500px;
+      margin: 50px auto;
+      /* border: 1px solid #000; */
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 15px 30px;
+    }
+
+    hr {
+      margin: 50px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>1. setTimeout() 테스트</h1>
+
+    <img src="https://bit.ly/36n8RaZ" alt="폭탄" class="bomb"> <br>
+    <button>폭탄해체</button>
+
+
+    <script>
+      const $bomb = document.querySelector('.bomb');
+
+      setTimeout(function () {
+        $bomb.setAttribute('src', 'https://bit.ly/3gRmoJX');
+      }, 2000);
+    </script>
+
+    <hr>
+
+    <h1>2. setInterval() 테스트</h1>
+  </div>
+</body>
+
+</html>

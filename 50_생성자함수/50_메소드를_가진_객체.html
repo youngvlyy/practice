@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50_메소드를_가진_객체</title>
+</head>
+<body>
+    <h1>객체의 프로퍼티에 할당된 함수를 메소드라고 부른다.</h1>
+    <pre>
+        1. 호출할 때 앞에 .(점)찍고 호출하면 메소드
+
+        2. 호출할때 앞에 .(점)없이 호출하면 함수
+
+        3. 객체의 메소드는 보통 다른 프로퍼티를 이용하여 어떤 처리를 할 때 사용된다.
+    </pre>
+
+    <hr>
+
+    <script>
+        //리터럴 방식으로 생성한 객체변수 duly
+        const duly = {
+            name : '아기공룡 둘리',
+            age : 5,
+            address: '쌍문동',
+            info : function(){
+                //this에는 객체변수명 duly가 암시적으로 매칭된다.
+                document.write(`나는 ${this.address}에 사는 ${this.age}살 ${this.name}`) // duly 의 프로퍼티들을 사용함.
+            }
+        };
+        duly.info();
+        
+    </script>
+</body>
+</html>

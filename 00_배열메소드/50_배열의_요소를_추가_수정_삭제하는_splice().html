@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50_배열의_요소를_추가_수정_삭제하는_splice()</title>
+    <style>
+        .days{
+            color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>배열명.splice()</h1>
+
+    <pre>
+        1. 형식 : 배열명.splice(시작위치를 알리는 인덱스, 삭제할 개수, 추가할 아이템);
+
+        2. 배열에서 특정 범위의 원소를 삭제하거나 새로운 값을 추가 할 수 있다.
+
+        3. 원본배열이 수정된다.
+    </pre>
+
+    <h2>days 배열 출력 : <span class="days">?</span></h2>
+
+    <script>
+        const days = ['월', '화', '수', '목', '금', '토', '일'];
+
+        //문제1) str 변수에 days 배열의 원소를 모두 합하여 하나의 문자열로 저장후 출력하시오
+
+        let str = ''
+
+        //방법1 - for 반복문
+
+        if(false){
+            for(let i = 0; i<days.length; i++){
+            str += days[i];
+            console.log(str);
+            };
+        }
+
+        //방법2 - for ~ of 반복문 사용
+
+        if(false){
+            for(let day of days){
+                str += day;
+            }
+        }
+
+        //방법 3
+        // str = days.toString(); //월,화,수,목,금,토,일
+
+        //방법 4 -join
+        if(false){
+            str = days.join(' ');
+        }
+
+
+
+        //문제2) days 배열의 원소중 '수', '목'만 str 변수에 문자열로 저장하여 출력하시오. (단 연결시 , 콤마로 구분할 것)
+        str = days[2] + ',' + days[3];
+        str = `${days[2]},${days[3]}`;
+
+
+        //문제3) days 배열에서 '수','목'을 삭제하시오.(단 연결시 콤마로 구분할 것)
+
+        if(false){
+            days.splice(2, 2);
+            str = days.toString();
+        }
+
+
+        //문제4) days배열에서 '토','일'을 삭제 후 '금','금'을 추가하시오.
+        if(false){
+            days.splice(5,2,'금','금');
+            str = days.join('/');
+        }
+
+        //문제5) 배열의 원소를 '월 / 화 / 공휴일 / 국경일 / 휴가일 / 수 / 목 / 금 / 토 / 일'으로 수정후 출력하시오
+        if(true){
+            days.splice(2,0,'공휴일','국경일', '휴가일');
+            str = days.join('/');
+        }
+
+        document.querySelector('.days').textContent = str;
+
+    </script>
+
+</body>
+</html>

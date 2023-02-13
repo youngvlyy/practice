@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>40-원하는 위치에 노드 추가 또는 이동-insertBefore(), appendChild()</title>
+</head>
+
+<body>
+  <h1>insertBefore(), appendChild()로 요소 추가/이동</h1>
+
+  <ul id="subject">
+    <li class="css">CSS</li>
+    <li class="js">JAVASCRIPT</li>
+    <li>NODEJS</li>
+  </ul>
+
+  <script src="./myReact.js"></script>
+  <script>
+    const $subject = document.getElementById('subject');
+
+    const $html = React.createElement('li', { 'class': 'html' }, '웹표준');
+    const $react = React.createElement('li', {}, '리액트');
+    const $vue = React.createElement('li', {}, '뷰JS');
+
+    //1. 첫번째 자식으로 요소를 추가
+    $subject.insertBefore($html, $subject.firstElementChild);//(무엇을,어디에)
+
+    //2. 마지막 자식으로 요소를 추가
+    $subject.appendChild($react);
+    $subject.appendChild($vue);
+
+
+    //3. 이미 존재하는 요소를 첫번째 자식으로 이동
+    const $js = document.querySelector('.js');
+    $subject.insertBefore($js, $subject.firstElementChild);
+
+    //4. 이미 존재하는 요소를 마지막 자식으로 이동
+    const $css = document.querySelector('.css');
+    $subject.appendChild($css);
+
+  </script>
+</body>
+
+</html>

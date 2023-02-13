@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>50_두값의_맞교환(연습문제)</title>
+  <style>
+    body{text-align: center;}
+
+    .box{
+      position: relative;
+      width: 400px;
+      height: 250px;
+      margin: 0 auto;
+      /* border: 1px solid #000; */
+    }
+
+    .box>p{
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 150px;
+      height: 150px;
+      line-height: 150px;
+      border: 1px solid #000;
+      border-radius: 10px;
+    }
+
+    .box>p.a{
+      margin-left: -170px;
+      background-color: yellow;
+    }
+
+    .box>p.b{
+      margin-left: 20px;
+      background-color: pink;
+    }
+
+    button{margin-top: 210px; padding: 10px 20px; font-size: 24px;}
+  </style>
+</head>
+<body>
+  <h1>두 값의 맞교환</h1>
+  <div class="box">
+    <p class="a">5</p>
+    <p class="b">7</p>
+    <button>맞교환</button>
+  </div>
+  
+  <script>
+    const $a = document.querySelector('.a');
+    const $b = document.querySelector('.b');
+    const $box = document.getElementsByClassName('box');
+    const $button = document.querySelector('button');
+    
+    $button.addEventListener('click', function () {
+        let aval = $a.textContent;
+        let bval = $b.textContent;
+
+        let tmp = aval;
+        aval = bval;
+        bval = tmp;
+        //임시로 담을 바구니를 만들어줌
+
+        $a.textContent = aval;
+        $b.textContent = bval;
+
+        // $box.appendChild($a);
+
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_key와_value의_쌍으로_이루어진_리터럴객체변수</title>
+    <style>
+        hr{margin: 20px 0;}
+        button{display: block; padding: 5px 10px; margin-bottom: 10px;}
+    </style>
+</head>
+<body>
+    <h1>객체변수(Object)</h1>
+
+    <pre>
+        1. literal - 사람이 이해할 수 있는 문자나 약속된 기호를 사용해서 값을 생성하는 표기법
+        
+        2. 리터럴 객체변수 - literal 방식으로 객체를 생성
+
+        3. 객체릐 형태 - {key : value} 또는 {property : value}
+
+        4. 객체변수에 저장된 데이터 출력방법은 => 객체변수명.프로퍼티명
+    </pre>
+
+    <hr>
+
+    <button>1. 홍길동 데이터 출력</button>
+
+    <script>
+        //저장하고 싶은 데이터 - 'korea', '손흥민', 30
+        //대입연산자
+        const nation = 'korea';
+        const name = '손흥민';
+        const age = 30;
+        
+        const son = {
+            nation : 'korea', 
+            name : '손흥민', 
+            age : 30
+        }
+
+        //객체의 프로퍼티를 동적으로 추가
+        son.gender = '남자';
+        son.nation = '한국';
+
+        //첫번째 버튼에 대한 클릭이벤트 구문
+
+       const $btnOne = document.querySelector('button');
+
+       $btnOne.addEventListener('click', function(){
+        const str = `${son.nation}의 축구 ${son.gender} 대표팀 선수 ${son.name}은 ${son.age}세이다.`
+        document.write(str + '<br>');
+       })
+
+    </script>
+
+    <hr>
+
+
+</body>
+</html>

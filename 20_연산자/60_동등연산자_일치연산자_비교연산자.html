@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60_동등연산자_일치연산자_비교연산자</title>
+</head>
+<body>
+    <h1>동등연산자_일치연산자_비교연산자</h1>
+
+    <pre>
+        동등연산자 : == !=
+        
+        일치연산자 : === !==
+
+        비교연산자 : >, >=, <, <=
+    </pre>
+    <script>
+        const score1 = 100;
+        const score2 = '100';
+        
+        document.write(`score1 변수의 타입은 ${typeof(score1)} <br>`);
+        document.write(`score2 변수의 타입은 ${typeof(score2)} <br>`);
+
+        //비교연산의 결과는 항상 true false 중 하나이다.
+
+        //동등연산자는 값만 비교 => true
+        document.write(`score1 == score2 결과는 ${score1 == score2}<br>`);
+
+        //동등연산자는 값만 비교 => false
+        document.write(`score1 === score2 결과는 ${score1 === score2}<br>`);
+
+        //동등연산자는 값만 비교 일치연산자는 값과 타입 함께 비교(권장)
+
+        const dully = 7;
+        const micol = 7;
+
+        console.log(dully > micol);
+        console.log(dully >= micol);
+        console.log(dully <= micol);
+
+        console.log(dully != micol); //동등연산자 부정
+        console.log(dully !== micol) //일치연산자 부정
+
+    </script>
+
+</body>
+</html>

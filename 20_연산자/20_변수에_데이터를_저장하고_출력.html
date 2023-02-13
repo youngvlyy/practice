@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_변수에_데이터를_저장하고_출력</title>
+</head>
+<body>
+    <h1>변수명을 정하는 좋은 습관</h1>
+    <!-- pre 테그는 기제한 그대로 출력 -->
+    <pre>
+        1. 영문 소문자 띄어쓰기 없이
+        2. 의미있는 짧은 영단어를 선택
+        3. 두 단어 이상일 경우 _로 연결
+            ex) my_home (my-home x)
+        4. 숫자로 시작하지 않는다.
+            3duly
+        5. 사용할 수 있는 특수문자는 $, _
+
+    </pre>
+
+    <h2>let 으로 선언한 변수의 특징</h2>
+    <pre>
+        let은 뚜껑 없는 컵 -> 원할때마다 다른 내용물(값)로 변경 가능
+        논리적인 흐름상 중간에 내용이 바뀌어야 하는 변수라면 let 으로 선언
+    </pre>
+    <h2>const로 선언한 변수의 특징</h2>
+    <pre>
+        const는 밀폐된 컵 -> 한번 내용물을 담으면 뚜껑으로 완전 밀폐
+        논리적인 흐름상 중간에 내용이 바뀌면 안되는 변수라면 const로 선언
+    </pre>
+    <script>
+        let money = 500; //바뀔 수 있음 = 변수
+
+        console.log(money);
+
+        console.log("money =");
+        console.log('money =');
+        console.log('money = ' + money); //문자열과 상수를 출력하는 방법1
+        // 속성은 "" 문자열은 ''
+
+
+        const username = '둘리' ;//바뀌면 안되는 = 상수
+        // username = '또치'; //재할당 못함.
+
+        console.log(`username = ${username}`); //문자열과 상수를 출력하는 방법2
+
+    </script>
+</body>
+</html>

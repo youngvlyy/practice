@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Array 객체의 반복메소드 forEach()</title>
+</head>
+<body>
+    <div id="wrap">
+        <h1>배열의 원소의 공통 작업을 할 때 유용한 forEach</h1>
+        <pre>
+            형태 : 배열명.forEach(function(item, idx, arr){});
+
+            item은 배열의 원소 == 요소 == item
+            idx는 각 원소의 인덱스값
+            arr은 현재 배열 그 자체
+
+            forEach()는 우리가 넣어주는 콜백함수에서 item, idx, arr을 사용할 수 있게 해준다.
+            결국 배열안의 원소 각각에 대하여 우리가 넣어준 콜백함수를 호출해준다.
+
+            배열의 모든 아이템에 동일한 작업을 해주고 싶을 때 사용하면 Good~!
+        </pre>
+        <p class="print"></p>
+
+        <button>확인</button>
+    </div>
+
+    <script>
+        const arrData = [3,6,9,'a','b','c'];
+
+        const print = document.querySelector('.print');
+        const btn = print.nextElementSibling;
+        console.log(btn);
+
+        btn.addEventListener('click' , function(){
+
+            let str = '';
+
+            arrData.forEach((element, index, array)=>{
+                str += `${index} : ${element} <br>`;
+
+                print.innerHTML = str;
+                
+            });
+
+            for(let i = 0; i<arrData.length; i++){
+                str += `${i} : ${arrData[i]} <br>`;
+
+                print.innerHTML = str; 
+            }
+        })
+
+    </script>
+</body>
+</html>

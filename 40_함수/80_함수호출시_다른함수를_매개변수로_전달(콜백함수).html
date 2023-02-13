@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80_함수호출시_다른함수를_매개변수로_전달(콜백함수)</title>
+</head>
+<body>
+    <h1>콜백함수</h1>
+
+    <pre>
+        콜백함수는 예약을 걸때 전달하는 함수이다.
+        즉, 어떤 조건이 성립되면 이 함수를 호출시켜줘~! 라고 하면서 전달하는 함수를 의미한다.
+
+        1. 어떤 한수의 매개변수로 함수를 전달할 수 있다.
+        2. 이처럼 매개변수 형태로 동작하는 함수르 콜백함수라고 한다.
+
+        $btn.addEventListener('click', function(){})
+    </pre>
+
+    <hr>
+
+    <script>
+        const myFn = (nickname)=>{
+            console.log(`${nickname}께서 myFn 콜백함수를 호출함`)
+        }
+
+        //callback은 myFn과 같은 주소값을 가지게 된다.
+        const addEventListener = (event, callback) => {
+            if(event ==='click'){
+                callback('이순신 장군님');
+            }
+        };
+
+        addEventListener('click', myFn); //myFn 함수의 주소값을 인자로 보냄.
+    </script>
+</body>
+</html>

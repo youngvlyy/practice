@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_단순_if(홀짝)</title>
+</head>
+<body>
+    <h1>단순 if문</h1>
+    <pre>
+        문법형식
+
+        if(조건식){
+            조건식이 참인 경우에 실행될 코드들
+        }
+
+
+        tip.사용자로부터 데이터를 입력받는 방법
+            prompt('안내 메세지',기본값);
+            => 숫자로 입력해도 무조건 문자열로 입력됨
+    </pre>
+
+    <hr>
+
+    <button type="button">홀짝 판별하기</button>
+    <script>
+        let $button = document.querySelector('button');
+        $button.addEventListener('click', function(){
+           let num = prompt('좋아하는 숫자를 입력하시오',77); 
+
+           //변환하기 전에 아무 값도 입력하지 않았을 경우 빈 문자열이 할당되므로 77을 할당
+           //num에 빈 문자열이 할당될 경우 false 이므로, !으로 부정해야 true 되므로 비로소 if문이 실행된다.
+            if(!num){
+                num = 77;
+            }
+
+           num = parseInt(num);//문자 숫자를 연산 가능한 숫자로 변환
+           console.log(`num = ${num}`);
+
+           const rest = num % 2 //0,1
+           if(rest === 1){
+            document.write('당신이 입력한 숫자는 홀수입니다.');
+           }
+           if(rest === 0){
+            document.write('당신이 입력한 숫자는 짝수입니다.');
+           }
+        })
+    </script>
+</body>
+</html>

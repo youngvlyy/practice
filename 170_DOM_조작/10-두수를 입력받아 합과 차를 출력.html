@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-두수를 입력받아 합과 차를 출력</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .x,
+        .y{
+            color: red;
+        }
+        button{
+            margin-top: 20px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        입력받은 두개의 수 
+        <span class="x">?</span>
+        <span class="y">?</span>
+        합과 차
+    </h1>
+
+    <h2>두수의 합: <span class="sum">?</span></h2>
+    <h2>두수의 차(절대값) : <span class="diff">?</span></h2>
+
+    <button>숫자입력</button>
+
+    <script>
+        const $btn = document.querySelector('button');
+
+        $btn.addEventListener('click', function(){
+            //prompt 함수를 이용하여 숫자를 입력받아 진짜 숫자로 한번에 변환
+            const x = parseInt(prompt('x값을 입력하세요'));
+            const y = parseInt(prompt('y값을 입력하세요'));
+            const sum = x + y;
+            // const diff = x - y;
+            document.querySelector('.x').textContent = x;
+            document.querySelector('.y').textContent = y;
+            document.querySelector('.sum').textContent = sum ;
+
+            let diff = null;
+            if(x > y){
+                diff = x - y;
+            }
+            else{
+                diff = y - x; 
+            }//절댓값
+
+            document.querySelector('.diff').textContent = diff;
+
+            
+        });
+    </script>
+</body>
+</html>
