@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60-배열에서_특정_조건을_만족하는_원소값을_반환하는_find()</title>
+</head>
+<body>
+    <h1>배열명.find(판별함수)</h1>
+
+    <pre>
+        1. 주어진 판별함수의 조건을 만족하는 첫번째 원소의 값을 반환
+
+        2. 만약 없을경우 undefined를 반환
+    </pre>
+
+    <hr>
+
+    <script>
+        const arrNum = [3,6,9,12,15];
+
+        const resultnum = arrNum.find((item)=>{
+            return item > 10; //조건이 트루면 멈추고 그 값만 리턴.
+        });
+        
+        document.write(`10보다 큰 첫번째 원소의 값은 ${resultnum}`);
+
+        //2.응용예제
+
+        const initialState = {
+            user: [
+                {id:0, username:'둘리', email: 'duly', active: true},
+                {id:1, username:'또치', email: '또치', active: true},
+                {id:2, username:'도우너', email: '도우너', active: true}
+            ]
+        }
+       //수작업 const user = initialState.user[2];
+        const user = initialState.user.find((user)=>{
+            return user.id === 1;
+        });
+
+        document.write(`id값이 2인 회원의 정보는 <br> `);
+        document.write(`1. 아이디 : ${user.id} <br>`);
+        document.write(`2. 이름 : ${user.username} <br>`);
+        document.write(`3. 이메일 : ${user.email} <br>`);
+        document.write(`4. 활동중 : ${user.active} <br>`);
+
+        //
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>60-노드를 제거하거나 바꾸기-remove(), removeChild(), replaceChild()</title>
+</head>
+
+<body>
+  <h1>remove(), removeChild(), replaceChild()</h1>
+
+  <h2>1. remove() - 삭제할 요소를 직접 선택하여 자손까지 통째로 삭제</h2>
+  <p>
+    <mark>여기를 클릭하면 이 메세지가 삭제될 거에요~!</mark>
+  </p>
+
+  <script>
+    const $mark = document.querySelector('p>mark');
+
+    $mark.addEventListener('click', function () {
+      //<mark>요소를 삭제
+      // $mark.remove();
+      // this.remove();
+
+      //문제)mark의 부모태그인 p를 삭제하고 싶다면?
+      this.parentElement.remove();
+    });
+  </script>
+
+  <hr>
+
+  <h2>2. removeChild() - 먼저 부모에 접근한후 자식을 삭제</h2>
+  <h2>3. replaceChild() - 먼저 부모에 접근한후 자식을 교체</h2>
+
+  <ul id="list">
+    <li style="color:red;">이상한 변호사 우영우</li>
+    <li>자바스크립트</li>
+    <li>제이쿼리</li>
+    <li style="color:blue;">말티즈-구름이</li>
+    <li>웹표준</li>
+  </ul>
+
+  <script>
+    const $list = document.getElementById('list');
+
+    //문제1 - 첫번째 li를 삭제하시오.
+    // $list.firstElementChild.remove();//방법1
+
+    const $firstChild = $list.firstElementChild;
+
+    //삭제할 노드는 반드시 .removeChild()를 호출한 노드의 자식이어야 한다.
+    //$firstChild.parentElement.removeChild($firstChild);//방법2
+    $list.removeChild($firstChild);//방법3
+
+
+    //문제2 - 마지막 li를 $firstChild로 교체하시오
+
+    //교체할 노드는 반드시 .replaceChild()를 호출한 노드의 자식이어야 한다.
+    $list.replaceChild($firstChild, $list.lastElementChild);//(무엇을, 어디에)
+
+
+    //문제3 - '말티즈-구름이'를 .removeChild()로 삭제하시오.
+    const $puppy = $list.children[2];
+    $puppy.parentElement.removeChild($puppy);
+
+
+    //문제4 - 남아있는 모든 자식을 지우시오.
+    //방법1
+    // while ($list.childElementCount > 0) {
+    //   $list.removeChild($list.firstElementChild);
+    // }
+
+    //방법2
+    const intervalKey = setInterval(function () {
+      if ($list.childElementCount > 0) {
+        $list.removeChild($list.firstElementChild);
+      } else {
+        clearInterval(intervalKey);
+      }
+    }, 5000);
+
+
+
+  </script>
+</body>
+
+</html>

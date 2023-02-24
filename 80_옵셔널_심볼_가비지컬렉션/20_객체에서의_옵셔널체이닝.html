@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_객체에서의_옵셔널체이닝</title>
+</head>
+<body>
+    <h1>20_객체에서의_옵셔널체이닝</h1>
+
+
+    <pre>
+        1.코드실행중 에러발생으로 인한 프로그램 멈춤을 예방하는 코드
+
+        2.복잡하게 중첩된 객체데이터에서 특정 자료를 추출할 때 에러발생 없이 안전하게 데이터를 추출할 수 있다.
+
+        3.객체의 속성 출력시 . 왼쪽에 있는 값(주체)이 undefined,null 즉 없는 객체이면 에러발생
+            왜냐면 undefined.id, null.id와 같게 되기 때문
+
+        4.?(옵셔널체이닝) 사용시 왼쪽에 있는 값이 null, undefined이면 오른쪽의 .id를 더이상 실행하지 않고 undefined만 남겨준다.
+            결과적으로 에러가 발생하지 않아 실행이 멈추지 않는다.
+    </pre>
+
+    <hr>
+    <script>
+        const user = {
+            name : '둘리',
+            //login : {id:'duly', pwd: 1234}
+        }
+
+        //1. user객체의 login 속성을 주석처리하면 없는 속성을 출력하려고 한 것이기 때문에 undefined
+        console.log(user.login);
+
+
+        //2. user객체의 login 속성을 주석처리하면 user.login 자체가 없기때문에 에러가 발생.
+        //document.write(user.login.id)//없는 주체에 무언가를 출력하려고 하면 에러
+
+        //주체가 없을때 에러가 안뜨는 방법은? 
+
+        //3. user.login이 존재하면 .id속성을 출력하시오.
+        // if(user.login){
+        //     document.write(`예전방식으로 출력 - ${user.login.id}<br>`);
+        // }
+
+        //옵셔널 체이닝 활용
+        document.write(`옵셔널체이닝으로 출력 - ${user.login?.id}`); // ?전까지 있으면 출력 없으면 undefined 출력
+    </script>
+</body>
+</html>

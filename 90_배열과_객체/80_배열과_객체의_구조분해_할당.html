@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80_배열과_객체의_구조분해_할당</title>
+</head>
+<body>
+    <h1>배열과 객체의 구조분해(비구조) 할당</h1>
+
+    <pre>
+        1. 배열이나 객체에 담긴 데이터를 꺼내서 
+           별개의 변수에 저장해야 할 일이 발생했을 때 유용한 문법이다.
+        
+        2. 일일이 개별적으로 꺼내서 값을 저장해야만 했었는데
+           이 과정을 간소화하는 새로운 문법이다.
+        
+        3. 최근 프론트엔드에서 많이 사용되어진다.
+
+    </pre>
+
+    <script>
+        //1. 배열 구조분해(비구조) 할당
+        //문제) 문자열로 5개의 문자열 원소 '강아지, 고양이, 거북이, 달팽이, 토끼'를 갖는 배열변수 pet을 선언하시오 
+
+        const pet = ['강아지', '고양이', '거북이', '달팽이', '토끼'];
+
+        //pet 배열에 담긴 데이터를 꺼내서 별개의 변수에 저장해야 할 일이 발생
+        // const puppy = pet[0];
+        // const cat = pet[1];
+        // const tuttle = pet[2];
+        // const snail = pet[3];
+        // const rabbit = pet[4];
+
+        //위 과정을 간소화하는 새로운 문법이 등장
+        const [puppy, cat, tuttle, snail, rabbit] = pet; //['강아지', '고양이', '거북이', '달팽이', '토끼'];
+
+        console.log(puppy, cat, tuttle, snail, rabbit);
+
+        
+        //2. 객체의 구조분해(비구조) 할당
+        const duly = {
+            username: '둘리',
+            age : 7,
+            hobby : '초능력호이~!'
+        }
+
+        //객체에 담긴 데이터를 꺼내서 별개의 변수에 저장해야 할 일이 발생
+        // const username = duly.username;
+        // const age = duly.age;
+        // const hobby = duly.hobby;
+
+        //객체 비구조 할당에서는 프로퍼티명과 같도록 변수명을 설정
+        //변수명의 순서가 바뀌어도 결과는 똑같다.
+        const {username, age, hobby} = duly;
+        console.log(username, age, hobby);
+
+        //3. 구조분해 할당을 통한 두 값의 맞교환
+        let a=3;
+        let b=5;
+
+            //1) 전통적인 방법
+            let tmp = 3; //임시변수를 이용하여 a값 저장
+             a = b;
+             b = tmp;
+             console.log(`a=${a}, b=${b}`); //5,3
+
+             //2) 최신방법
+
+             [b,a] = [a,b];
+
+             console.log(`a=${a}, b=${b}`); //5,3
+    </script>
+</body>
+</html>

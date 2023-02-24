@@ -10,24 +10,27 @@
 
 <body>
   <!-- <h1>안녕, 자바스크립트~!</h1> -->
-<div id="root"></div>
 
-<script src="./myReact.js"></script>
+  <div id="root"></div>
+
+  <script src="./myReact.js"></script>
   <script>
-    //방법1 - 순수 자바스크립트 이용
+    //방법1 - 순수자바스크립트 이용
     const $h1 = document.createElement('h1');//h1 요소노드 생성
     $h1.setAttribute('name', '둘리');
     $h1.setAttribute('address', '쌍문동');
 
+    //$txt.textContent = '안녕, 자바스크립트~!'//같은결과
     const $txt = document.createTextNode('안녕, 자바스크립트~!');//텍스트노드 생성
     $h1.appendChild($txt);//두개의 요소를 결합
 
     document.body.appendChild($h1);//body에 추가
 
-    //방법2 라이브러리를 직접 만들어 이용
+
+    //방법2 - 라이브러리를 직접 만들어 이용
     const $root = document.getElementById('root');
-   const $h2 = React.createElement('h2',{'name':'하니','address':'서초동'},'hello, javascript~!');
-   ReactDOM.render($h2, $root);
+    const $h2 = React.createElement('h2', { 'name': '하니', 'address': '서초동' }, 'Hello, JavaScript~!');
+    ReactDOM.render($h2, $root);
   </script>
 </body>
 

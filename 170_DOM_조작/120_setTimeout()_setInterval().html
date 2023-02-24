@@ -45,15 +45,39 @@
 
     <script>
       const $bomb = document.querySelector('.bomb');
+      const $btnBomb = $bomb.nextElementSibling.nextElementSibling;
+      console.log($btnBomb);
 
-      setTimeout(function () {
+      const bombKey = setTimeout(function () {
         $bomb.setAttribute('src', 'https://bit.ly/3gRmoJX');
       }, 2000);
+
+      $btnBomb.addEventListener('click', function () {
+        //setTimeout()을 통한 예약을 해지하는 방법
+        clearTimeout(bombKey);
+      });
     </script>
 
     <hr>
 
     <h1>2. setInterval() 테스트</h1>
+    <img src="https://bit.ly/3gSK6W3" alt="">
+    <h2>현재까지 벌은 돈 : <span class="dollar">0</span> 달러</h2>
+    <button>그만벌기</button>
+
+    <script>
+      let totalmoney = 0;
+      const setintervalkey = setInterval(function(){
+        console.log('100달러 벌었음');
+        totalmoney += 100;
+        document.querySelector('.dollar').textContent = totalmoney;
+      }, 1000);
+
+      const $btnStop = document.querySelector('h2+button');
+      $btnStop.addEventListener('click', function(){
+        clearInterval(setintervalkey);
+      })
+    </script>
   </div>
 </body>
 
