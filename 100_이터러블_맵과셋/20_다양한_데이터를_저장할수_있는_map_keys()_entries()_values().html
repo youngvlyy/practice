@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_다양한_데이터를_저장할수_있는_map_keys()_entries()_values().html</title>
+</head>
+<body>
+    <h1>Map 생성자 함수를 이용한 객체</h1>
+
+    <pre>
+        1. 지금까지 데이터를 저장하는 방법은 - 일반변수, 배열변수, 객체변수
+
+        2. 현실세계 반영하기엔 턱없이 부족해서 Map, Set 등장
+
+        3. Map은 key가 있는 데이터를 저장한다는 점에서 Object와 유사
+
+        4. 다만 Map은 size 속성으로 항목의 수를 할 수 있게 한다는 점에서 차이가 있다.
+
+        5. Map에는 다음과 같은 메소드와 프로퍼티가 있다.
+            const myMap = new Map();
+
+            myMap.set(key, value) - key를 이용해서 value를 저장
+            myMap.get(key) - key에 해당하는 값을 리턴, 없으면 undefined
+            myMap.delete(key) - key에 해당하는 값을 삭제(메소드체인 불가);
+            myMap.has(key) - 존재여부 확인 --> true/false;
+            myMap.clear - 완전히 비우기;
+            myMap.size - 요소의 개수를 리턴
+    </pre>
+
+    <hr>
+
+    <script>
+        //비어있는 Map 자료구조 생성
+        const myMap = new Map();
+
+        //데이터 저장
+        myMap.set('name', '둘리');
+        myMap.set(100, '아기공룡');
+        myMap.set(true, '빙하타고 왔죠');
+
+        //데이터 인출
+        document.write(`${myMap.get('name')}<br>`);
+        document.write(`${myMap.get(100)}<br>`);
+        document.write(`${myMap.get(true)}<br>`);
+
+        //데이터 삭제
+        myMap.delete(100);
+
+        //요소의 존재여부 확인
+        document.write(`myMap.has('name')= ${myMap.has('name')}<br>`);
+        document.write(`myMap.has(100) = ${myMap.has(100)}<br>`);
+
+        //모든 요소 삭제(완전히 비우기)
+        myMap.clear();
+        console.log('myMap.clear() 작업후 :',myMap);
+
+        //Map은 이터러블 규약을 따르므로 for~of 문으로 출력가능
+        for(let item of myMap){
+            console.log(item);
+        }
+
+        console.log('-------------------');
+
+        //키와 값의 쌍으로 이루어진 요소로 구성된 이터러블 인수로 전달
+        const newMap = new Map([['name','둘리'],['100','아기공룡'],[true, '빙하타고 왔죠~!']]);
+        console.log('newMap=',newMap);
+
+        //key전체를 iterator 객체를 이용해서 출력
+        let iterator = newMap.keys();
+        for(let i = 0; i<newMap.size; i++){
+            console.log(iterator.next());
+        }
+
+        console.log('---------');
+
+        //value 전체를 iterator 객체를 이용해서 출력
+        iterator = newMap.values();
+
+        for(let i=0; i<newMap.size; i++){
+            console.log(iterator.next());
+        }
+
+
+        console.log('---------');
+
+        //key, value의 쌍으로 Map객체의 데이터를 iterator객체를 이용해서 출력
+        iterator = newMap.entries();
+
+        for(let i=0; i<newMap.size; i++){
+            console.log(iterator.next());
+        }
+
+    </script>
+</body>
+</html>

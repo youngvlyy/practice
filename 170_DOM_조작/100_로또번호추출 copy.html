@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100_로또번호추출</title>
+    <style>
+        #wrap{
+            text-align: center;
+        }
+        button{
+            padding: 20px 35px;
+            font-size: 24px;
+        }
+        .result>.ball{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background-color: orange;
+            border-radius: 50%;
+            line-height: 80px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>일등 로또번호 추출하기</h1>
+        <button>START</button>
+
+        <p class="result">
+            <!-- <span class="ball">1</span>
+            <span class="ball">2</span>
+            <span class="ball">3</span>
+            <span class="ball">4</span>
+            <span class="ball">5</span>
+            <span class="ball">6</span> -->
+        </p>
+    </div>
+
+    <script>
+        const $btn = document.querySelector('button');
+        const $result = document.querySelector('.result');
+
+        $btn.addEventListener('click', function(){
+
+            while ($result.children.length >0){
+                $result.removeChild($result.firstElementChild);
+            }
+
+            const ballBox = [];
+
+            //1~45
+            for(let i=0; i<45; i++){
+                ballBox.push(i + 1);
+                console.log(ballBox);
+            }
+
+            const lottopaper = [];
+            for(let i=0; i<6; i++){
+                const idx = Math.floor(Math.random()*45);               
+                const ballNum = ballBox[idx];
+               
+                //console.log(ballNum);
+                
+                lottopaper.push(ballNum);
+                lottopaper.join(',');
+                console.log(lottopaper);
+                
+                const $span = document.createElement('span');
+                $span.setAttribute('class', 'ball');
+                $span.textContent = ballNum;
+                $result.appendChild($span);
+            }
+        });
+
+    </script>
+</body>
+</html>

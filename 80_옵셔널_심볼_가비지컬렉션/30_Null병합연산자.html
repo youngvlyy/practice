@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_Null병합연산자</title>
+</head>
+<body>
+    <h1>Null병합 연산자 - ??</h1>
+
+    <pre>
+        왼쪽 피연산자의 값이 null 또는 undefined 이면 
+        오른쪽 피연산자의 값을 리턴하고, 
+
+        그렇지 않으면 왼쪽 피연산자의 값을 리턴한다.
+    </pre>
+
+    <hr>
+    <script>
+        let dnldData = null;
+        dnldData = '아기공룡 둘리와 친구들';
+        const result = dnldData ?? '다운로드 받은 데이터가 없습니다.'; //값이 있으면 왼쪽 없으면 오른쪽의 값을 넣음
+        
+        document.write(`result = ${result}<br>`);
+
+        //0은 null 또는 undefined에 해당하지 않음
+        const num = 0;
+        const lucky = num ?? 777;
+
+        document.write(lucky);
+    </script>
+</body>
+</html>

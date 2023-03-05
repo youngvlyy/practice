@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_1초단위로_메세지를_출력</title>
+</head>
+<body>
+    <h1>1초단위로 메세지를 출력</h1>
+
+    <pre>
+        문제) 예약을 거는 방식으로 아래와 같이 출력하고 싶다.
+        Thu Mar 02 2023 20:14:22 GMT+0900
+        Thu Mar 02 2023 20:14:23 GMT+0900
+        Thu Mar 02 2023 20:14:24 GMT+0900
+
+         해결) 
+            1. 비동기작업을 동기작업처럼 순차적으로 실행
+            2. 첫번째 콜백이 실행된 시점에 또다시 예약을 거는 방법으로 해결
+            3. 아래와 같은 비동기 처리방식을 '콜백지옥' 이라고 부른다.
+            4. 콜백지옥의 단점은 코드의 가독성이 떨어진다는 점이다.
+    </pre>
+    <script>
+        // console.log(new Date());
+
+        setTimeout(
+            function(){
+                console.log(new Date()); 
+                setTimeout(
+                    function(){
+                        console.log(new Date()); 
+
+                        setTimeout(
+                            function(){
+                                console.log(new Date()); 
+                            },1000)
+                },1000)
+
+            //콜백지옥 형태의 비동기코드 작성의 단점은 실행순서가 헷갈린다는 점이다.
+            console.log('마지막 출력');//의도와는 달리 두번째로 출력됨
+        },1000)
+
+    </script>
+</body>
+</html>

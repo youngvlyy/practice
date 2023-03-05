@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>50-cloneNode(true)로 자손을 포함한 노드복제</title>
+</head>
+
+<body>
+  <h1>cloneNode(true)</h1>
+
+  <h2>1. 아래의 ul노드를 복제</h2>
+  <ul id="subject">
+    <li>CSS</li>
+    <li>JAVASCRIPT</li>
+    <li>NODEJS</li>
+  </ul>
+
+  <h2>2. 복제한 노드를 section에 삽입</h2>
+  <section></section>
+
+  <script>
+    const $subject = document.getElementById('subject');
+
+    //true 옵션을 설정하면 자손노드를 포함하여 복제
+    const $clone = $subject.cloneNode(true);
+    console.log($clone);
+
+
+    //insetBefore()를 이용해 마지막 자식으로 추가
+    //document.querySelector('section').insertBefore($clone, null);
+
+    //마지막 자식으로 추가
+    document.querySelector('section').appendChild($clone);
+  </script>
+</body>
+
+</html>

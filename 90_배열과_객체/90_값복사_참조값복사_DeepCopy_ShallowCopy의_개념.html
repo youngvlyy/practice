@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90_값복사_참조값복사_DeepCopy_ShallowCopy의_개념</title>
+</head>
+<body>
+    <h1>참조에 의한 객체복사</h1>
+
+    <pre>
+        1.값복사란?
+
+            두개의 메모리 공간이 존재하고 
+            한쪽의 메모리에 있는 값이
+            다른메모리로 그 값만을 복사하는 행위를 말한다.
+
+            이 두개의 메모리는 완전히 독립적인 상태이다.
+            우리가 일반적으로 많이 하는 파일복사/값복사에 해당한다. 
+
+            이렇게 두 메모리가 완전히 독립성을 갖는 것을 '깊은복사' 또는 'Deep Copy'라고 한다.
+
+
+        2.참조값복사란?
+
+            객체변수는 주소값을 저장하는 참조변수이며,
+            참조변수의 할당은 참조(주소)값 복사가 된다.
+
+            참조값 복사가 이루어지면 두 변수는 같은 메모리 주소값을 가지므로
+            서로 독립적이지 않다.
+
+            이런것을 '얕은복사',또는 'Shallow Copy'
+
+        3.참조값을 가지는 객체변수를 Deep Copy 하는 방법
+            1. Object.assign(빈객체, 복사할객체);
+            2. spread 연산자를 이용(100번 예제 참조)
+    </pre>
+
+    <script>
+        //1. primitive 타임의 값 복사 - 파일복사와 비슷한 개념
+
+        let num = 100;
+
+        let copyNum = num; //100
+
+        copyNum = 200;
+
+        console.log(num);
+
+        //2. 주솟값을 저장하는 참조변수 작동원리 - 배열, 객체 , 함수
+        //hong 변수에는 주솟값이 저장
+        const hong = {
+            name: '홍길동',
+            age: 23
+        }
+        console.log(hong);
+
+        console.log('-----------------');
+        
+        
+        const hani = hong; //hong의 주솟값이 복사 (참조값 복사);
+
+        hani.name = '하니';
+        hani.age = '15';
+        
+        console.log(hong);
+        console.log(hani);
+
+    // 3.참조값을 가지는 객체변수를 Deep Copy 하는 방법
+
+    const duly =Object.assign({},hong);
+
+    duly.name = '둘리';
+    duly.hani = '7';
+
+    console.log('duly=', duly);
+    console.log('hong=', hong);
+
+    </script>
+</body>
+</html>

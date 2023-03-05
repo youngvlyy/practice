@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>110_spread와_사용법이_비슷하지만_완전히_다른개념의_rest</title>
+</head>
+<body>
+    <h1>rest 연산자</h1>
+
+    <pre>
+        1. 배열과 객체에서 특정 값을 제외한 나머지 값들을 저장하는 방법
+
+        2. 함수에서 매개변수의 개수가 유동적일때 매우 유용
+
+        3. 형식) 무조건 맨 마지막에...rest 작성
+
+        4. rest 변수명은 자유롭게 지정할 수 있다.
+    </pre>
+
+    <script>
+        //1. 배열에서의 rest
+            const numbers =[10, 20, 30, 40, 50];
+
+            //문제1) 배열 비구조할당을 통해 첫번째 값을 꺼내고, 나머지를 num에 저장
+            const [first, ...num] = numbers; //num = 20, 30, 40, 50
+
+            console.log('first =', first);
+            console.log('num=',num);//배열로 출력
+
+            console.log('--------');
+
+        //2. 객체에서의 rest
+            const newCar = {
+                carname : '그랜저',
+                color : '스페이스그레이',
+                door :5
+            }
+            //문제 2) door 속성을 제외한 
+            //문제 2) 객체 비구조할당을 통해 door 값을 꺼내고, 나머지를 yourCar에 저장
+
+            //속성의 닉네임을 지정
+            const{door:cardoor, ...yourCar} = newCar;
+
+            console.log('door =',cardoor);
+            console.log('yourCar =', yourCar);//객체
+
+        //3. 함수의 매개변수에서 rest
+            //문제3) 매개변수 a,b,c를 갖는 totalFn 함수를 표현식으로 작성하시오
+            const totalFn = function(a,b,c){
+                return a + b + c;
+            };
+
+            let result =totalFn(1,2,3,4,5);
+            console.log(`result = ${result}`);
+
+            //함수에 전달되는 인자의 개수가 몇개가 될지 모르는 상황에서 
+            //그걸 다 받아야 할 때 ...rest 파라미터를 사용하면 매우 유용
+
+            const hab = function(...rest){
+                let sum = 0;
+                for(let item of rest){
+                    sum += item;
+                }
+                return sum;
+            };
+            result = hab(1,2,3,4,5);
+            console.log(`result = ${result}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>브라우저의 전역객체(변수)는 window는 생략 가능</h1>
+
+    <script>
+        window.console.log('1. 콘솔 메소드는 window 객체에 등록된 것이었음');
+
+        window.alert('2. alert()도 window 객체에 등록된 메소드');
+        window.prompt('2. alert()도 window 객체에 등록된 메소드');
+        window.confirm('자바스크립트 재밌죠?');
+
+        window.setInterval();
+        window.setTimeout();
+
+        window.document.body();
+        window.document.querySelector();
+    </script>
+</body>
+</html>

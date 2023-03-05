@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>130_setInterval()_달리는_캐릭터</title>
+    <style>
+        #wrap{text-align: center;}
+        address{
+            font-style: normal;
+            font-size: 12px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>달리는 캐릭터</h1>
+
+        <p><img src="./../images/run_1.gif" alt="#"></p>
+
+        <button class="play">달리기</button>
+        <button class="stop">멈추기</button>
+
+        <address>&copy; Designed by 홍길동</address>
+
+        <script>
+            //두 버튼에 대한 DOM 선택과 click 이벤트 구문 작성
+            const $play = document.querySelector('.play') ;
+            const $stop = document.querySelector('.stop') ;
+            const $img = document.querySelector('img');
+
+            let intervalKey = null;
+
+            const arrImg = [
+                './../images/run_1.gif',
+                './../images/run_2.gif',
+                './../images/run_3.gif',
+                './../images/run_4.gif',
+                './../images/run_5.gif',
+                './../images/run_6.gif',
+                './../images/run_7.gif',
+                './../images/run_8.gif',
+                './../images/run_9.gif',
+                './../images/run_10.gif',
+            ];
+
+            $play.addEventListener('click', function(){
+                /*
+                    img의 src 값이 0.05초마다
+                        ./../images/run_1.gif
+                        ./../images/run_2.gif
+                        ./../images/run_3.gif
+                        .
+                        .
+                        ./../images/run_10.gif
+                        ./../images/run_1.gif
+                        .
+                        .
+                        .순차적으로 변경되어야 한다.
+
+                        힌트 - setInterval(), setAttribute() 이용
+                */
+               
+               clearInterval(intervalKey);//이전의 인터벌을 해제
+               
+               let num = 1;
+               let idx = 0;
+
+               intervalKey = setInterval(function(){
+
+                //방법1 - 문자열 조작
+                if(false){
+                    
+                    if(num<10){
+                        num++;
+                    }else{
+                        num=1;
+                    }
+
+                    // console.log(num);
+                    $img.setAttribute('src', `./../images/run_${num}.gif`);
+                }
+    
+    
+                //방법2 - 배열이용
+                if(true){
+                    
+                    //idx 값은 0~9
+                    if(idx<9){
+                        idx++;
+                    }else{
+                        idx=0;
+                    }
+
+                    $img.setAttribute('src',arrImg[idx]);
+                }
+                
+
+               }, 50);
+
+            });
+
+
+            $stop.addEventListener('click', function(){
+                clearInterval(intervalKey);
+            });
+
+            
+        </script>
+    </div>
+</body>
+</html>

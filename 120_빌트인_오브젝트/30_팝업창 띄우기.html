@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_팝업창 띄우기</title>
+</head>
+<body>
+    <h1>새로운 window 객체 생성</h1>
+
+    <h2>팝업창 열고 닫기</h2>
+
+    <p>
+        <button class="btnOpen">열기</button>
+        <button class="btnClose">닫기</button>
+    </p>
+
+
+
+    <script>
+        const $btnOpen = document.querySelector('.btnOpen');
+        const $btnClose = document.querySelector('.btnClose');
+        let winCodeName = null;
+
+        $btnOpen.addEventListener('click', function(){
+            window.open('gongi.html', 'gongi', 'width = 300, height = 300');
+        });
+
+        $btnClose.addEventListener('click', function(){
+            winCodeName.close();
+        })
+
+    </script>
+</body>
+</html>

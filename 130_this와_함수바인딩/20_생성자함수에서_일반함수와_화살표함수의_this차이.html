@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_생성자함수에서_일반함수와_화살표함수의_this차이</title>
+</head>
+<body>
+    <!-- 카카오 기술면접 단골 -->
+
+    <h1>생성자함수에서_일반함수와_화살표함수의_this</h1>
+
+    <script>
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+
+            this.info = function(){
+                //this는 hong 인스턴스를 가리킨다.
+                document.write(`info 메소드 안에서 this.name = ${this.name}<br>`);
+
+                //내부함수에서 this는 window를 가리킨다. 따라서 출력되는 값이 없다 = undefined가 출력된다.
+                function innerFn(){
+                    document.write(`innerFn 함수 안에서 this.name = ${this.name}<br>`);
+                }
+
+                innerFn();
+
+                //내부함수에서 this를 인식시키는 방법1 (구식)
+                const that = this; //주솟값
+                function innerFn2(){
+                    document.write(`innerFn 함수 안에서 this.name = ${that.name}<br>`);
+                }
+
+                innerFn2();
+
+
+                //내부함수에서 this를 인식시키는 방법2 (최신)
+                const innerFn3 = () => {
+                    document.write(`innerFn 함수 안에서 this.name = ${this.name}<br>`);
+                }
+                //결론 => 함수 안 화살표함수(내부 화살표함수) 안에서의 this는 인스턴스에 매칭된다. 
+
+                innerFn3();
+
+            };
+        }
+
+        const hong = new Person('홍길동', 15);
+        hong.info();
+    </script>
+</body>
+</html>
