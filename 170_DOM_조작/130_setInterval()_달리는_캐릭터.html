@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>130_setInterval()_달리는_캐릭터</title>
+</head>
+<style>
+    #wrap{
+        text-align: center;
+    }
+    address{
+        font-size: 12px;
+        line-height: 50px;
+        font-style: normal;
+    }
+</style>
+<body>
+    <div id="wrap">
+        <h1>달리는 캐릭터</h1>
+
+        <p><img src="./../images/run_1.gif" alt=""></p>
+
+        <button class="run">play</button>
+        <button class="stop">멈추기</button>
+
+        <address>&copy; by sy</address>
+    </div>
+
+    <script>
+        //두 버튼에 대한 돔을 선택과 
+        const $run = document.querySelector('.run');
+        const $stop = document.querySelector('.stop');
+        const $img = document.querySelector('img');
+
+        $run.addEventListener('click', function(){
+            console.log('뛴다');
+            let num=0;
+            setInterval(function(){
+                if(num < 10){
+                    num++
+                    console.log(num);
+                }else{
+                    num = 1;
+                    console.log(num);
+                }
+                $img.setAttribute('src', `./../images/run_${num}.gif`);
+            },50);
+            //방법1 - 문자열 조작
+
+            //방법2 - 배열이동
+        });
+
+        $stop.addEventListener('click', function(){
+            console.log('멈추다');
+        });
+        
+    </script>
+</body>
+</html>

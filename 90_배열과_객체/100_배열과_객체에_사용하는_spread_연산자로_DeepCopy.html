@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100_배열과_객체에_사용하는_spread_연산자로_DeepCopy</title>
+</head>
+<body>
+    <h1>원본데이터를 훼손하지 않고 복사하는 spread 연산자</h1>
+
+    <pre>
+        1. spread 연산자는 원본의 데이터만 가져온다.
+
+        2. 표기법) ...
+    </pre>
+
+    <script>
+        //1. 배열에서의 spread 연산자 사용법
+        const member = ['둘리', '또치'];//주소값이 저장주소값 0x1000
+
+        //아래와 같이 작성하면 Shallow Copy
+        // const newMember = member; // 주소값 0x1000
+        // newMember.push('도우너');
+
+        //원본의 상태를 보존하는 Deep Copy(불변)
+        const newMember = [...member,'마이콜']; //주솟값이 0x1010
+        newMember.push('도우너');
+        const nowMember = [...member,'철수', '영희', ...member];
+        
+        console.log('newMember=', newMember);
+        console.log('member=',member);
+        console.log('newMember=',nowMember);
+        console.log('--------------------');
+
+
+        //1. 객체에서의 spread 연산자 사용법
+
+        //비슷한 프로퍼티를 가지고 있는 서로 다른 세 객체
+        const eBoy = {
+            kor:'국어'
+        };
+
+        const mBoy = {
+            kor:'국어',
+            eng:'영어'
+        };
+
+        const hBoy = {
+            kor:'국어',
+            eng:'영어',
+            math:'수학'
+        };
+
+
+        //Spread 연산자를 이용한 객체 데이터 복사
+        const eStudent = {
+            kor:'국어'
+        }
+        const mStudent = {
+            ...eStudent,
+            eng : '영어'
+        }
+        const hStudent = {
+            ...mStudent,
+            math : '수학'
+        }
+
+        console.log('eStudent=', eStudent);
+        console.log('mStudent=', mStudent);
+        console.log('hStudent=', hStudent);
+
+    </script>
+</body>
+</html>

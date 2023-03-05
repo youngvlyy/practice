@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>110_입력받은수보다_1크고_1작은수_출력하기(연습문제)</title>
+    <style>
+        body{text-align: center;}
+        button{
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 24px;
+            border-radius: 10%;
+        }
+        h3{margin: 30px 0;}
+        p{
+            margin: 30px 0 60px;
+            line-height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>입력받은수보다_1크고_1작은수_출력하기</h1>
+
+    <h2>입력받은 수 : <span class="num">?</span></h2>
+
+    <p>
+        버튼을 누르면 프로그램이 시작됩니다. <br>
+        <button>시작</button>
+    </p>
+
+    <h3>1 큰수 : <span class="greater"></span></h3>
+    <h3>1 작은수 : <span class="less"></span></h3>
+    <address>&copy; 자바스크립트 저녁반</address>
+
+    <script>
+        /*
+            1.사용자가 시작버튼을 누른다.
+                ->시작버튼에 대한 클릭이벤트 구문 작성
+            2. 숫자를 입력할 창이 뜬다.
+
+            3.입력받은 숫자를 .num에 출력한다.
+
+            4.+1 -1한 결과를 아래에 출력한다.
+        */
+        const $btn = document.querySelector('button');
+
+
+        $btn.addEventListener('click', function(){
+            const $prnum = parseInt(prompt('숫자를 입력하시오'));
+            const $num = document.querySelector('.num');
+            const $greater = document.querySelector('.greater');
+            const $less = document.querySelector('.less');
+            
+            $num.textContent = $prnum;
+            $greater.textContent = $prnum + 1;
+            $less.textContent = $prnum - 1
+        });
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50-요소의 기본이벤트 동작을 방지하는 preventDefault()</title>
+</head>
+<body>
+    <h1>요소의 기본기능 작동 방지</h1>
+
+    <a href="https://k-dokdo.com/">K-Dokdo 바로가기</a>
+
+    <script>
+        const $alink = document.querySelector('a');
+
+        //evt - 요소에 발생한 이벤트정보를 전달받을 매개변수
+        $alink.addEventListener('click', function(e){
+
+            if(confirm('정말 이동하시겠습니까?')){
+                alert('안녕히 가세요')
+                
+            }else{
+                alert('이동하지 않습니다.');
+                e.preventDefault(); //앵커테그의 기본기능 작동 방지
+
+            }
+        });
+    </script>
+</body>
+</html>
