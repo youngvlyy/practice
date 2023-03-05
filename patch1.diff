@@ -1,0 +1,3390 @@
+From a41dd60ba0b24826fb8e48d8c2e0574c636bc7f9 Mon Sep 17 00:00:00 2001
+From: younvlyy <qqm2308@gmail.com>
+Date: Sun, 5 Mar 2023 19:37:05 +0900
+Subject: [PATCH] 03-02
+
+---
+ ...�럼_인덱스로_값을_가져올수는_문자열과_charAt().html |  30 +++++
+ .../10_이터러블규약_이터레이터규약.html       |  92 ++++++++++++++
+ ...�터를_저장할수_있는_map_keys()_entries()_values().html |  97 +++++++++++++++
+ ...�터를_저장할수_있는_set_keys()_entries()_values().html | 101 ++++++++++++++++
+ .../40_Set을_이용한_로또번호생성.html         |  78 ++++++++++++
+ 110_스코프와_클로저/10_재귀와_스택.html       |  34 ++++++
+ .../20_전역변수_지역변수_유효범위(scope)의_개념.html |  29 +++++
+ .../30_소멸됐지만_살아남은_유령변수와_클로저.html |  45 +++++++
+ 110_스코프와_클로저/40_전역객체.html          |  26 ++++
+ .../20_window_screen_객체(창_화면크기).html   |  55 +++++++++
+ 120_빌트인_오브젝트/30_팝업창 띄우기.html     |  36 ++++++
+ ...��짜와_시간_정보를_제공하는_생성자함수_Date().html |  47 ++++++++
+ 120_빌트인_오브젝트/50_자바스크립트_시계.html |  46 +++++++
+ 120_빌트인_오브젝트/gongi.html                |  14 +++
+ .../10_생성자함수의_this.html                 |  30 +++++
+ ...��자함수에서_일반함수와_화살표함수의_this차이.html |  54 +++++++++
+ .../30_bind()를_이용한_함수바인딩.html        |  44 +++++++
+ ...��를_바인딩시켜_객체변수를_생성하는_apply()와_call().html |  44 +++++++
+ ...로_배열의_지정된_인덱스구간만큼_데이터_추출.html |  34 ++++++
+ 140_비동기처리/10_동기처리와_비동기처리.html  |  44 +++++++
+ ...rim()과_replace()로_문자열의_좌우공백_제거.html |  40 ++++++
+ ...��변수로_함수를_전달받아_실행하는_함수만들기.html |  30 +++++
+ ...��_메세지를_출력하고_싶었는데(실행순서에 초점).html |  46 +++++++
+ ...��_비동기처리_실행순서에_초점을_맞춘_Promise().html |  49 ++++++++
+ ...��함수와_Promise_객체를_리턴하는_함수의_차이.html |  34 ++++++
+ ...��행순서와_코드의_가독성까지_해결한_async_함수.html |  46 +++++++
+ .../40_DOM_이벤트와_forEach.html              |  61 ++++++++++
+ ...�� 기본이벤트 동작을 방지하는 preventDefault().html |  31 +++++
+ 170_DOM_조작/100_로또번호추출 copy.html       |  81 +++++++++++++
+ ...�은수보다_1크고_1작은수_출력하기(연습문제).html |  65 ++++++++++
+ .../120_setTimeout()_setInterval().html       |  84 +++++++++++++
+ .../130_setInterval()_달리는_캐릭터.html      | 114 ++++++++++++++++++
+ 180_Node_탐색/30-노드의 동적 생성과 추가.html |  15 ++-
+ ...loneNode(true)로 자손을 포함한 노드복제.html |  40 ++++++
+ ... 바꾸기-remove(), removeChild(), replaceChild().html |  90 ++++++++++++++
+ ...�정_조건을_만족하는_원소값을_반환하는_find().html |  53 ++++++++
+ 60_클래스/10_객체변수_설계도_class.html       |  42 +++++++
+ 60_클래스/20_constructor()를_가진_class.html  |  37 ++++++
+ .../30_접근제한자와_this_게터_세터로_캡슐화.html |  54 +++++++++
+ 70_상속/10_클래스의_상속.html                 |  53 ++++++++
+ .../20_메소드_오버라이딩과_super_참조변수.html |  57 +++++++++
+ 70_상속/30_정적프로퍼티와_정적메소드.html     |  56 +++++++++
+ 70_상속/40_믹스인(mixin).html                 |  52 ++++++++
+ .../10_옵셔널 파라미터.html                   |  47 ++++++++
+ .../20_객체에서의_옵셔널체이닝.html           |  50 ++++++++
+ .../30_Null병합연산자.html                    |  34 ++++++
+ .../40_기본데이터타입_Symbol().html           |  87 +++++++++++++
+ .../50_JS의_메모리관리(가비지컬렉션).html     |  44 +++++++
+ ...�과_객체에_사용하는_spread_연산자로_DeepCopy.html |  75 ++++++++++++
+ ..._사용법이_비슷하지만_완전히_다른개념의_rest.html |  72 +++++++++++
+ .../120_배열요소중_최대값_찾기.html           |  45 +++++++
+ .../70_객체프로퍼티_축약과_메소드축약표현.html |  56 +++++++++
+ .../80_배열과_객체의_구조분해_할당.html       |  76 ++++++++++++
+ ...복사_참조값복사_DeepCopy_ShallowCopy의_개념.html |  82 +++++++++++++
+ 54 files changed, 2872 insertions(+), 6 deletions(-)
+ create mode 100644 00_문자열메소드/10_배열처럼_인덱스로_값을_가져올수는_문자열과_charAt().html
+ create mode 100644 100_이터러블_맵과셋/10_이터러블규약_이터레이터규약.html
+ create mode 100644 100_이터러블_맵과셋/20_다양한_데이터를_저장할수_있는_map_keys()_entries()_values().html
+ create mode 100644 100_이터러블_맵과셋/30_다양한_데이터를_저장할수_있는_set_keys()_entries()_values().html
+ create mode 100644 100_이터러블_맵과셋/40_Set을_이용한_로또번호생성.html
+ create mode 100644 110_스코프와_클로저/10_재귀와_스택.html
+ create mode 100644 110_스코프와_클로저/20_전역변수_지역변수_유효범위(scope)의_개념.html
+ create mode 100644 110_스코프와_클로저/30_소멸됐지만_살아남은_유령변수와_클로저.html
+ create mode 100644 110_스코프와_클로저/40_전역객체.html
+ create mode 100644 120_빌트인_오브젝트/20_window_screen_객체(창_화면크기).html
+ create mode 100644 120_빌트인_오브젝트/30_팝업창 띄우기.html
+ create mode 100644 120_빌트인_오브젝트/40_날짜와_시간_정보를_제공하는_생성자함수_Date().html
+ create mode 100644 120_빌트인_오브젝트/50_자바스크립트_시계.html
+ create mode 100644 120_빌트인_오브젝트/gongi.html
+ create mode 100644 130_this와_함수바인딩/10_생성자함수의_this.html
+ create mode 100644 130_this와_함수바인딩/20_생성자함수에서_일반함수와_화살표함수의_this차이.html
+ create mode 100644 130_this와_함수바인딩/30_bind()를_이용한_함수바인딩.html
+ create mode 100644 130_this와_함수바인딩/40_빈객체와_생성자함수를_바인딩시켜_객체변수를_생성하는_apply()와_call().html
+ create mode 100644 130_this와_함수바인딩/70_slice()로_배열의_지정된_인덱스구간만큼_데이터_추출.html
+ create mode 100644 140_비동기처리/10_동기처리와_비동기처리.html
+ create mode 100644 140_비동기처리/20_trim()과_replace()로_문자열의_좌우공백_제거.html
+ create mode 100644 140_비동기처리/20_매개변수로_함수를_전달받아_실행하는_함수만들기.html
+ create mode 100644 140_비동기처리/30_1초단위로_메세지를_출력하고_싶었는데(실행순서에 초점).html
+ create mode 100644 140_비동기처리/40_순차적인_비동기처리_실행순서에_초점을_맞춘_Promise().html
+ create mode 100644 140_비동기처리/50_일반함수와_Promise_객체를_리턴하는_함수의_차이.html
+ create mode 100644 140_비동기처리/60_비동기_실행순서와_코드의_가독성까지_해결한_async_함수.html
+ create mode 100644 160_DOM_선택과_이벤트/40_DOM_이벤트와_forEach.html
+ create mode 100644 160_DOM_선택과_이벤트/50-요소의 기본이벤트 동작을 방지하는 preventDefault().html
+ create mode 100644 170_DOM_조작/100_로또번호추출 copy.html
+ create mode 100644 170_DOM_조작/110_입력받은수보다_1크고_1작은수_출력하기(연습문제).html
+ create mode 100644 170_DOM_조작/120_setTimeout()_setInterval().html
+ create mode 100644 170_DOM_조작/130_setInterval()_달리는_캐릭터.html
+ create mode 100644 180_Node_탐색/50-cloneNode(true)로 자손을 포함한 노드복제.html
+ create mode 100644 180_Node_탐색/60-노드를 제거하거나 바꾸기-remove(), removeChild(), replaceChild().html
+ create mode 100644 180_Node_탐색/60-배열에서_특정_조건을_만족하는_원소값을_반환하는_find().html
+ create mode 100644 60_클래스/10_객체변수_설계도_class.html
+ create mode 100644 60_클래스/20_constructor()를_가진_class.html
+ create mode 100644 60_클래스/30_접근제한자와_this_게터_세터로_캡슐화.html
+ create mode 100644 70_상속/10_클래스의_상속.html
+ create mode 100644 70_상속/20_메소드_오버라이딩과_super_참조변수.html
+ create mode 100644 70_상속/30_정적프로퍼티와_정적메소드.html
+ create mode 100644 70_상속/40_믹스인(mixin).html
+ create mode 100644 80_옵셔널_심볼_가비지컬렉션/10_옵셔널 파라미터.html
+ create mode 100644 80_옵셔널_심볼_가비지컬렉션/20_객체에서의_옵셔널체이닝.html
+ create mode 100644 80_옵셔널_심볼_가비지컬렉션/30_Null병합연산자.html
+ create mode 100644 80_옵셔널_심볼_가비지컬렉션/40_기본데이터타입_Symbol().html
+ create mode 100644 80_옵셔널_심볼_가비지컬렉션/50_JS의_메모리관리(가비지컬렉션).html
+ create mode 100644 90_배열과_객체/100_배열과_객체에_사용하는_spread_연산자로_DeepCopy.html
+ create mode 100644 90_배열과_객체/110_spread와_사용법이_비슷하지만_완전히_다른개념의_rest.html
+ create mode 100644 90_배열과_객체/120_배열요소중_최대값_찾기.html
+ create mode 100644 90_배열과_객체/70_객체프로퍼티_축약과_메소드축약표현.html
+ create mode 100644 90_배열과_객체/80_배열과_객체의_구조분해_할당.html
+ create mode 100644 90_배열과_객체/90_값복사_참조값복사_DeepCopy_ShallowCopy의_개념.html
+
+diff --git a/00_문자열메소드/10_배열처럼_인덱스로_값을_가져올수는_문자열과_charAt().html b/00_문자열메소드/10_배열처럼_인덱스로_값을_가져올수는_문자열과_charAt().html
+new file mode 100644
+index 0000000..c6be2fd
+--- /dev/null
++++ b/00_문자열메소드/10_배열처럼_인덱스로_값을_가져올수는_문자열과_charAt().html
+@@ -0,0 +1,30 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>10_배열처럼_인덱스로_값을_가져올수는_문자열과_charAt()</title>
++</head>
++<body>
++    <h1>문자열.charAt(인덱스)</h1>
++
++    <hr>
++
++    <script>
++        let strNum = '200';
++        document.write(`strNum[0] = ${strNum[0]}<br>`);
++
++        //자바스크립트에서 문자열은 읽기 전용 배열
++        const str = 'UIUX-Design';
++
++        //재할당을 시도해도 오류는 안나지만 값이 변경되지 않음 
++        str[0] = 'k';
++
++        console.log(str[0]);//U
++        console.log(str[5]);//D
++
++        document.write(`str.carAt(7) = ${str.charAt(7)}`);//s
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/100_이터러블_맵과셋/10_이터러블규약_이터레이터규약.html b/100_이터러블_맵과셋/10_이터러블규약_이터레이터규약.html
+new file mode 100644
+index 0000000..ae4deaa
+--- /dev/null
++++ b/100_이터러블_맵과셋/10_이터러블규약_이터레이터규약.html
+@@ -0,0 +1,92 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>10_이터러블규약_이터레이터규약</title>
++</head>
++<body>
++    <h1>Iterable, Iterator Protocol</h1>
++
++    <pre>
++        1. 이터러블 규약(Iterable Protocol)
++
++            배열처럼 순회가능한 자료구조를 
++            for~of 반복문을 실행하여 반복할 때
++            값이 열거되어야 하며, 
++            내부적으로 @@iterator 메소드가 구현되어 있어야 한다는
++            규약이다.
++
++            str[Symbol.iterator]을 줄여서 @@iiterator 함수라고 부른다.
++
++            배열, 문자열(읽기전용배열) 등이 이터러블 규약을 따르며
++            이를 이터러블 객체라고 한다.
++
++
++        2. 이터레이터 규약(Iterator Protocol)
++            next() 메소드를 통해서 하나씩 순차적으로 열거되어 하며,
++            열거된 값은 {value:값, done:불린값} 형태이어야 한다는 규약
++    </pre>
++
++    <hr>
++
++    <script>
++        const str = '가나다라마바사';
++
++        //내장된 @@iterator 함수를 호출하여 이터레이터객체를 전달받음
++        let iterator = str[Symbol.iterator]();
++
++        console.log(iterator.next());//{value: '가', done: false}
++        console.log(iterator.next());
++        console.log(iterator.next());
++        console.log(iterator.next());
++        console.log(iterator.next());
++        console.log(iterator.next());
++        console.log(iterator.next());//{value: '사', done: false}
++
++        //순차적으로 마지막까지 열거한 후의 value, done의 값
++        console.log(iterator.next());//{value: undefined, done: true}
++
++        const arrNum = [10, 20 , 30];
++        let iterator1 = arrNum[Symbol.iterator]();
++        console.log('------------------');
++        console.log(iterator1.next());
++        console.log(iterator1.next());
++        console.log(iterator1.next());
++       // console.log(iterator1.next());
++
++       console.log('------------------');
++
++       //일반적으로 객체는 이터러블/이터레이터 규약을 따르지 않는다
++       //이터러블 객체를 직접 변환구현(화살표함수 x) 할 수 있다.
++
++       const myIterator = {
++            age : 16,
++
++
++            //이터러블 규약을 따르기 위해 @@iterator 메소드를 선언
++            [Symbol.iterator] : function(){
++                //this는 자기 자신을 가리킨다.
++                return this
++            },
++
++            //{value:0, done:false}
++            //이터레이터 규약을 따르기 위해 객체에 next() 메소드를 선언
++            next : function(){
++                return (this.age<20)? {value:this.age++, done:false} : {value:undefined, done:true};
++
++            }
++       };
++       console.log(myIterator.next());
++       console.log(myIterator.next());
++       console.log(myIterator.next());
++       console.log(myIterator.next());
++       console.log(myIterator.next());
++       console.log(myIterator.next());
++
++      // iterator = myIterator[Symbol.iterator]();
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/100_이터러블_맵과셋/20_다양한_데이터를_저장할수_있는_map_keys()_entries()_values().html b/100_이터러블_맵과셋/20_다양한_데이터를_저장할수_있는_map_keys()_entries()_values().html
+new file mode 100644
+index 0000000..e65640d
+--- /dev/null
++++ b/100_이터러블_맵과셋/20_다양한_데이터를_저장할수_있는_map_keys()_entries()_values().html
+@@ -0,0 +1,97 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_다양한_데이터를_저장할수_있는_map_keys()_entries()_values().html</title>
++</head>
++<body>
++    <h1>Map 생성자 함수를 이용한 객체</h1>
++
++    <pre>
++        1. 지금까지 데이터를 저장하는 방법은 - 일반변수, 배열변수, 객체변수
++
++        2. 현실세계 반영하기엔 턱없이 부족해서 Map, Set 등장
++
++        3. Map은 key가 있는 데이터를 저장한다는 점에서 Object와 유사
++
++        4. 다만 Map은 size 속성으로 항목의 수를 할 수 있게 한다는 점에서 차이가 있다.
++
++        5. Map에는 다음과 같은 메소드와 프로퍼티가 있다.
++            const myMap = new Map();
++
++            myMap.set(key, value) - key를 이용해서 value를 저장
++            myMap.get(key) - key에 해당하는 값을 리턴, 없으면 undefined
++            myMap.delete(key) - key에 해당하는 값을 삭제(메소드체인 불가);
++            myMap.has(key) - 존재여부 확인 --> true/false;
++            myMap.clear - 완전히 비우기;
++            myMap.size - 요소의 개수를 리턴
++    </pre>
++
++    <hr>
++
++    <script>
++        //비어있는 Map 자료구조 생성
++        const myMap = new Map();
++
++        //데이터 저장
++        myMap.set('name', '둘리');
++        myMap.set(100, '아기공룡');
++        myMap.set(true, '빙하타고 왔죠');
++
++        //데이터 인출
++        document.write(`${myMap.get('name')}<br>`);
++        document.write(`${myMap.get(100)}<br>`);
++        document.write(`${myMap.get(true)}<br>`);
++
++        //데이터 삭제
++        myMap.delete(100);
++
++        //요소의 존재여부 확인
++        document.write(`myMap.has('name')= ${myMap.has('name')}<br>`);
++        document.write(`myMap.has(100) = ${myMap.has(100)}<br>`);
++
++        //모든 요소 삭제(완전히 비우기)
++        myMap.clear();
++        console.log('myMap.clear() 작업후 :',myMap);
++
++        //Map은 이터러블 규약을 따르므로 for~of 문으로 출력가능
++        for(let item of myMap){
++            console.log(item);
++        }
++
++        console.log('-------------------');
++
++        //키와 값의 쌍으로 이루어진 요소로 구성된 이터러블 인수로 전달
++        const newMap = new Map([['name','둘리'],['100','아기공룡'],[true, '빙하타고 왔죠~!']]);
++        console.log('newMap=',newMap);
++
++        //key전체를 iterator 객체를 이용해서 출력
++        let iterator = newMap.keys();
++        for(let i = 0; i<newMap.size; i++){
++            console.log(iterator.next());
++        }
++
++        console.log('---------');
++
++        //value 전체를 iterator 객체를 이용해서 출력
++        iterator = newMap.values();
++
++        for(let i=0; i<newMap.size; i++){
++            console.log(iterator.next());
++        }
++
++
++        console.log('---------');
++
++        //key, value의 쌍으로 Map객체의 데이터를 iterator객체를 이용해서 출력
++        iterator = newMap.entries();
++
++        for(let i=0; i<newMap.size; i++){
++            console.log(iterator.next());
++        }
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/100_이터러블_맵과셋/30_다양한_데이터를_저장할수_있는_set_keys()_entries()_values().html b/100_이터러블_맵과셋/30_다양한_데이터를_저장할수_있는_set_keys()_entries()_values().html
+new file mode 100644
+index 0000000..d6bdda9
+--- /dev/null
++++ b/100_이터러블_맵과셋/30_다양한_데이터를_저장할수_있는_set_keys()_entries()_values().html
+@@ -0,0 +1,101 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>30_다양한_데이터를_저장할수_있는_set_keys()_entries()_values()</title>
++</head>
++<body>
++    <h1>Set 생성자 함수를 이용한 객체</h1>
++
++    <pre>
++        1. Set은 중복을 허용하지 않는 값을 모아놓은 특별한 자료구조
++        2. Set은 Key가 필요없으며, value만을 저장한다.
++        3. Set은 수학적 집합을 구현하기 위한 자료구조이다.
++
++        4. Set에는 다음과 같은 메소드와 프로퍼티가 있다.
++
++            const mySet = new Set();
++
++            mySet.add(값) - 데이터 추가
++            mySet.delete(값) - 데이터 삭제
++            mySet.has(값) - 데이터 존재여부 확인 true/false
++            mySet.clear() - 모든 요소 삭제(완전히 비우기)
++
++            mySet.size - 저장된 데이터 개수
++    </pre>
++
++    <hr>
++
++    <script>
++        //비어있는 Set 자료구조 생성
++        const mySet = new Set();
++        console.log('mySet =',mySet);//Set(0) {}
++
++        //데이터 추가
++        mySet.add('둘리');
++        mySet.add('도우너');
++        mySet.add('마이콜');
++        mySet.add('도우너');
++        mySet.add('마이콜');
++
++        console.log('mySet =',mySet);//Set(3) {'둘리', '도우너', '마이콜'}
++
++        //Set은 유일무이한 값만 저장됨(중복허용X)
++        console.log(`mySet.size = ${mySet.size}`);
++
++        //for~of 반복문을 이용한 출력
++        for(let user of mySet){
++            document.write(`${user}<br>`);
++        }
++
++        console.log('---------------');
++
++        const strSet = new Set('JAVASCRIPT');
++        console.log('strSet =', strSet);//Set(9) {'J', 'A', 'V', 'S', 'C', …}
++
++        //하나의 데이터 삭제
++        strSet.delete('V');
++
++        //데이터 존재여부 확인
++        document.write(`strSet.has('S') = ${strSet.has('S')} <br>`);//true
++        document.write(`strSet.has('V') = ${strSet.has('V')} <br>`);//false
++
++        //모든 데이터 삭제
++        strSet.clear();
++        console.log('strSet.clear() 작업후 :', strSet);//Set(0) {size: 0}
++
++        console.log('-------------------');
++
++        const newSet = new Set(['a','b','c','c','c']);
++        console.log('newSet =', newSet);//Set(3) {'a', 'b', 'c'}
++
++        console.log('-------------------');
++
++        //Set 객체는 값이 key의 역할을 대신한다.
++        let keys = newSet.keys();
++
++        for(let key of keys){
++            console.log(key);
++        }
++
++        console.log('-------------------');
++
++        //Set 객체의 값 전체를 for~of 문으로 출력
++        let values = newSet.values();
++        for(let value of values){
++            console.log(value);
++        }
++
++        console.log('-------------------');
++
++        //Set 객체의 값을 열거할 수 있는 iterator 객체를 반환
++        const iterator = newSet.entries();
++
++        for(let i=0;i<newSet.size;i++){
++            console.log(iterator.next());
++        }
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/100_이터러블_맵과셋/40_Set을_이용한_로또번호생성.html b/100_이터러블_맵과셋/40_Set을_이용한_로또번호생성.html
+new file mode 100644
+index 0000000..b00cea6
+--- /dev/null
++++ b/100_이터러블_맵과셋/40_Set을_이용한_로또번호생성.html
+@@ -0,0 +1,78 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>40_Set을_이용한_로또번호생성</title>
++    <style>
++        #wrap {
++          text-align: center;
++        }
++    
++        button {
++          padding: 20px 35px;
++          font-size: 24px;
++        }
++    
++        .result {
++          margin-top: 30px;
++        }
++    
++        .result>.ball {
++          display: inline-block;
++          width: 80px;
++          height: 80px;
++          margin-right: 10px;
++          font-size: 24px;
++          line-height: 80px;
++          text-align: center;
++          background-color: orange;
++          border-radius: 50%;
++        }
++    </style>    
++</head>
++<body>
++    <div id="wrap">
++        <h1>로또 1등번호 추출</h1>
++        <button>클릭</button>
++
++        <p class="result">
++            <!-- <span class="ball">1</span>
++            <span class="ball">2</span>
++            <span class="ball">3</span>
++            <span class="ball">4</span>
++            <span class="ball">5</span>
++            <span class="ball">6</span> -->
++        </p>        
++    </div>
++
++    <script>
++        const $btn = document.querySelector('button');
++        const $result = document.querySelector('.result');
++
++        $btn.addEventListener('click', function(){
++            const lottoPaper = new Set();
++
++            //숫자가 중복되지 않게 6개의 값을 저장
++            while(true){
++                //1~45 사이의 번호를 랜덤하게 추출
++                const ballNum = Math.floor(Math.random()*45)+1;
++                lottoPaper.add(ballNum);
++
++                if(lottoPaper.size>5) break;
++            }
++
++            //이전에 출력된 번호를 화면에서 제거
++            $result.innerHTML = '';
++
++            for(let lottoNum of lottoPaper){
++                const $span = document.createElement('span');
++                $span.setAttribute('class','ball');
++                $span.textContent = lottoNum;
++                $result.appendChild($span);
++            }
++        });
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/110_스코프와_클로저/10_재귀와_스택.html b/110_스코프와_클로저/10_재귀와_스택.html
+new file mode 100644
+index 0000000..da2cfbb
+--- /dev/null
++++ b/110_스코프와_클로저/10_재귀와_스택.html
+@@ -0,0 +1,34 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>10_재귀와_스택</title>
++</head>
++<body>
++    <h1>재귀와 스택</h1>
++
++    <p>1~100까지의 합은 <span>?</span></p>
++
++    <pre>
++        1. 아래 재귀함수 sum()의 경우 100부터 1까지 순회하여
++        2. 호출스택에 쌓여 처리해 나가게 되는데
++        3. Stack(스택)은 입구와 출구가 하나인 
++        4. LIFO(Last In Frist Out) 방식이기 때문에
++        5. 제일 마지막에 쌓은 sum(1) 부터 sum(100)까지 순차적으로
++        6. 호출되어 값을 반환하게 된다.
++    </pre>
++
++    <script>
++        //1~100까지의 합을 구하는 재귀함수 구현
++        function sum(n){
++            if(n<=1) return 1//종료조건
++            return n + sum(n-1);//자기자신을 호출
++        }
++
++        const result = sum(100);
++        document.querySelector('span').textContent = result;
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/110_스코프와_클로저/20_전역변수_지역변수_유효범위(scope)의_개념.html b/110_스코프와_클로저/20_전역변수_지역변수_유효범위(scope)의_개념.html
+new file mode 100644
+index 0000000..77098ed
+--- /dev/null
++++ b/110_스코프와_클로저/20_전역변수_지역변수_유효범위(scope)의_개념.html
+@@ -0,0 +1,29 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_전역변수_지역변수_유효범위(scope)의_개념</title>
++</head>
++<body>
++    <h1>변수 Scope</h1>
++
++    <script>
++        let username = '둘리';
++
++        function runFn(){
++            const username = '하니';
++
++            //먼저 중괄호 내에서 변수찾고 없으면 전역에서 찾음
++            console.log(username + '달려~!');
++
++            //중괄호 안에서 선언한 지역변수
++            let address = '서울시 쌍문동';
++        }
++
++        console.log(address + '에 살아요~!');
++        runFn();
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/110_스코프와_클로저/30_소멸됐지만_살아남은_유령변수와_클로저.html b/110_스코프와_클로저/30_소멸됐지만_살아남은_유령변수와_클로저.html
+new file mode 100644
+index 0000000..f344376
+--- /dev/null
++++ b/110_스코프와_클로저/30_소멸됐지만_살아남은_유령변수와_클로저.html
+@@ -0,0 +1,45 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>30_소멸됐지만_살아남은_유령변수와_클로저</title>
++</head>
++<body>
++    <h1>유령변수와 클로저</h1>
++
++    <pre>
++        1. 일반적으로 지역변수는 
++        2. 함수가 실행되는 시점에 메모리가 생성되고, 종료될때 소멸된다.
++        3. 그런데 아래 예제처럼 지역변수를 로직에서 활용하는 함수를 리턴하면
++        4. 소멸되어야 할 지역변수가 소멸되지 않고 리턴된 함수 안에서 살아남아
++        5. 계속 사용할 수 있게 된다.
++        6. 이때 살아남은 변수를 유령변수라 할 수 있고,
++        7. 리턴된 함수를 클로저라고 한다.
++    </pre>
++
++    <hr>
++
++    <script>
++        const closerFn = function(){
++            let score = 60;
++
++            return function(){
++                score++;
++
++                console.log(score);
++                document.write(`score= ${score}<br>`);
++            };
++        };
++
++        const printScore = closerFn();//리턴되는 함수의 주솟값 0x0101 이 저장
++
++        printScore();
++        printScore();
++        printScore();
++        printScore();
++        printScore();
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/110_스코프와_클로저/40_전역객체.html b/110_스코프와_클로저/40_전역객체.html
+new file mode 100644
+index 0000000..63e29d0
+--- /dev/null
++++ b/110_스코프와_클로저/40_전역객체.html
+@@ -0,0 +1,26 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Document</title>
++</head>
++<body>
++    <h1>브라우저의 전역객체(변수)는 window는 생략 가능</h1>
++
++    <script>
++        window.console.log('1. 콘솔 메소드는 window 객체에 등록된 것이었음');
++
++        window.alert('2. alert()도 window 객체에 등록된 메소드');
++        window.prompt('2. alert()도 window 객체에 등록된 메소드');
++        window.confirm('자바스크립트 재밌죠?');
++
++        window.setInterval();
++        window.setTimeout();
++
++        window.document.body();
++        window.document.querySelector();
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/120_빌트인_오브젝트/20_window_screen_객체(창_화면크기).html b/120_빌트인_오브젝트/20_window_screen_객체(창_화면크기).html
+new file mode 100644
+index 0000000..fd4fabf
+--- /dev/null
++++ b/120_빌트인_오브젝트/20_window_screen_객체(창_화면크기).html
+@@ -0,0 +1,55 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_window_screen_객체(창_화면크기)</title>
++</head>
++<body>
++    <h1>window, screen 객체</h1>
++
++    <pre>
++        웹브라우저를 의미하는 window 객체
++
++        1. 웹브라우저와 관련된 여러가지 property, method 가 있다.
++
++        2. 스크롤바와 툴바를 포함하지 않은 브라우저의 크기
++            window.innerWidth
++            window.innerHeight
++
++        3. 스크롤바와 툴바를 포함한 브라우저의 크기
++            window.outerWidth
++            window.outerHeight
++
++        4. 사용자 모니터의 해상도
++            screen.width
++            screen.height
++        
++        5. 모니터가 표현가능한 컬러 bit
++            screen.colorDepth
++    </pre>
++
++    <hr>
++    <h2>스크롤바와 툴바를 포함하지 않는 브라우저의 크기</h2>
++    <h3>1. window.innerWidth : <span class="iw">px</span></h3>
++    <h3>1. window.innerheight : <span class="ih">px</span></h3>
++    
++    <hr>
++
++    <h2>사용자 모니터의 해상도</h2>
++    <h3>1. screen.Width : <span class="sw">px</span></h3>
++    <h3>2. screen.Height : <span class="sh">px</span></h3>
++    <h3>3. 모니터가 표현가능한 컬러 bit <span class="cd">?</span></h3>
++
++    <script>
++        document.querySelector('.iw').textContent = window.innerWidth;
++        document.querySelector('.ih').textContent = window.innerHeight;
++
++        document.querySelector('.sw').textContent = screen.width;
++        document.querySelector('.sh').textContent = screen.height;
++        document.querySelector('.cd').textContent = screen.colorDepth;
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/120_빌트인_오브젝트/30_팝업창 띄우기.html b/120_빌트인_오브젝트/30_팝업창 띄우기.html
+new file mode 100644
+index 0000000..ea315a5
+--- /dev/null
++++ b/120_빌트인_오브젝트/30_팝업창 띄우기.html	
+@@ -0,0 +1,36 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>30_팝업창 띄우기</title>
++</head>
++<body>
++    <h1>새로운 window 객체 생성</h1>
++
++    <h2>팝업창 열고 닫기</h2>
++
++    <p>
++        <button class="btnOpen">열기</button>
++        <button class="btnClose">닫기</button>
++    </p>
++
++
++
++    <script>
++        const $btnOpen = document.querySelector('.btnOpen');
++        const $btnClose = document.querySelector('.btnClose');
++        let winCodeName = null;
++
++        $btnOpen.addEventListener('click', function(){
++            window.open('gongi.html', 'gongi', 'width = 300, height = 300');
++        });
++
++        $btnClose.addEventListener('click', function(){
++            winCodeName.close();
++        })
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/120_빌트인_오브젝트/40_날짜와_시간_정보를_제공하는_생성자함수_Date().html b/120_빌트인_오브젝트/40_날짜와_시간_정보를_제공하는_생성자함수_Date().html
+new file mode 100644
+index 0000000..05ccd17
+--- /dev/null
++++ b/120_빌트인_오브젝트/40_날짜와_시간_정보를_제공하는_생성자함수_Date().html
+@@ -0,0 +1,47 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>40_날짜와_시간_정보를_제공하는_생성자함수_Date()</title>
++</head>
++<body>
++    <h1>날짜 , 사간정보 추출</h1>
++
++    <script>
++        //현재시점의 날짜/ 시간 정보가 저장됨
++        const today = new Date();
++
++        document.write(today + '<br>');
++
++        //년월일
++        const year = today.getFullYear();
++        const month = today.getMonth(); // 0~11
++        const date = today.getDate();
++
++        document.write(year + '<br>');
++        document.write(month + 1 + '<br>');
++        document.write(date + '<br>');
++
++        //요일
++        const day = today.getDay(); //0~6(일~토)
++        console.log(day)
++
++        const daylist = ['일','월','화', '수', '목', '금', '토'];
++        let dayname = daylist[day];
++        
++        document.write(`오늘은 ${dayname}요일 입니다.`);
++
++
++        //시분초
++        const hours = today.getHours();
++        const minutes = today.getMinutes();
++        const seconds = today.getSeconds();
++
++        document.write(`${hours}시 <br>`);
++        document.write(`${minutes}시 <br>`);
++        document.write(`${seconds}시 <br>`);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/120_빌트인_오브젝트/50_자바스크립트_시계.html b/120_빌트인_오브젝트/50_자바스크립트_시계.html
+new file mode 100644
+index 0000000..441f574
+--- /dev/null
++++ b/120_빌트인_오브젝트/50_자바스크립트_시계.html
+@@ -0,0 +1,46 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>50_자바스크립트_시계</title>
++    <style>
++        h1{
++            width: 260px;
++            height: 40px;
++            margin: 0 auto;
++            padding: 20px 30px;
++            text-align: center;
++            border: 5px dotted pink;
++        }
++    </style>
++</head>
++<body>
++    <h1>20시 8분 25초</h1>
++
++    <script>
++        /*
++            힌트 - setInterval()을 이용
++
++            1. 1초마다 새로운 시간을 구한다.
++            2. 시, 분, 초를 추출한다.
++            3. h1의 텍스트로 값을 할당한다.
++        */
++       
++        const $h1 = document.querySelector('h1');
++
++        window.setInterval(function(){
++
++            const now = new Date();
++
++            const hours = now.getHours();
++            const minutes = now.getMinutes();
++            const seconds = now.getSeconds();
++
++            $h1.textContent = `${hours}시 ${minutes}분 ${seconds}초`;
++
++        },1000);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/120_빌트인_오브젝트/gongi.html b/120_빌트인_오브젝트/gongi.html
+new file mode 100644
+index 0000000..165aeb6
+--- /dev/null
++++ b/120_빌트인_오브젝트/gongi.html
+@@ -0,0 +1,14 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>gongi</title>
++</head>
++<body>
++    <h1>공지창</h1>
++
++    <p>새로운 window 객체가 생성되었습니다.</p>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/130_this와_함수바인딩/10_생성자함수의_this.html b/130_this와_함수바인딩/10_생성자함수의_this.html
+new file mode 100644
+index 0000000..75d5be5
+--- /dev/null
++++ b/130_this와_함수바인딩/10_생성자함수의_this.html
+@@ -0,0 +1,30 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>10_생성자함수의_this</title>
++</head>
++<body>
++    <h1>생성자 함수에서의 this</h1>
++
++    <p>생성자함수에서 this는 인스턴스에 바인딩된다.</p>
++
++    <hr>
++
++    <script>
++        function Person(name, age){
++            //아래의 this는 인스턴스명에 바인딩된다.
++            this.name = name;
++            this.age = age;
++        }
++
++        //생성자함수를 이용해서 객체변수를 만들때는 new 키워드를 이용한다. (규칙)
++        const micol = new Person('마이콜', 24);
++
++        document.write(`micol.name = ${micol.name}<br>`);
++        document.write(`micol.age = ${micol.age}<br>`);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/130_this와_함수바인딩/20_생성자함수에서_일반함수와_화살표함수의_this차이.html b/130_this와_함수바인딩/20_생성자함수에서_일반함수와_화살표함수의_this차이.html
+new file mode 100644
+index 0000000..deaf5de
+--- /dev/null
++++ b/130_this와_함수바인딩/20_생성자함수에서_일반함수와_화살표함수의_this차이.html
+@@ -0,0 +1,54 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_생성자함수에서_일반함수와_화살표함수의_this차이</title>
++</head>
++<body>
++    <!-- 카카오 기술면접 단골 -->
++
++    <h1>생성자함수에서_일반함수와_화살표함수의_this</h1>
++
++    <script>
++        function Person(name, age){
++            this.name = name;
++            this.age = age;
++
++            this.info = function(){
++                //this는 hong 인스턴스를 가리킨다.
++                document.write(`info 메소드 안에서 this.name = ${this.name}<br>`);
++
++                //내부함수에서 this는 window를 가리킨다. 따라서 출력되는 값이 없다 = undefined가 출력된다.
++                function innerFn(){
++                    document.write(`innerFn 함수 안에서 this.name = ${this.name}<br>`);
++                }
++
++                innerFn();
++
++                //내부함수에서 this를 인식시키는 방법1 (구식)
++                const that = this; //주솟값
++                function innerFn2(){
++                    document.write(`innerFn 함수 안에서 this.name = ${that.name}<br>`);
++                }
++
++                innerFn2();
++
++
++                //내부함수에서 this를 인식시키는 방법2 (최신)
++                const innerFn3 = () => {
++                    document.write(`innerFn 함수 안에서 this.name = ${this.name}<br>`);
++                }
++                //결론 => 함수 안 화살표함수(내부 화살표함수) 안에서의 this는 인스턴스에 매칭된다. 
++
++                innerFn3();
++
++            };
++        }
++
++        const hong = new Person('홍길동', 15);
++        hong.info();
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/130_this와_함수바인딩/30_bind()를_이용한_함수바인딩.html b/130_this와_함수바인딩/30_bind()를_이용한_함수바인딩.html
+new file mode 100644
+index 0000000..47c73fa
+--- /dev/null
++++ b/130_this와_함수바인딩/30_bind()를_이용한_함수바인딩.html
+@@ -0,0 +1,44 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>30_bind()를_이용한_함수바인딩</title>
++</head>
++<body>
++    <h1>bind()를 이용한 함수바인딩</h1>
++
++    <p>여러 객체가 아무 상관없는 함수를 가져다 쓸 수 있도록 바인딩</p>
++
++    <hr>
++
++    <script>
++        //마침 가져다 쓰기에(바인딩 하기에) 딱 좋은 함수
++        function weather(){
++            document.write(`${this.when} 날씨는 ${this.state}<br>`);
++
++        }
++
++        //weather();
++
++        const today = {
++            when : '오늘',
++            state : '맑음'
++        };
++        //today 객체를 this에 바인딩한 새로운 함수를 생성
++        const weatherToday = weather.bind(today);
++        weatherToday();
++
++        const tomorrow = {
++            when : '내일',
++            state : '쾌창'
++        }
++
++        //tomorrow 객체를 this에 바인딩한 새로운 함수를 생성
++        const weatherTommorow = weather.bind(tomorrow);
++        weatherTommorow();
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/130_this와_함수바인딩/40_빈객체와_생성자함수를_바인딩시켜_객체변수를_생성하는_apply()와_call().html b/130_this와_함수바인딩/40_빈객체와_생성자함수를_바인딩시켜_객체변수를_생성하는_apply()와_call().html
+new file mode 100644
+index 0000000..aa3bdbc
+--- /dev/null
++++ b/130_this와_함수바인딩/40_빈객체와_생성자함수를_바인딩시켜_객체변수를_생성하는_apply()와_call().html
+@@ -0,0 +1,44 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>40_빈객체와_생성자함수를_바인딩시켜_객체변수를_생성하는_apply()와_call()</title>
++</head>
++<body>
++    <h1>생성자 함수에 비어있는 객체를 바인딩하는 두가지 방법</h1>
++
++    <pre>
++        방법1
++        생성자함수.apply(this에 바인딩시킬 객체명, 배열데이터);
++
++        방법2
++        생성자함수.call(this에 바인딩시킬 객체명, 데이터를 나열);
++
++
++    </pre>
++
++    <script>
++        function Character(name, age, hobby){
++            this.name = name;
++            this.age = age;
++            this.hobby = hobby;
++        }
++
++        //방법1 - apply()
++        const duly = {};
++        Character.apply(duly, ['둘리', 7, '호이호이~!']);
++
++        
++
++        document.write(`이름: ${duly.name}, 나이 : ${duly.age}, 취미: ${duly.hobby}<br>`);
++
++        //방법2 - call()
++        const micol = {}; //빈객체
++        Character.call(micol, '마이콜', 24, '구공탄 노래부르기');
++        document.write(`이름: ${micol.name}, 나이 : ${micol.age}, 취미: ${micol.hobby}`);
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/130_this와_함수바인딩/70_slice()로_배열의_지정된_인덱스구간만큼_데이터_추출.html b/130_this와_함수바인딩/70_slice()로_배열의_지정된_인덱스구간만큼_데이터_추출.html
+new file mode 100644
+index 0000000..0eb92ae
+--- /dev/null
++++ b/130_this와_함수바인딩/70_slice()로_배열의_지정된_인덱스구간만큼_데이터_추출.html
+@@ -0,0 +1,34 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>70_slice()로_배열의_지정된_인덱스구간만큼_데이터_추출</title>
++</head>
++<body>
++    <h1>(문자열 또는 배열).slice()</h1>
++    <pre>
++        1. slice()는 배열의 begin~end+1 인덱스까지 원소를 복사하여 새로운 배열을 생성
++
++        2. slice()로 생성된 배열과 원본은 전혀 상관없음
++
++        3. 뒤에서부터 카운팅할 경우 -1부터 시작함
++    </pre>
++    <script>
++        const friends = ['둘리', '또치', '도우너', '마이콜', '희동이'];
++
++        document.write(friends.slice(2, 3+1));//['도우너, 마이콜']
++        document.write('<br>');
++
++        document.write(friends.slice(2));//인덱스 2 부터 끝까지
++        document.write('<br>');
++
++        document.write(friends.slice(-2));//마이콜 희동이
++        document.write('<br>');
++
++        document.write(friends.slice());//통째로 복사
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/140_비동기처리/10_동기처리와_비동기처리.html b/140_비동기처리/10_동기처리와_비동기처리.html
+new file mode 100644
+index 0000000..5c4bfe5
+--- /dev/null
++++ b/140_비동기처리/10_동기처리와_비동기처리.html
+@@ -0,0 +1,44 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>10_동기처리와_비동기처리</title>
++</head>
++<body>
++    <!-- 비동기처리를 동기처럼 .. -->
++    <h1>동기방식(sync), 비동기(async) - 처리순서와 연관</h1>
++    <h2>처리순서와 연관이 있다.</h2>
++
++    <pre>
++        1.Process - 하나의 프로그램 실행 단위
++        2.Thread - 프로세스 내에서 실행되는 흐름의 단위
++
++        3. 동기방식 - Blocking(잠근다 -> 대기발생)
++            => 여러개의 작업(Thread) 발생시 순차적으로 실행됨
++
++        4. 비동기방식 - NoneBlocking(예약 -> 대기발생X)
++            1)작성(Thread) 발생시 만약 바로 처리할 수 없다면 예약을 건다.
++            2)예약이 여러개일 경우 어떤것이 먼저 처리될지 알 수 없다.
++            3)이렇게 작업의 흐름이 순차적이지 않은 방식을 비동기방식이라고 한다. 
++    </pre>
++
++    <script>
++        //기본적으로 동기방식이 콘솔창에 출력됨(코드가 작성된 순서대로)
++        console.log(1);
++        console.log(2);
++        console.log(3);
++        console.log(4);
++        console.log(5);
++
++        //비동기는 코드가 작성된 순서대로의 실행을 보장하지 않음
++        setTimeout(() => {
++            document.write('한우불고기 버거 조리 완료<br>');
++        }, 3000);
++        setTimeout(() => {
++            document.write('아메리카노 준비완료<br>');
++        }, 2000);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/140_비동기처리/20_trim()과_replace()로_문자열의_좌우공백_제거.html b/140_비동기처리/20_trim()과_replace()로_문자열의_좌우공백_제거.html
+new file mode 100644
+index 0000000..39caa02
+--- /dev/null
++++ b/140_비동기처리/20_trim()과_replace()로_문자열의_좌우공백_제거.html
+@@ -0,0 +1,40 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_trim()과_replace()로_문자열의_좌우공백_제거</title>
++</head>
++<body>
++    <h1>trim(), replace()</h1>
++
++    <pre>
++        1. trim() : 좌우의 공백 제거
++
++        2. replace() 
++            1) 어떤 문자열에서 특정 단어를 다른 내용으로 치환
++            2) 만약 특정단어가 여러개일 경우 첫번째로 발견한 것만 치환
++            3) 원본데이터에는 영향을 미치지 않는다.(불변)
++    </pre>
++
++    <hr>
++
++    <script>
++        const greeting = '        Hello World       ';
++        console.log(`${greeting}~!`);
++
++        //1. trim()으로 좌우의 공백 제거
++        const newGreeting = greeting.trim();
++        console.log(`${newGreeting}~!`);
++
++
++        //2. replace()로 치환
++        const fruites = 'apple watermelon mango pineapple banana mangoFashion';
++        const newFruites = fruites.replace('apple', 'strawberry');
++        console.log(`frites = ${fruites}`);//원본에 영향을 주지 않는다.
++        console.log(`newFruites = ${newFruites}`);
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/140_비동기처리/20_매개변수로_함수를_전달받아_실행하는_함수만들기.html b/140_비동기처리/20_매개변수로_함수를_전달받아_실행하는_함수만들기.html
+new file mode 100644
+index 0000000..c1cd73f
+--- /dev/null
++++ b/140_비동기처리/20_매개변수로_함수를_전달받아_실행하는_함수만들기.html
+@@ -0,0 +1,30 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_매개변수로_함수를_전달받아_실행하는_함수만들기</title>
++</head>
++<body>
++    <h1>함수를 전달받는 함수만들기</h1>
++
++    <script>
++        const speakerFn = (callback)=>{
++            callback();
++        };
++        //실행1 -> 실행2 -> 실행3 (동기방식은 순차적으로...)
++        console.log(0); //실행1
++
++        speakerFn(function(){
++            console.log('오늘은 목요일');
++        });//실행2
++
++        setTimeout(function(){
++            console.log('안녕하세요~!');
++        },0);//실행4 (비동기이기 때문)
++
++        console.log(1); //실행3
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/140_비동기처리/30_1초단위로_메세지를_출력하고_싶었는데(실행순서에 초점).html b/140_비동기처리/30_1초단위로_메세지를_출력하고_싶었는데(실행순서에 초점).html
+new file mode 100644
+index 0000000..faf5573
+--- /dev/null
++++ b/140_비동기처리/30_1초단위로_메세지를_출력하고_싶었는데(실행순서에 초점).html	
+@@ -0,0 +1,46 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>30_1초단위로_메세지를_출력</title>
++</head>
++<body>
++    <h1>1초단위로 메세지를 출력</h1>
++
++    <pre>
++        문제) 예약을 거는 방식으로 아래와 같이 출력하고 싶다.
++        Thu Mar 02 2023 20:14:22 GMT+0900
++        Thu Mar 02 2023 20:14:23 GMT+0900
++        Thu Mar 02 2023 20:14:24 GMT+0900
++
++         해결) 
++            1. 비동기작업을 동기작업처럼 순차적으로 실행
++            2. 첫번째 콜백이 실행된 시점에 또다시 예약을 거는 방법으로 해결
++            3. 아래와 같은 비동기 처리방식을 '콜백지옥' 이라고 부른다.
++            4. 콜백지옥의 단점은 코드의 가독성이 떨어진다는 점이다.
++    </pre>
++    <script>
++        // console.log(new Date());
++
++        setTimeout(
++            function(){
++                console.log(new Date()); 
++                setTimeout(
++                    function(){
++                        console.log(new Date()); 
++
++                        setTimeout(
++                            function(){
++                                console.log(new Date()); 
++                            },1000)
++                },1000)
++
++            //콜백지옥 형태의 비동기코드 작성의 단점은 실행순서가 헷갈린다는 점이다.
++            console.log('마지막 출력');//의도와는 달리 두번째로 출력됨
++        },1000)
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/140_비동기처리/40_순차적인_비동기처리_실행순서에_초점을_맞춘_Promise().html b/140_비동기처리/40_순차적인_비동기처리_실행순서에_초점을_맞춘_Promise().html
+new file mode 100644
+index 0000000..a20fdda
+--- /dev/null
++++ b/140_비동기처리/40_순차적인_비동기처리_실행순서에_초점을_맞춘_Promise().html
+@@ -0,0 +1,49 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>40_순차적인_비동기처리_실행순서에_초점을_맞춘_Promise()</title>
++</head>
++<body>
++    <h1>비동기처리를 동기처럼 순차적으로 실행하게 하는 Promise</h1>
++
++    <pre>
++        Promise() 생성자함수를 이용한 콜백지옥 탈출
++
++        1. Promise() 객체를 생성하여 리턴하고,
++        2. then()에서 resolve()로 보낸 결과를 받는다.
++        3. 프라미스 문법에서는 두개의 콜백이 필요하다.
++            첫번째는 Promise 객체 생성시 전달하는 콜백 (resolve, reject)=>{}
++            두번째는 then()에서 받는 콜백 (result)=>{}
++
++        4. resolve에는 비동기작업 성공시 호출하는 함수의 주소값이 전달되고,
++            reject에는 에러가 발생했을 때 호출하는 함수의 주소값이 전달된다.
++        
++    </pre>
++    <script>
++        //Promise 객체를 리턴하는 함수
++        function workFn(sec){
++            return new Promise((resolve, reject)=>{
++                //우리가 걸 예약의 구체적 내용을 여기에 기술
++                //비동기적으로 받아온 데이터를 resolve()를 호출하여 전달.
++                //보통 어떤 서버에서 데이터를 수신하는데 약간의 시간이 필요하다. 이런 상황을 가정해서 setTimeout()을 이용해 아래에 표현하겠다.
++                setTimeout(()=>{
++                    resolve(new Date());
++                },sec*1000);
++            });//(성공했을때 호출할 수 있는 함수, 실패했을때)
++        }
++        workFn(1).then((result)=>{
++            console.log('첫번째 작업을 실행한 시간:',result);
++            return workFn(1);
++        }).then((result)=>{
++            console.log('두번째 작업을 실행한 시간', result);
++            return workFn(1);
++
++        }).then((result)=>{
++            console.log('세번째 작업을 실행한 시간', result);
++        });// resolve인자를 then에 대입할 수 있음
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/140_비동기처리/50_일반함수와_Promise_객체를_리턴하는_함수의_차이.html b/140_비동기처리/50_일반함수와_Promise_객체를_리턴하는_함수의_차이.html
+new file mode 100644
+index 0000000..9f3b252
+--- /dev/null
++++ b/140_비동기처리/50_일반함수와_Promise_객체를_리턴하는_함수의_차이.html
+@@ -0,0 +1,34 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>50_일반함수와_Promise_객체를_리턴하는_함수의_차이</title>
++</head>
++<body>
++    <h1>일반함수와 Promise 객체를 리턴하는 함수의 차이</h1>
++
++    <script>
++        //1. 기본데이터타입을 리턴하는 일반함수
++        function normalFn(){
++            return '1. normalFn 일반함수 호출';
++        }
++
++        console.log(normalFn());
++
++        //2. Promise 객체를 리턴하는 함수
++        function workFn(){
++            return new Promise((resolve, reject)=>{
++                resolve('내일은 금요일~!');
++            });
++        }
++        console.log(workFn());//Promise {<pending>}
++
++            //만약 resolve로 넘겨준 값을 받고싶다면...
++        workFn().then((result)=>{
++            console.log(result);
++        })
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/140_비동기처리/60_비동기_실행순서와_코드의_가독성까지_해결한_async_함수.html b/140_비동기처리/60_비동기_실행순서와_코드의_가독성까지_해결한_async_함수.html
+new file mode 100644
+index 0000000..d2889a5
+--- /dev/null
++++ b/140_비동기처리/60_비동기_실행순서와_코드의_가독성까지_해결한_async_함수.html
+@@ -0,0 +1,46 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>60_비동기_실행순서와_코드의_가독성까지_해결한_async_함수</title>
++</head>
++<body>
++    <h1>async, await</h1>
++
++    <pre>
++        1. Promise() 생성자함수를 이용한 문법의 가독성도 그리 좋지 않다.
++
++        2. await을 붙이면 비동기처리가 완료될때 까지 기다려다가 다음 코드가 실행됨
++
++        3. await 키워드를 사용하려면 함수앞에 async 키워드를 명시해야 한다.
++    </pre>
++
++    <script>
++        //서버에서 데이터 수신후 Promise 객체를 리턴하는 함수
++        function Fetch(sec){
++            return new Promise((resolve, reject)=>{
++                setTimeout(()=>{
++                    resolve(`${sec}초후 서버에서 데이터 수신 완료`);
++                }, sec*1000);
++            });
++        }
++
++        //수신한 데이터를 처리하는 함수
++       async function useFn(){
++            let result = await Fetch(3);
++            console.log(`${result}하여 화면에 출력합니다.`);
++
++            result = await Fetch(2);
++            console.log(`${result}하여 화면에 출력합니다.`);
++
++            result = await Fetch(1);
++            console.log(`${result}하여 화면에 출력합니다.`);
++
++            return 'async 함수 종료~!';
++        }
++        useFn().then(result => console.log(result))
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/160_DOM_선택과_이벤트/40_DOM_이벤트와_forEach.html b/160_DOM_선택과_이벤트/40_DOM_이벤트와_forEach.html
+new file mode 100644
+index 0000000..2dab053
+--- /dev/null
++++ b/160_DOM_선택과_이벤트/40_DOM_이벤트와_forEach.html
+@@ -0,0 +1,61 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>40_DOM_이벤트와_forEach</title>
++
++    <style>
++        button{width: 40px; height: 40px;}
++    </style>
++</head>
++<body>
++    <h1>배열의 반복메소드 .forEach()</h1>
++
++    <pre>
++        1. 배열 각각의 원소에 공통적인 작업을 하고싶을 때 유용
++
++        2. 사용법
++            배열.forEach(function(원소, 인덱스, 원본배열){});
++
++            예시) arrData.forEach(function(item, idx, arr){});
++    </pre>
++    <hr>
++
++    <p class="str">?</p>
++    <button>버튼</button>
++
++    <script>
++        const arrData = ['둘리', '또치', '도우너', '마이콜', 10, 20, 30, 40, 50];
++
++        //let str = '0:둘리<br>1:또치<br>2:도우너'
++        let str = '';
++
++        const $str = document.querySelector('.str');
++        const $btn = document.querySelector('button');
++
++        //버튼에 대한 클릭이벤트 구문
++        $btn.addEventListener('click', function(){
++            //방법1 for 
++            if(false){
++                for(let i=0; i<arrData.length; i++){
++                str += `${i} : ${arrData[i]}<br>`;
++                $str.innerHTML = str;
++                }
++            }
++            //방법2 forEach()
++            if(true){
++                arrData.forEach((item,idx)=>{
++                    str += `${idx}: ${item}<br>`;
++                    $str.innerHTML = str;
++
++                })
++            }
++
++        })
++        //$str.textContent = '0:둘리<br>1:또치<br>2:도우너'
++        $str.innerHTML = str;
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/160_DOM_선택과_이벤트/50-요소의 기본이벤트 동작을 방지하는 preventDefault().html b/160_DOM_선택과_이벤트/50-요소의 기본이벤트 동작을 방지하는 preventDefault().html
+new file mode 100644
+index 0000000..992061a
+--- /dev/null
++++ b/160_DOM_선택과_이벤트/50-요소의 기본이벤트 동작을 방지하는 preventDefault().html	
+@@ -0,0 +1,31 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>50-요소의 기본이벤트 동작을 방지하는 preventDefault()</title>
++</head>
++<body>
++    <h1>요소의 기본기능 작동 방지</h1>
++
++    <a href="https://k-dokdo.com/">K-Dokdo 바로가기</a>
++
++    <script>
++        const $alink = document.querySelector('a');
++
++        //evt - 요소에 발생한 이벤트정보를 전달받을 매개변수
++        $alink.addEventListener('click', function(e){
++
++            if(confirm('정말 이동하시겠습니까?')){
++                alert('안녕히 가세요')
++                
++            }else{
++                alert('이동하지 않습니다.');
++                e.preventDefault(); //앵커테그의 기본기능 작동 방지
++
++            }
++        });
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/170_DOM_조작/100_로또번호추출 copy.html b/170_DOM_조작/100_로또번호추출 copy.html
+new file mode 100644
+index 0000000..f0e4c00
+--- /dev/null
++++ b/170_DOM_조작/100_로또번호추출 copy.html	
+@@ -0,0 +1,81 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>100_로또번호추출</title>
++    <style>
++        #wrap{
++            text-align: center;
++        }
++        button{
++            padding: 20px 35px;
++            font-size: 24px;
++        }
++        .result>.ball{
++            display: inline-block;
++            width: 80px;
++            height: 80px;
++            background-color: orange;
++            border-radius: 50%;
++            line-height: 80px;
++            margin-right: 10px;
++            margin-top: 10px;
++        }
++    </style>
++</head>
++<body>
++    <div id="wrap">
++        <h1>일등 로또번호 추출하기</h1>
++        <button>START</button>
++
++        <p class="result">
++            <!-- <span class="ball">1</span>
++            <span class="ball">2</span>
++            <span class="ball">3</span>
++            <span class="ball">4</span>
++            <span class="ball">5</span>
++            <span class="ball">6</span> -->
++        </p>
++    </div>
++
++    <script>
++        const $btn = document.querySelector('button');
++        const $result = document.querySelector('.result');
++
++        $btn.addEventListener('click', function(){
++
++            while ($result.children.length >0){
++                $result.removeChild($result.firstElementChild);
++            }
++
++            const ballBox = [];
++
++            //1~45
++            for(let i=0; i<45; i++){
++                ballBox.push(i + 1);
++                console.log(ballBox);
++            }
++
++            const lottopaper = [];
++            for(let i=0; i<6; i++){
++                const idx = Math.floor(Math.random()*45);               
++                const ballNum = ballBox[idx];
++               
++                //console.log(ballNum);
++                
++                lottopaper.push(ballNum);
++                lottopaper.join(',');
++                console.log(lottopaper);
++                
++                const $span = document.createElement('span');
++                $span.setAttribute('class', 'ball');
++                $span.textContent = ballNum;
++                $result.appendChild($span);
++            }
++        });
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/170_DOM_조작/110_입력받은수보다_1크고_1작은수_출력하기(연습문제).html b/170_DOM_조작/110_입력받은수보다_1크고_1작은수_출력하기(연습문제).html
+new file mode 100644
+index 0000000..29a43af
+--- /dev/null
++++ b/170_DOM_조작/110_입력받은수보다_1크고_1작은수_출력하기(연습문제).html
+@@ -0,0 +1,65 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>110_입력받은수보다_1크고_1작은수_출력하기(연습문제)</title>
++    <style>
++        body{text-align: center;}
++        button{
++            margin-top: 20px;
++            padding: 15px 30px;
++            font-size: 24px;
++            border-radius: 10%;
++        }
++        h3{margin: 30px 0;}
++        p{
++            margin: 30px 0 60px;
++            line-height: 35px;
++        }
++    </style>
++</head>
++<body>
++    <h1>입력받은수보다_1크고_1작은수_출력하기</h1>
++
++    <h2>입력받은 수 : <span class="num">?</span></h2>
++
++    <p>
++        버튼을 누르면 프로그램이 시작됩니다. <br>
++        <button>시작</button>
++    </p>
++
++    <h3>1 큰수 : <span class="greater"></span></h3>
++    <h3>1 작은수 : <span class="less"></span></h3>
++    <address>&copy; 자바스크립트 저녁반</address>
++
++    <script>
++        /*
++            1.사용자가 시작버튼을 누른다.
++                ->시작버튼에 대한 클릭이벤트 구문 작성
++            2. 숫자를 입력할 창이 뜬다.
++
++            3.입력받은 숫자를 .num에 출력한다.
++
++            4.+1 -1한 결과를 아래에 출력한다.
++        */
++        const $btn = document.querySelector('button');
++
++
++        $btn.addEventListener('click', function(){
++            const $prnum = parseInt(prompt('숫자를 입력하시오'));
++            const $num = document.querySelector('.num');
++            const $greater = document.querySelector('.greater');
++            const $less = document.querySelector('.less');
++            
++            $num.textContent = $prnum;
++            $greater.textContent = $prnum + 1;
++            $less.textContent = $prnum - 1
++        });
++
++
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/170_DOM_조작/120_setTimeout()_setInterval().html b/170_DOM_조작/120_setTimeout()_setInterval().html
+new file mode 100644
+index 0000000..f650f8d
+--- /dev/null
++++ b/170_DOM_조작/120_setTimeout()_setInterval().html
+@@ -0,0 +1,84 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>120_setTimeout()_setInterval()</title>
++  <style>
++    * {
++      margin: 0;
++      padding: 0;
++    }
++
++    body {
++      text-align: center;
++    }
++
++    #wrap {
++      width: 85%;
++      max-width: 800px;
++      min-width: 500px;
++      margin: 50px auto;
++      /* border: 1px solid #000; */
++    }
++
++    button {
++      margin-top: 15px;
++      padding: 15px 30px;
++    }
++
++    hr {
++      margin: 50px 0;
++    }
++  </style>
++</head>
++
++<body>
++  <div id="wrap">
++    <h1>1. setTimeout() 테스트</h1>
++
++    <img src="https://bit.ly/36n8RaZ" alt="폭탄" class="bomb"> <br>
++    <button>폭탄해체</button>
++
++
++    <script>
++      const $bomb = document.querySelector('.bomb');
++      const $btnBomb = $bomb.nextElementSibling.nextElementSibling;
++      console.log($btnBomb);
++
++      const bombKey = setTimeout(function () {
++        $bomb.setAttribute('src', 'https://bit.ly/3gRmoJX');
++      }, 2000);
++
++      $btnBomb.addEventListener('click', function () {
++        //setTimeout()을 통한 예약을 해지하는 방법
++        clearTimeout(bombKey);
++      });
++    </script>
++
++    <hr>
++
++    <h1>2. setInterval() 테스트</h1>
++    <img src="https://bit.ly/3gSK6W3" alt="">
++    <h2>현재까지 벌은 돈 : <span class="dollar">0</span> 달러</h2>
++    <button>그만벌기</button>
++
++    <script>
++      let totalmoney = 0;
++      const setintervalkey = setInterval(function(){
++        console.log('100달러 벌었음');
++        totalmoney += 100;
++        document.querySelector('.dollar').textContent = totalmoney;
++      }, 1000);
++
++      const $btnStop = document.querySelector('h2+button');
++      $btnStop.addEventListener('click', function(){
++        clearInterval(setintervalkey);
++      })
++    </script>
++  </div>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/170_DOM_조작/130_setInterval()_달리는_캐릭터.html b/170_DOM_조작/130_setInterval()_달리는_캐릭터.html
+new file mode 100644
+index 0000000..dfc8cab
+--- /dev/null
++++ b/170_DOM_조작/130_setInterval()_달리는_캐릭터.html
+@@ -0,0 +1,114 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>130_setInterval()_달리는_캐릭터</title>
++    <style>
++        #wrap{text-align: center;}
++        address{
++            font-style: normal;
++            font-size: 12px;
++            line-height: 50px;
++        }
++    </style>
++</head>
++<body>
++    <div id="wrap">
++        <h1>달리는 캐릭터</h1>
++
++        <p><img src="./../images/run_1.gif" alt="#"></p>
++
++        <button class="play">달리기</button>
++        <button class="stop">멈추기</button>
++
++        <address>&copy; Designed by 홍길동</address>
++
++        <script>
++            //두 버튼에 대한 DOM 선택과 click 이벤트 구문 작성
++            const $play = document.querySelector('.play') ;
++            const $stop = document.querySelector('.stop') ;
++            const $img = document.querySelector('img');
++
++            let intervalKey = null;
++
++            const arrImg = [
++                './../images/run_1.gif',
++                './../images/run_2.gif',
++                './../images/run_3.gif',
++                './../images/run_4.gif',
++                './../images/run_5.gif',
++                './../images/run_6.gif',
++                './../images/run_7.gif',
++                './../images/run_8.gif',
++                './../images/run_9.gif',
++                './../images/run_10.gif',
++            ];
++
++            $play.addEventListener('click', function(){
++                /*
++                    img의 src 값이 0.05초마다
++                        ./../images/run_1.gif
++                        ./../images/run_2.gif
++                        ./../images/run_3.gif
++                        .
++                        .
++                        ./../images/run_10.gif
++                        ./../images/run_1.gif
++                        .
++                        .
++                        .순차적으로 변경되어야 한다.
++
++                        힌트 - setInterval(), setAttribute() 이용
++                */
++               
++               clearInterval(intervalKey);//이전의 인터벌을 해제
++               
++               let num = 1;
++               let idx = 0;
++
++               intervalKey = setInterval(function(){
++
++                //방법1 - 문자열 조작
++                if(false){
++                    
++                    if(num<10){
++                        num++;
++                    }else{
++                        num=1;
++                    }
++
++                    // console.log(num);
++                    $img.setAttribute('src', `./../images/run_${num}.gif`);
++                }
++    
++    
++                //방법2 - 배열이용
++                if(true){
++                    
++                    //idx 값은 0~9
++                    if(idx<9){
++                        idx++;
++                    }else{
++                        idx=0;
++                    }
++
++                    $img.setAttribute('src',arrImg[idx]);
++                }
++                
++
++               }, 50);
++
++            });
++
++
++            $stop.addEventListener('click', function(){
++                clearInterval(intervalKey);
++            });
++
++            
++        </script>
++    </div>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/180_Node_탐색/30-노드의 동적 생성과 추가.html b/180_Node_탐색/30-노드의 동적 생성과 추가.html
+index f1fc853..ad1f36f 100644
+--- a/180_Node_탐색/30-노드의 동적 생성과 추가.html	
++++ b/180_Node_탐색/30-노드의 동적 생성과 추가.html	
+@@ -10,24 +10,27 @@
+ 
+ <body>
+   <!-- <h1>안녕, 자바스크립트~!</h1> -->
+-<div id="root"></div>
+ 
+-<script src="./myReact.js"></script>
++  <div id="root"></div>
++
++  <script src="./myReact.js"></script>
+   <script>
+-    //방법1 - 순수 자바스크립트 이용
++    //방법1 - 순수자바스크립트 이용
+     const $h1 = document.createElement('h1');//h1 요소노드 생성
+     $h1.setAttribute('name', '둘리');
+     $h1.setAttribute('address', '쌍문동');
+ 
++    //$txt.textContent = '안녕, 자바스크립트~!'//같은결과
+     const $txt = document.createTextNode('안녕, 자바스크립트~!');//텍스트노드 생성
+     $h1.appendChild($txt);//두개의 요소를 결합
+ 
+     document.body.appendChild($h1);//body에 추가
+ 
+-    //방법2 라이브러리를 직접 만들어 이용
++
++    //방법2 - 라이브러리를 직접 만들어 이용
+     const $root = document.getElementById('root');
+-   const $h2 = React.createElement('h2',{'name':'하니','address':'서초동'},'hello, javascript~!');
+-   ReactDOM.render($h2, $root);
++    const $h2 = React.createElement('h2', { 'name': '하니', 'address': '서초동' }, 'Hello, JavaScript~!');
++    ReactDOM.render($h2, $root);
+   </script>
+ </body>
+ 
+diff --git a/180_Node_탐색/50-cloneNode(true)로 자손을 포함한 노드복제.html b/180_Node_탐색/50-cloneNode(true)로 자손을 포함한 노드복제.html
+new file mode 100644
+index 0000000..3ff40a6
+--- /dev/null
++++ b/180_Node_탐색/50-cloneNode(true)로 자손을 포함한 노드복제.html	
+@@ -0,0 +1,40 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>50-cloneNode(true)로 자손을 포함한 노드복제</title>
++</head>
++
++<body>
++  <h1>cloneNode(true)</h1>
++
++  <h2>1. 아래의 ul노드를 복제</h2>
++  <ul id="subject">
++    <li>CSS</li>
++    <li>JAVASCRIPT</li>
++    <li>NODEJS</li>
++  </ul>
++
++  <h2>2. 복제한 노드를 section에 삽입</h2>
++  <section></section>
++
++  <script>
++    const $subject = document.getElementById('subject');
++
++    //true 옵션을 설정하면 자손노드를 포함하여 복제
++    const $clone = $subject.cloneNode(true);
++    console.log($clone);
++
++
++    //insetBefore()를 이용해 마지막 자식으로 추가
++    //document.querySelector('section').insertBefore($clone, null);
++
++    //마지막 자식으로 추가
++    document.querySelector('section').appendChild($clone);
++  </script>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/180_Node_탐색/60-노드를 제거하거나 바꾸기-remove(), removeChild(), replaceChild().html b/180_Node_탐색/60-노드를 제거하거나 바꾸기-remove(), removeChild(), replaceChild().html
+new file mode 100644
+index 0000000..824730d
+--- /dev/null
++++ b/180_Node_탐색/60-노드를 제거하거나 바꾸기-remove(), removeChild(), replaceChild().html	
+@@ -0,0 +1,90 @@
++
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>60-노드를 제거하거나 바꾸기-remove(), removeChild(), replaceChild()</title>
++</head>
++
++<body>
++  <h1>remove(), removeChild(), replaceChild()</h1>
++
++  <h2>1. remove() - 삭제할 요소를 직접 선택하여 자손까지 통째로 삭제</h2>
++  <p>
++    <mark>여기를 클릭하면 이 메세지가 삭제될 거에요~!</mark>
++  </p>
++
++  <script>
++    const $mark = document.querySelector('p>mark');
++
++    $mark.addEventListener('click', function () {
++      //<mark>요소를 삭제
++      // $mark.remove();
++      // this.remove();
++
++      //문제)mark의 부모태그인 p를 삭제하고 싶다면?
++      this.parentElement.remove();
++    });
++  </script>
++
++  <hr>
++
++  <h2>2. removeChild() - 먼저 부모에 접근한후 자식을 삭제</h2>
++  <h2>3. replaceChild() - 먼저 부모에 접근한후 자식을 교체</h2>
++
++  <ul id="list">
++    <li style="color:red;">이상한 변호사 우영우</li>
++    <li>자바스크립트</li>
++    <li>제이쿼리</li>
++    <li style="color:blue;">말티즈-구름이</li>
++    <li>웹표준</li>
++  </ul>
++
++  <script>
++    const $list = document.getElementById('list');
++
++    //문제1 - 첫번째 li를 삭제하시오.
++    // $list.firstElementChild.remove();//방법1
++
++    const $firstChild = $list.firstElementChild;
++
++    //삭제할 노드는 반드시 .removeChild()를 호출한 노드의 자식이어야 한다.
++    //$firstChild.parentElement.removeChild($firstChild);//방법2
++    $list.removeChild($firstChild);//방법3
++
++
++    //문제2 - 마지막 li를 $firstChild로 교체하시오
++
++    //교체할 노드는 반드시 .replaceChild()를 호출한 노드의 자식이어야 한다.
++    $list.replaceChild($firstChild, $list.lastElementChild);//(무엇을, 어디에)
++
++
++    //문제3 - '말티즈-구름이'를 .removeChild()로 삭제하시오.
++    const $puppy = $list.children[2];
++    $puppy.parentElement.removeChild($puppy);
++
++
++    //문제4 - 남아있는 모든 자식을 지우시오.
++    //방법1
++    // while ($list.childElementCount > 0) {
++    //   $list.removeChild($list.firstElementChild);
++    // }
++
++    //방법2
++    const intervalKey = setInterval(function () {
++      if ($list.childElementCount > 0) {
++        $list.removeChild($list.firstElementChild);
++      } else {
++        clearInterval(intervalKey);
++      }
++    }, 5000);
++
++
++
++  </script>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/180_Node_탐색/60-배열에서_특정_조건을_만족하는_원소값을_반환하는_find().html b/180_Node_탐색/60-배열에서_특정_조건을_만족하는_원소값을_반환하는_find().html
+new file mode 100644
+index 0000000..c5a66b3
+--- /dev/null
++++ b/180_Node_탐색/60-배열에서_특정_조건을_만족하는_원소값을_반환하는_find().html
+@@ -0,0 +1,53 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>60-배열에서_특정_조건을_만족하는_원소값을_반환하는_find()</title>
++</head>
++<body>
++    <h1>배열명.find(판별함수)</h1>
++
++    <pre>
++        1. 주어진 판별함수의 조건을 만족하는 첫번째 원소의 값을 반환
++
++        2. 만약 없을경우 undefined를 반환
++    </pre>
++
++    <hr>
++
++    <script>
++        const arrNum = [3,6,9,12,15];
++
++        const resultnum = arrNum.find((item)=>{
++            return item > 10; //조건이 트루면 멈추고 그 값만 리턴.
++        });
++        
++        document.write(`10보다 큰 첫번째 원소의 값은 ${resultnum}`);
++
++        //2.응용예제
++
++        const initialState = {
++            user: [
++                {id:0, username:'둘리', email: 'duly', active: true},
++                {id:1, username:'또치', email: '또치', active: true},
++                {id:2, username:'도우너', email: '도우너', active: true}
++            ]
++        }
++       //수작업 const user = initialState.user[2];
++        const user = initialState.user.find((user)=>{
++            return user.id === 1;
++        });
++
++        document.write(`id값이 2인 회원의 정보는 <br> `);
++        document.write(`1. 아이디 : ${user.id} <br>`);
++        document.write(`2. 이름 : ${user.username} <br>`);
++        document.write(`3. 이메일 : ${user.email} <br>`);
++        document.write(`4. 활동중 : ${user.active} <br>`);
++
++        //
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/60_클래스/10_객체변수_설계도_class.html b/60_클래스/10_객체변수_설계도_class.html
+new file mode 100644
+index 0000000..335a555
+--- /dev/null
++++ b/60_클래스/10_객체변수_설계도_class.html
+@@ -0,0 +1,42 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>10_객체변수_설계도_class</title>
++</head>
++<body>
++    <h1>class는 객체변수 설계도</h1>
++
++    <pre>
++        1.같은 패턴의 객체변수를 자동으로 만들 때 사용하는 class
++        2.형식 : class 클래스명{
++
++        }
++        3.클래스 설계시 constructor() 작성을 생략하면 비어있는 constructor(){}을 하나 암시적으로 만들어서 넣어준다.
++
++        4. {name:'태권브이', usage:'전투', weight:1000} 형태의 객체데이터를 생성하는 설계도를 만드시오.
++
++        <script>
++            class Robot{
++                name;
++                usage;
++                weight;
++
++                constructor(){}
++            }
++
++            //Robot class를 이용해서 객체변수를 생성하지만 아무값도 전달하지 않으므로 
++            //name, usage, weight에는 undefined가 할당됨
++            const taekwonV = new Robot();
++
++            taekwonV.name = '태권브이';
++            taekwonV.usage = '전투';
++            taekwonV.weight = 1000;
++
++            console.log(taekwonV);
++        </script>
++    </pre>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/60_클래스/20_constructor()를_가진_class.html b/60_클래스/20_constructor()를_가진_class.html
+new file mode 100644
+index 0000000..749621c
+--- /dev/null
++++ b/60_클래스/20_constructor()를_가진_class.html
+@@ -0,0 +1,37 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_constructor()를_가진_class</title>
++</head>
++<body>
++    <h1>constructor()는 객체생성시 자동 호출됨</h1>
++
++    <script>
++        //생성자를 가진 class
++        class Person{
++            name;
++            gender;
++            age;
++
++            //new 키워드로 인스턴스 생성시 자동 호출됨
++            constructor(name, gender, age){
++                this.name = name; //this 를 빼면 person 의 name 을 가져옴
++                this.age = age;
++                this.gender =gender;
++
++            }
++
++            info(){
++                document.write(`${this.name}는 ${this.age}세의 ${this.gender} 입니다.`);
++            }
++        }
++
++        const hani = new Person('하니', '여자', 15);
++        hani.info();
++        console.log(hani);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/60_클래스/30_접근제한자와_this_게터_세터로_캡슐화.html b/60_클래스/30_접근제한자와_this_게터_세터로_캡슐화.html
+new file mode 100644
+index 0000000..9c189f8
+--- /dev/null
++++ b/60_클래스/30_접근제한자와_this_게터_세터로_캡슐화.html
+@@ -0,0 +1,54 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>30_접근제한자와_this_게터_세터로_캡슐화</title>
++</head>
++
++<body>
++  <h1>접근제한자, 게터, 세터</h1>
++
++  <pre>
++    1. 캡슐화 - 게터, 세터 함수를 이용한 private 변수 접근 설정
++
++    2. 브라우저기반 자바스크립트의 캡슐화
++       1) private 필드(프로퍼티)는 '#(샵)'으로 표현
++       2) private 필드(프로퍼티)는 직접 접근할 수 없다.
++  </pre>
++
++  <script>
++    class Bank {
++      #money;
++
++      constructor(money) {
++        //this는 kb 인스턴스에 매칭된다.
++        this.#money = money;
++      }
++
++      //게터함수 - 값을 뿌려주는 함수
++      getMoney() {
++        return this.#money;
++      }
++
++      //세터함수 - 값을 얻는 함수
++      setMoney(money) {
++        this.#money = money;
++      }
++    }
++
++    const kb = new Bank(50000);
++
++    //private 처리한 변수는 직접접근시 에러발생
++    //console.log(kb.#money);
++    
++
++    kb.setMoney(200000);
++
++    console.log(kb.getMoney());
++  </script>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/70_상속/10_클래스의_상속.html b/70_상속/10_클래스의_상속.html
+new file mode 100644
+index 0000000..12115ec
+--- /dev/null
++++ b/70_상속/10_클래스의_상속.html
+@@ -0,0 +1,53 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>10_클래스의_상속</title>
++</head>
++<body>
++    <h1>클레스의 상속</h1>
++
++    <pre>
++        상속이란?
++
++        하위클래스가 상위클래스를 상속받았을때,
++        하위클래스는 모든 권한을 갖게된다.
++
++        상속키워드 extends
++
++        1.기존의 클래스를 재사용해서 새로운 클래스를 작성하는것
++        2.두 클래스를 조상과 자손으로 관계를 맺어주는 것
++        3.자손은 조상의 모든 프로퍼티를 상속받는다
++        4.상속개념을 적용하면 재사용성을 높이고 관리가 용이
++        5.단일 상속의 개념 - 상속받을 수 있는 클래스는 단 하나
++    </pre>
++
++    <script>
++        //할아버지 클래스
++        class Car{
++            CarSpeaker(){
++                console.log('빵빵!')
++            }
++        }
++        //아빠클래스
++        class Sedan extends Car{
++            sedanSpeaker(){
++                console.log('빠바방~!');
++            }
++        }
++        //자식클래스
++        class K7 extends Sedan{
++            k7speaker(){
++                console.log('빵라방빵~!');
++            }
++        }
++
++        const myCar = new K7();
++        myCar.k7speaker();
++        myCar.sedanSpeaker(); //아빠의 메소드 호출
++        myCar.CarSpeaker(); //할아버지 메소드 호출
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/70_상속/20_메소드_오버라이딩과_super_참조변수.html b/70_상속/20_메소드_오버라이딩과_super_참조변수.html
+new file mode 100644
+index 0000000..acdfa7b
+--- /dev/null
++++ b/70_상속/20_메소드_오버라이딩과_super_참조변수.html
+@@ -0,0 +1,57 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>20_메소드_오버라이딩과_super_참조변수</title>
++</head>
++
++<body>
++  <h1>오버라이딩, super</h1>
++
++  <pre>
++    1. 메소드 오버라이딩 - 상속받은 조상의 메소드와 똑같은 메소드를 재정의 하는 것
++
++    2. super - 상속받은 부모 클래스를 의미하는 특별한 키워드
++  </pre>
++
++  <script>
++    //상위클래스
++    class Father {
++      constructor() {
++        console.log('2. Father의 생성자함수 호출 성공~!');
++      }
++
++      sayHello() {
++        console.log('Father의 sayHello() 호출~!');
++      }
++    }
++
++    //하위클래스
++    class Son extends Father {
++      constructor() {
++        console.log('1. Son의 생성자함수 호출 성공~!');
++
++        //constructor() 사용시 상속받은 상위클래스의 생성자를 호출해야만 한다.(필수)
++        super();
++      }
++
++      sayHello() {
++        console.log('Son의 sayHello() 호출~!');
++      }
++
++      test() {
++        //super 키워드를 이용하여 상속받은 상위클래스의 메소드를 호출할 수 있다.
++        super.sayHello();
++      }
++    }
++
++    const son = new Son();
++    son.sayHello();
++    son.test();
++  </script>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/70_상속/30_정적프로퍼티와_정적메소드.html b/70_상속/30_정적프로퍼티와_정적메소드.html
+new file mode 100644
+index 0000000..67dd7f3
+--- /dev/null
++++ b/70_상속/30_정적프로퍼티와_정적메소드.html
+@@ -0,0 +1,56 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>30_정적프로퍼티와_정적메소드</title>
++</head>
++
++<body>
++  <h1>static 키워드를 이용한 정적변수, 정적메소드</h1>
++
++  <pre>
++    1. 객체를 아무리 많이 만들더라도 static 변수는 오직 하나의 메모리만 생성
++
++    2. 해당 클래스로 만든 모든 객체가 공유하기 때문에 메모리를 효율적으로 사용 가능
++
++    3. 인스턴스나 this로 접근하지 않고, 반드시 클래스이름으로 접근해야만 한다.
++  </pre>
++
++  <script>
++    class HelloCount {
++      static sCount = 0;//공용변수의 개념
++      #nCount = 0;//private
++
++      static goUp() {
++        console.log('static 메소드 goUp() 호출 성공~!');
++      }
++
++      sayHello() {
++        HelloCount.sCount++;
++        this.#nCount++;
++
++        console.log(`static을 이용하여 ${HelloCount.sCount}번째 인사를 합니다.`);
++        console.log(`${this.#nCount}번째 인사를 합니다.`);
++      }
++    }
++
++    HelloCount.goUp();//static 정적메소드 호출
++
++    const hello1 = new HelloCount();
++    hello1.sayHello();
++    hello1.sayHello();
++
++    console.log('-----------------')
++    const hello2 = new HelloCount();
++    hello2.sayHello();
++    hello2.sayHello();
++    hello2.sayHello();
++
++
++  </script>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/70_상속/40_믹스인(mixin).html b/70_상속/40_믹스인(mixin).html
+new file mode 100644
+index 0000000..0966ddc
+--- /dev/null
++++ b/70_상속/40_믹스인(mixin).html
+@@ -0,0 +1,52 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>40_믹스인(mixin)</title>
++</head>
++
++<body>
++  <h1>Mixin</h1>
++
++  <pre>
++    1. Mixin - 이미 구현된 메소드를 가져다 현재 클래스에 사용하는 기법
++
++    2. Object.assign() 메소드를 사용해서 설정
++  </pre>
++
++  <script>
++    const sayMixin = {
++      sayHi: function () {
++        console.log('sayHi() 메소드 호출~!');
++        console.log(`Hello ${this.name}~!`);
++      },
++
++      sayBye: function () {
++        console.log('sayBye() 메소드 호출~!');
++        console.log(`Bye ${this.name}~!`);
++      }
++    };
++
++    class User {
++      name;
++
++      constructor(name) {
++        this.name = name;
++      }
++    }
++
++    //Mixin 기법으로 메소드 복사
++    Object.assign(User.prototype, sayMixin);
++
++    const duly = new User('둘리');
++
++    //mixin 기법으로 연결한 메소드 호출
++    duly.sayHi();
++    duly.sayBye();
++  </script>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/80_옵셔널_심볼_가비지컬렉션/10_옵셔널 파라미터.html b/80_옵셔널_심볼_가비지컬렉션/10_옵셔널 파라미터.html
+new file mode 100644
+index 0000000..7bd5b45
+--- /dev/null
++++ b/80_옵셔널_심볼_가비지컬렉션/10_옵셔널 파라미터.html	
+@@ -0,0 +1,47 @@
++<!DOCTYPE html>
++<html lang="en">
++
++<head>
++  <meta charset="UTF-8">
++  <meta http-equiv="X-UA-Compatible" content="IE=edge">
++  <meta name="viewport" content="width=device-width, initial-scale=1.0">
++  <title>10_옵셔널 파라미터</title>
++</head>
++
++<body>
++  <h1>옵셔널 파라미터</h1>
++
++  <pre>
++    1. 함수에서의 옵셔널 파라미터 - 매개변수에 기본값을 할당하는 개념
++
++    2. 삼항연산자 - 간단한 if~else 구문의 약식 표현
++
++        if(조건식){
++          console.log('참');
++        }else{
++          console.log('거짓');
++        }
++
++        (조건식) ? console.log('참') : console.log('거짓');
++  </pre>
++
++  <hr>
++
++  <script>
++    const infoFn = function (name = '하니', age = 5, address = '서울시 서초구') {
++
++      //함수호출시 매개변수에 값을 전달하지 않았을 경우 기본값 설정방법1 - 삼항연산자
++      //document.write(`${name}, ${age}, ${address ? address : '주소없음'}<br><br>`);
++
++      //함수호출시 매개변수에 값을 전달하지 않았을 경우 기본값 설정방법2 - 옵셔널 파라미터
++      document.write(`${name}, ${age}, ${address}<br><br>`);
++    };
++
++    infoFn('둘리', 7, '쌍문동');
++    infoFn('둘리', 7);
++    infoFn('둘리');
++    infoFn();
++  </script>
++</body>
++
++</html>
+\ No newline at end of file
+diff --git a/80_옵셔널_심볼_가비지컬렉션/20_객체에서의_옵셔널체이닝.html b/80_옵셔널_심볼_가비지컬렉션/20_객체에서의_옵셔널체이닝.html
+new file mode 100644
+index 0000000..719b42f
+--- /dev/null
++++ b/80_옵셔널_심볼_가비지컬렉션/20_객체에서의_옵셔널체이닝.html
+@@ -0,0 +1,50 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>20_객체에서의_옵셔널체이닝</title>
++</head>
++<body>
++    <h1>20_객체에서의_옵셔널체이닝</h1>
++
++
++    <pre>
++        1.코드실행중 에러발생으로 인한 프로그램 멈춤을 예방하는 코드
++
++        2.복잡하게 중첩된 객체데이터에서 특정 자료를 추출할 때 에러발생 없이 안전하게 데이터를 추출할 수 있다.
++
++        3.객체의 속성 출력시 . 왼쪽에 있는 값(주체)이 undefined,null 즉 없는 객체이면 에러발생
++            왜냐면 undefined.id, null.id와 같게 되기 때문
++
++        4.?(옵셔널체이닝) 사용시 왼쪽에 있는 값이 null, undefined이면 오른쪽의 .id를 더이상 실행하지 않고 undefined만 남겨준다.
++            결과적으로 에러가 발생하지 않아 실행이 멈추지 않는다.
++    </pre>
++
++    <hr>
++    <script>
++        const user = {
++            name : '둘리',
++            //login : {id:'duly', pwd: 1234}
++        }
++
++        //1. user객체의 login 속성을 주석처리하면 없는 속성을 출력하려고 한 것이기 때문에 undefined
++        console.log(user.login);
++
++
++        //2. user객체의 login 속성을 주석처리하면 user.login 자체가 없기때문에 에러가 발생.
++        //document.write(user.login.id)//없는 주체에 무언가를 출력하려고 하면 에러
++
++        //주체가 없을때 에러가 안뜨는 방법은? 
++
++        //3. user.login이 존재하면 .id속성을 출력하시오.
++        // if(user.login){
++        //     document.write(`예전방식으로 출력 - ${user.login.id}<br>`);
++        // }
++
++        //옵셔널 체이닝 활용
++        document.write(`옵셔널체이닝으로 출력 - ${user.login?.id}`); // ?전까지 있으면 출력 없으면 undefined 출력
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/80_옵셔널_심볼_가비지컬렉션/30_Null병합연산자.html b/80_옵셔널_심볼_가비지컬렉션/30_Null병합연산자.html
+new file mode 100644
+index 0000000..4733688
+--- /dev/null
++++ b/80_옵셔널_심볼_가비지컬렉션/30_Null병합연산자.html
+@@ -0,0 +1,34 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>30_Null병합연산자</title>
++</head>
++<body>
++    <h1>Null병합 연산자 - ??</h1>
++
++    <pre>
++        왼쪽 피연산자의 값이 null 또는 undefined 이면 
++        오른쪽 피연산자의 값을 리턴하고, 
++
++        그렇지 않으면 왼쪽 피연산자의 값을 리턴한다.
++    </pre>
++
++    <hr>
++    <script>
++        let dnldData = null;
++        dnldData = '아기공룡 둘리와 친구들';
++        const result = dnldData ?? '다운로드 받은 데이터가 없습니다.'; //값이 있으면 왼쪽 없으면 오른쪽의 값을 넣음
++        
++        document.write(`result = ${result}<br>`);
++
++        //0은 null 또는 undefined에 해당하지 않음
++        const num = 0;
++        const lucky = num ?? 777;
++
++        document.write(lucky);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/80_옵셔널_심볼_가비지컬렉션/40_기본데이터타입_Symbol().html b/80_옵셔널_심볼_가비지컬렉션/40_기본데이터타입_Symbol().html
+new file mode 100644
+index 0000000..0f2d3ee
+--- /dev/null
++++ b/80_옵셔널_심볼_가비지컬렉션/40_기본데이터타입_Symbol().html
+@@ -0,0 +1,87 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>40_기본데이터타입_Symbol()</title>
++</head>
++<body>
++    <h1>Symbol()</h1>
++
++    <pre>
++        1. ES6(2015년)부터 Symbol()은 Number,String 등과 같은 기본데이터 타입이다.
++
++        2. Symbol을 사용하는 이유는 객체에 새로 추가하는 프로퍼티(key)명을 고유하게 설정하므로써 
++        기존의 프로퍼티명과 중복되는것을 피하기 위함이다.
++
++        3. 심볼값은 Symbol()생성자함수를 호출해서 생성한다.
++
++        4. 이때 생성되는 심볼값은 변경이 불가능한 원시값이다.
++
++        5. Symbol()을 호출할 때 인자로 전달하는 문자열은 생성된 심볼에 대한 일종의 설명문으로, console.log()등을 이용한 디버깅에
++            각 심볼을 구분하기 위한 용도로 사용된다.
++
++    </pre>
++
++    <hr>
++
++    <script>
++        //심볼변수 생성
++        const sym1 = Symbol(); //sym1변수에 우주에서 유일한 고유값을 할당한다.
++
++        const sym2 = Symbol();
++
++        const sym3 = Symbol('도우너의 이름'); //Symbol(이름에 대한 설명)
++
++        const sym4 = Symbol('또치의 이름'); //Symbol(이름에 대한 설명) 
++
++
++        console.log(sym1)
++        console.log(sym2)
++        console.log(sym3)
++        console.log(sym4)
++        
++        //타입검사
++
++        console.log(typeof sym1);
++        console.log(typeof sym2);
++        console.log(typeof sym3);
++        console.log(typeof sym4);
++
++        //생성된 심볼값 비교
++        console.log(sym1 === sym2);
++        console.log(sym3 === sym4);
++        
++        const duly = {
++            name : '둘리',
++            age: 7,
++            friend : '또치'
++        }
++
++        //상황 가정 - 동적으로 '또치', '도우너', '마이콜' 데이터를 추가해야 하는 상황
++        const name1 = Symbol('또치이름');
++        const name2 = Symbol('도우너 이름');
++        const name3 = Symbol('마이콜 이름');
++
++        //symbol을 이용하여 동적으로 객체의 속성 추가시에는 반드시 대괄호 기법 사용
++        duly[name1] = '또치';
++        duly[name2] = '도우너';
++        duly[name3] = '마이콜';
++
++        //duly 객체 출력
++        console.log(duly);
++        document.write(`duly[name1] = ${duly[name1]}<br>`);
++
++       console.log('---------------------') ;
++
++       //Symbol.for()를 이용해서 심볼을 생성 -> 내부적으로 심볼리스트에서 저장,관리함
++        const s1 = Symbol.for('samsung'); //심볼리스트에 'samsung'이라는 key를 갖는 심볼이 없으면 새로운 심볼 생성
++        
++        //만약 심볼리스트에 'samsung' key를 갖는 심볼이 이미 있으면, 그 심볼값을 리턴
++        const s2 = Symbol.for('samsung');
++
++        console.log(s1 === s2); //true
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/80_옵셔널_심볼_가비지컬렉션/50_JS의_메모리관리(가비지컬렉션).html b/80_옵셔널_심볼_가비지컬렉션/50_JS의_메모리관리(가비지컬렉션).html
+new file mode 100644
+index 0000000..034119c
+--- /dev/null
++++ b/80_옵셔널_심볼_가비지컬렉션/50_JS의_메모리관리(가비지컬렉션).html
+@@ -0,0 +1,44 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>50_JS의_메모리관리(가비지컬렉션)</title>
++</head>
++<body>
++    <h1>메모리관리(가비지컬렉션)</h1>
++
++    <pre>
++        1. 가비지 컬렉터 - 변수를 선언하면 자동으로 메모리를 할당하고,
++            더이상 필요하지 않을 때 자동으로 해제한다.
++
++        2. 메모리 생존주기 
++            1) 메모리 생존주기는 프로그래밍 언어와 상관없이 대부분 비슷하다.
++            2) 필요할 때 할당한다. - 예)변수를 선언할 때 자동으로 메모리 할당
++            3) 할당된 메모리를 사용한다.(읽기, 쓰기)
++            4) 더이상 필요하지 않으면 자동으로 해제한다.
++
++        3. 자바스크립트와 같은 고수준 언어들은 '가비지컬렉터(GC)'라는 자동메모리 관리 기법을 사용한다.
++
++        4. 가비지 컬렉터의 목적은 메모리 할당을 추적하고, 할당된 메모리 블록이 더이상 필요하지 않은지를 판단하여 회수하는 것이다.
++    </pre>
++
++    <script>
++        let num = 123; //숫자타입에 맞게 메모리 공간을 자동 할당
++
++        const username = 'duly';//문자열 타입에 맞게 메모리 공간을 자동 할당
++
++        //객체와 해당객체 내에 포함된 값들은 담기 위한 메모리 공간을 자동 할당
++        const hong = {age: 30, name: 'dodestates'}
++
++        const numArr = [2,4,6,8];
++
++        //함수와 해당함수 내에 포함된 값들은 담기 위한 메모리 공간을 자동 할당
++        //단, 호출한 시점에 메모리 공간을 할당
++        function plusFn(){
++            return num + 2 ;
++        }
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/90_배열과_객체/100_배열과_객체에_사용하는_spread_연산자로_DeepCopy.html b/90_배열과_객체/100_배열과_객체에_사용하는_spread_연산자로_DeepCopy.html
+new file mode 100644
+index 0000000..2039144
+--- /dev/null
++++ b/90_배열과_객체/100_배열과_객체에_사용하는_spread_연산자로_DeepCopy.html
+@@ -0,0 +1,75 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>100_배열과_객체에_사용하는_spread_연산자로_DeepCopy</title>
++</head>
++<body>
++    <h1>원본데이터를 훼손하지 않고 복사하는 spread 연산자</h1>
++
++    <pre>
++        1. spread 연산자는 원본의 데이터만 가져온다.
++
++        2. 표기법) ...
++    </pre>
++
++    <script>
++        //1. 배열에서의 spread 연산자 사용법
++        const member = ['둘리', '또치'];//주소값이 저장주소값 0x1000
++
++        //아래와 같이 작성하면 Shallow Copy
++        // const newMember = member; // 주소값 0x1000
++        // newMember.push('도우너');
++
++        //원본의 상태를 보존하는 Deep Copy(불변)
++        const newMember = [...member,'마이콜']; //주솟값이 0x1010
++        newMember.push('도우너');
++        const nowMember = [...member,'철수', '영희', ...member];
++        
++        console.log('newMember=', newMember);
++        console.log('member=',member);
++        console.log('newMember=',nowMember);
++        console.log('--------------------');
++
++
++        //1. 객체에서의 spread 연산자 사용법
++
++        //비슷한 프로퍼티를 가지고 있는 서로 다른 세 객체
++        const eBoy = {
++            kor:'국어'
++        };
++
++        const mBoy = {
++            kor:'국어',
++            eng:'영어'
++        };
++
++        const hBoy = {
++            kor:'국어',
++            eng:'영어',
++            math:'수학'
++        };
++
++
++        //Spread 연산자를 이용한 객체 데이터 복사
++        const eStudent = {
++            kor:'국어'
++        }
++        const mStudent = {
++            ...eStudent,
++            eng : '영어'
++        }
++        const hStudent = {
++            ...mStudent,
++            math : '수학'
++        }
++
++        console.log('eStudent=', eStudent);
++        console.log('mStudent=', mStudent);
++        console.log('hStudent=', hStudent);
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/90_배열과_객체/110_spread와_사용법이_비슷하지만_완전히_다른개념의_rest.html b/90_배열과_객체/110_spread와_사용법이_비슷하지만_완전히_다른개념의_rest.html
+new file mode 100644
+index 0000000..72ede3c
+--- /dev/null
++++ b/90_배열과_객체/110_spread와_사용법이_비슷하지만_완전히_다른개념의_rest.html
+@@ -0,0 +1,72 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>110_spread와_사용법이_비슷하지만_완전히_다른개념의_rest</title>
++</head>
++<body>
++    <h1>rest 연산자</h1>
++
++    <pre>
++        1. 배열과 객체에서 특정 값을 제외한 나머지 값들을 저장하는 방법
++
++        2. 함수에서 매개변수의 개수가 유동적일때 매우 유용
++
++        3. 형식) 무조건 맨 마지막에...rest 작성
++
++        4. rest 변수명은 자유롭게 지정할 수 있다.
++    </pre>
++
++    <script>
++        //1. 배열에서의 rest
++            const numbers =[10, 20, 30, 40, 50];
++
++            //문제1) 배열 비구조할당을 통해 첫번째 값을 꺼내고, 나머지를 num에 저장
++            const [first, ...num] = numbers; //num = 20, 30, 40, 50
++
++            console.log('first =', first);
++            console.log('num=',num);//배열로 출력
++
++            console.log('--------');
++
++        //2. 객체에서의 rest
++            const newCar = {
++                carname : '그랜저',
++                color : '스페이스그레이',
++                door :5
++            }
++            //문제 2) door 속성을 제외한 
++            //문제 2) 객체 비구조할당을 통해 door 값을 꺼내고, 나머지를 yourCar에 저장
++
++            //속성의 닉네임을 지정
++            const{door:cardoor, ...yourCar} = newCar;
++
++            console.log('door =',cardoor);
++            console.log('yourCar =', yourCar);//객체
++
++        //3. 함수의 매개변수에서 rest
++            //문제3) 매개변수 a,b,c를 갖는 totalFn 함수를 표현식으로 작성하시오
++            const totalFn = function(a,b,c){
++                return a + b + c;
++            };
++
++            let result =totalFn(1,2,3,4,5);
++            console.log(`result = ${result}`);
++
++            //함수에 전달되는 인자의 개수가 몇개가 될지 모르는 상황에서 
++            //그걸 다 받아야 할 때 ...rest 파라미터를 사용하면 매우 유용
++
++            const hab = function(...rest){
++                let sum = 0;
++                for(let item of rest){
++                    sum += item;
++                }
++                return sum;
++            };
++            result = hab(1,2,3,4,5);
++            console.log(`result = ${result}`);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/90_배열과_객체/120_배열요소중_최대값_찾기.html b/90_배열과_객체/120_배열요소중_최대값_찾기.html
+new file mode 100644
+index 0000000..a48d1fa
+--- /dev/null
++++ b/90_배열과_객체/120_배열요소중_최대값_찾기.html
+@@ -0,0 +1,45 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>120_배열요소중_최대값_찾기</title>
++</head>
++<body>
++    <h1>배열요소중 최대값 찾기</h1>
++
++    <pre>
++        아래의 배열요소중 최대값을 찾아서 화면에 출력하는 코드를 작성하시오
++
++        [6, 3, 4, 1, 55, 2, 7];
++    </pre>
++
++    <hr>
++
++    <script>
++        let max = 0;
++        const num = [6, 3, 4, 1, 55, 2, 77];
++
++        //힌트 - for문, if문
++        //방법1
++        if(false){
++            for(let i=0;i<num.length;i++){
++                //만약 배열의 num[i]가 max보다 크다면 
++                if(max<num[i]){
++                    max=num[i];
++                }
++            }
++        }
++
++        //방법2 - for~of
++        if(true){
++            for(let item of num){
++                if(max<item) max=item;
++            }
++        }
++
++        document.write(`최대값은 ${max}`);
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/90_배열과_객체/70_객체프로퍼티_축약과_메소드축약표현.html b/90_배열과_객체/70_객체프로퍼티_축약과_메소드축약표현.html
+new file mode 100644
+index 0000000..32c9fd0
+--- /dev/null
++++ b/90_배열과_객체/70_객체프로퍼티_축약과_메소드축약표현.html
+@@ -0,0 +1,56 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>70_객체프로퍼티_축약과_메소드축약표현</title>
++</head>
++<body>
++    <h1>객체의 프로퍼티와 메소드의 축약표현</h1>
++
++    <pre>
++        1. key와 value의 이름이 동일하면 key를 생략할 수 있다.
++        이때 key는 value의 이름으로 자동 생성된다.
++
++        2. 객체의 메소드를 정의할 때 function 키워드를 생략할 수 있다.
++    </pre>
++
++    <script>
++        //1. 객체 프로퍼티의 축약
++
++        const name = '둘리';
++        const age = 7;
++
++        //위 데이터를 객체변수의 값으로 할당
++        // const duly = {
++        //     name : name,
++        //     age : age
++        // };
++        const duly = {
++            name,
++            age
++        };
++
++        console.log('duly=', duly);
++
++        //2. 객체의 메소드를 정의할 때 function 키워드를 생략한 축약표현
++
++        const robot = {
++            name : '태권브이',
++
++            go(){
++                console.log(`${this.name},앞으로 갓~!`);
++            },
++
++            back(){
++                console.log(`${this.name}, 뒤로돌아 갓~!`);
++            }
++
++        };
++        robot.go();
++        robot.back();
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/90_배열과_객체/80_배열과_객체의_구조분해_할당.html b/90_배열과_객체/80_배열과_객체의_구조분해_할당.html
+new file mode 100644
+index 0000000..c032f31
+--- /dev/null
++++ b/90_배열과_객체/80_배열과_객체의_구조분해_할당.html
+@@ -0,0 +1,76 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>80_배열과_객체의_구조분해_할당</title>
++</head>
++<body>
++    <h1>배열과 객체의 구조분해(비구조) 할당</h1>
++
++    <pre>
++        1. 배열이나 객체에 담긴 데이터를 꺼내서 
++           별개의 변수에 저장해야 할 일이 발생했을 때 유용한 문법이다.
++        
++        2. 일일이 개별적으로 꺼내서 값을 저장해야만 했었는데
++           이 과정을 간소화하는 새로운 문법이다.
++        
++        3. 최근 프론트엔드에서 많이 사용되어진다.
++
++    </pre>
++
++    <script>
++        //1. 배열 구조분해(비구조) 할당
++        //문제) 문자열로 5개의 문자열 원소 '강아지, 고양이, 거북이, 달팽이, 토끼'를 갖는 배열변수 pet을 선언하시오 
++
++        const pet = ['강아지', '고양이', '거북이', '달팽이', '토끼'];
++
++        //pet 배열에 담긴 데이터를 꺼내서 별개의 변수에 저장해야 할 일이 발생
++        // const puppy = pet[0];
++        // const cat = pet[1];
++        // const tuttle = pet[2];
++        // const snail = pet[3];
++        // const rabbit = pet[4];
++
++        //위 과정을 간소화하는 새로운 문법이 등장
++        const [puppy, cat, tuttle, snail, rabbit] = pet; //['강아지', '고양이', '거북이', '달팽이', '토끼'];
++
++        console.log(puppy, cat, tuttle, snail, rabbit);
++
++        
++        //2. 객체의 구조분해(비구조) 할당
++        const duly = {
++            username: '둘리',
++            age : 7,
++            hobby : '초능력호이~!'
++        }
++
++        //객체에 담긴 데이터를 꺼내서 별개의 변수에 저장해야 할 일이 발생
++        // const username = duly.username;
++        // const age = duly.age;
++        // const hobby = duly.hobby;
++
++        //객체 비구조 할당에서는 프로퍼티명과 같도록 변수명을 설정
++        //변수명의 순서가 바뀌어도 결과는 똑같다.
++        const {username, age, hobby} = duly;
++        console.log(username, age, hobby);
++
++        //3. 구조분해 할당을 통한 두 값의 맞교환
++        let a=3;
++        let b=5;
++
++            //1) 전통적인 방법
++            let tmp = 3; //임시변수를 이용하여 a값 저장
++             a = b;
++             b = tmp;
++             console.log(`a=${a}, b=${b}`); //5,3
++
++             //2) 최신방법
++
++             [b,a] = [a,b];
++
++             console.log(`a=${a}, b=${b}`); //5,3
++    </script>
++</body>
++</html>
+\ No newline at end of file
+diff --git a/90_배열과_객체/90_값복사_참조값복사_DeepCopy_ShallowCopy의_개념.html b/90_배열과_객체/90_값복사_참조값복사_DeepCopy_ShallowCopy의_개념.html
+new file mode 100644
+index 0000000..2ef7188
+--- /dev/null
++++ b/90_배열과_객체/90_값복사_참조값복사_DeepCopy_ShallowCopy의_개념.html
+@@ -0,0 +1,82 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta http-equiv="X-UA-Compatible" content="IE=edge">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>90_값복사_참조값복사_DeepCopy_ShallowCopy의_개념</title>
++</head>
++<body>
++    <h1>참조에 의한 객체복사</h1>
++
++    <pre>
++        1.값복사란?
++
++            두개의 메모리 공간이 존재하고 
++            한쪽의 메모리에 있는 값이
++            다른메모리로 그 값만을 복사하는 행위를 말한다.
++
++            이 두개의 메모리는 완전히 독립적인 상태이다.
++            우리가 일반적으로 많이 하는 파일복사/값복사에 해당한다. 
++
++            이렇게 두 메모리가 완전히 독립성을 갖는 것을 '깊은복사' 또는 'Deep Copy'라고 한다.
++
++
++        2.참조값복사란?
++
++            객체변수는 주소값을 저장하는 참조변수이며,
++            참조변수의 할당은 참조(주소)값 복사가 된다.
++
++            참조값 복사가 이루어지면 두 변수는 같은 메모리 주소값을 가지므로
++            서로 독립적이지 않다.
++
++            이런것을 '얕은복사',또는 'Shallow Copy'
++
++        3.참조값을 가지는 객체변수를 Deep Copy 하는 방법
++            1. Object.assign(빈객체, 복사할객체);
++            2. spread 연산자를 이용(100번 예제 참조)
++    </pre>
++
++    <script>
++        //1. primitive 타임의 값 복사 - 파일복사와 비슷한 개념
++
++        let num = 100;
++
++        let copyNum = num; //100
++
++        copyNum = 200;
++
++        console.log(num);
++
++        //2. 주솟값을 저장하는 참조변수 작동원리 - 배열, 객체 , 함수
++        //hong 변수에는 주솟값이 저장
++        const hong = {
++            name: '홍길동',
++            age: 23
++        }
++        console.log(hong);
++
++        console.log('-----------------');
++        
++        
++        const hani = hong; //hong의 주솟값이 복사 (참조값 복사);
++
++        hani.name = '하니';
++        hani.age = '15';
++        
++        console.log(hong);
++        console.log(hani);
++
++    // 3.참조값을 가지는 객체변수를 Deep Copy 하는 방법
++
++    const duly =Object.assign({},hong);
++
++    duly.name = '둘리';
++    duly.hani = '7';
++
++    console.log('duly=', duly);
++    console.log('hong=', hong);
++
++    </script>
++</body>
++</html>
+\ No newline at end of file
+-- 
+2.39.1.windows.1
+
