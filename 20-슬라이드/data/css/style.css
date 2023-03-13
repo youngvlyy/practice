@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+h1,address{
+    line-height: 100px;
+    text-align: center;
+}
+
+.slides{
+    overflow: hidden;
+    position: relative;
+    width: 1120px;
+    height: 450px;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+.slides-container{
+    display: flex;
+    position: absolute;
+    left: 0;
+    /* 
+        첫번째 슬라이드 left : -1120px * 0칸
+        두번째 슬라이드 left : -1120px * 1칸
+        세번째 슬라이드 left : -1120px * 2칸 
+        네번째 슬라이드 left : -1120px * 3칸
+        다섯번째 슬라이드 left : -1120px * 4칸
+    */
+    top: 0;
+    width: calc(1120px * 5);
+    background-color: #ff0;
+    /* 트랜지션을 이용해 컨테이너가 슬라이딩 되는 효과를 낼 수 있다. */
+    transition: all 0.5s;
+}
+
+.slides-container>p{
+    width: 1120px;
+    text-indent: -9999px;
+    background-position: center center;
+    background-size: cover;
+}
+
+.slides-container>p:nth-child(1){
+    background-image: url(./../images/slide-1.jpg);
+}
+
+.slides-container>p:nth-child(2){
+    background-image: url(./../images/slide-2.jpg);
+}
+
+.slides-container>p:nth-child(3){
+    background-image: url(./../images/slide-3.jpg);
+}
+
+.slides-container>p:nth-child(4){
+    background-image: url(./../images/slide-4.jpg);
+}
+
+.slides-container>p:nth-child(5){
+    background-image: url(./../images/slide-5.jpg);
+}
+
+.slides-container>p>a{
+    display: block;
+    height: 450px;
+}
+
+/* 제품썸네일 */
+.slides-thmbnail{
+    position: absolute;
+    right: 90px;
+    top: 50%;
+    margin-top: -150px;
+}
+
+.slides-thmbnail>li{
+    width: 180px;
+    height: 60px;
+    position: relative;
+}
+.slides-thmbnail>li:nth-child(1){
+    background-image: url('./../images/indicator-1.jpg');
+}
+.slides-thmbnail>li:nth-child(2){
+    background-image: url('./../images/indicator-2.jpg');
+}
+.slides-thmbnail>li:nth-child(3){
+    background-image: url('./../images/indicator-3.jpg');
+}
+.slides-thmbnail>li:nth-child(4){
+    background-image: url('./../images/indicator-4.jpg');
+}
+.slides-thmbnail>li:nth-child(5){
+    background-image: url('./../images/indicator-5.jpg');
+}
+
+.slides-thmbnail>li>a{
+    display: block;
+    height: 60px;
+}
+.slides-thmbnail>li:hover::after,
+.slides-thmbnail>li.on>a{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid skyblue;
+    box-sizing: border-box;
+}

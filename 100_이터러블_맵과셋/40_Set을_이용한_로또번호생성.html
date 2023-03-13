@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40_Set을_이용한_로또번호생성</title>
+    <style>
+        #wrap {
+          text-align: center;
+        }
+    
+        button {
+          padding: 20px 35px;
+          font-size: 24px;
+        }
+    
+        .result {
+          margin-top: 30px;
+        }
+    
+        .result>.ball {
+          display: inline-block;
+          width: 80px;
+          height: 80px;
+          margin-right: 10px;
+          font-size: 24px;
+          line-height: 80px;
+          text-align: center;
+          background-color: orange;
+          border-radius: 50%;
+        }
+    </style>    
+</head>
+<body>
+    <div id="wrap">
+        <h1>로또 1등번호 추출</h1>
+        <button>클릭</button>
+
+        <p class="result">
+            <!-- <span class="ball">1</span>
+            <span class="ball">2</span>
+            <span class="ball">3</span>
+            <span class="ball">4</span>
+            <span class="ball">5</span>
+            <span class="ball">6</span> -->
+        </p>        
+    </div>
+
+    <script>
+        const $btn = document.querySelector('button');
+        const $result = document.querySelector('.result');
+
+        $btn.addEventListener('click', function(){
+            const lottoPaper = new Set();
+
+            //숫자가 중복되지 않게 6개의 값을 저장
+            while(true){
+                //1~45 사이의 번호를 랜덤하게 추출
+                const ballNum = Math.floor(Math.random()*45)+1;
+                lottoPaper.add(ballNum);
+
+                if(lottoPaper.size>5) break;
+            }
+
+            //이전에 출력된 번호를 화면에서 제거
+            $result.innerHTML = '';
+
+            for(let lottoNum of lottoPaper){
+                const $span = document.createElement('span');
+                $span.setAttribute('class','ball');
+                $span.textContent = lottoNum;
+                $result.appendChild($span);
+            }
+        });
+    </script>
+</body>
+</html>

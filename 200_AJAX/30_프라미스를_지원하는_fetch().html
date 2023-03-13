@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>30_프라미스를_지원하는_fetch()</title>
+    <style>
+        #wrap{
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        section{
+            text-align: center;
+        }
+
+        section>p{
+            display: flex;
+            justify-content: center;
+            width: 300px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+            line-height: 30px;
+            /* border: 1px solid #000; */
+        }
+
+        select{
+            width: 100px;
+            margin: 0 15px;
+        }
+
+        .summary{display: none;}
+        .summary>div{
+            display: flex;
+            align-items: center;
+            width: 30%;
+            margin: 0 auto;
+            /* border: 1px solid #000; */
+        }
+
+        .summary>div>span{
+            margin-left: 10px;
+            font-size: 18px;
+        }
+
+        .summary>.desc{
+            line-height: 1.8;
+            text-align: center;
+        }        
+
+        hr{width: 80%;}        
+
+        address{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>암호화폐</h1>
+
+        <section>
+            <h2>코인정보</h2>
+
+            <p>
+                <label for="coin">코인선택 :</label>
+                <select name="coin" id="coin">
+                    <option value="btc-bitcoin">비트코인</option>
+                    <option value="eth-ethereum">이더리움</option>
+                    <option value="usdt-tether">테더</option>
+                    <option value="bnb-binance-coin">바이낸스</option>
+                </select>
+                <button>조회</button>
+            </p>
+
+            <hr>
+
+            <article class="summary">
+                <div>
+                    <h3>1. 랭킹 :</h3>
+                    <span class="rank">1</span>
+                </div>
+                <div>
+                    <h3>2. 심볼 :</h3>
+                    <span class="symbol">BTC</span>
+                </div>
+                <div>
+                    <h3>3. 가격 :</h3>
+                    <span class="price">$17200</span>
+                </div>
+
+                <p class="desc">요약내용</p>
+            </article>
+        </section>
+
+        <address>&copy;Designed by 홍길동</address>
+    </div>
+
+    <script>
+        const $btn = document.querySelector('button');
+        const $select = document.querySelector('select');
+        const $h2 = document.querySelector('h2');
+
+        const $summary = document.querySelector('.summary');
+
+        const $rank = document.querySelector('.rank');
+        const $symbol = document.querySelector('.symbol');
+        const $desc = document.querySelector('.desc');
+
+        //버튼에 대한 클릭이벤트
+        $btn.addEventListener('click', function(){
+
+            //선택한 코인의 id값을 추출
+            const coinId = $select.value;
+
+            //코인정보 비동기 수신
+            fetch(`https://api.coinpaprika.com/v1/coins/${coinId}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data);
+
+                    $h2.textContent = data.name.toUpperCase();
+
+                    $rank.textContent = data.rank;
+                    $symbol.textContent = data.symbol;
+                    $desc.textContent = data.description;
+
+                    $summary.style.display = 'block';
+                });
+
+            //코인가격 정보 비동기 수신
+            fetch(`https://api.coinpaprika.com/v1/tickers/${coinId}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('코인가격 정보 : ', data);
+
+                    const $price = document.querySelector('.price');
+                    $price.textContent = '$'+ data.quotes.USD.price.toFixed(0);
+                });
+        });
+    </script>
+</body>
+</html>

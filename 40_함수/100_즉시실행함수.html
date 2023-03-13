@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100_즉시실행함수</title>
+</head>
+<body>
+    <pre>
+        1. 함수의 선언과 동시에 호출되는 함수
+        2. 딱 한번만 호출되며 다시 호출할 수 없다.
+            왜냐하면 즉시실행함수의 경우 함수이름이 함수 몸체에서만 유효하기 때문이다.
+        3. 따라서 즉시실행함수의 경우 익명함수를 사용하는 것이 일반적이다.
+    </pre>
+
+    <script>
+        //1. 기명함수 즉시실행 함수
+
+        (function friendsFn(name){
+            document.write(`내 친구 ${name} 아기공룡입니다. <br>`);
+        }('둘리'));
+        //friendsFn(); //error
+
+        //2. 익명함수 즉시실행 함수 -유형1
+        (function(some){
+            document.write(`카지노에서 가장 좋아하는 숫자는 ${some} 입니다<br>`);
+        }(777));
+
+        //2. 익명함수 즉시실행 함수 -유형2
+        !function(now){
+            document.write(`오늘은 ${now.toLocaleString()} 입니다.<br>`);
+        }(new Date());
+
+        //2. 익명함수 즉시실행 함수 -유형3
+        +function(){
+            document.write(`즉시실행 함수는 전역변수 사용을 억제하기 위함이다.`);
+        }();
+    </script>
+</body>
+</html>

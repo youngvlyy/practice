@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20_trim()과_replace()로_문자열의_좌우공백_제거</title>
+</head>
+<body>
+    <h1>trim(), replace()</h1>
+
+    <pre>
+        1. trim() : 좌우의 공백 제거
+
+        2. replace() 
+            1) 어떤 문자열에서 특정 단어를 다른 내용으로 치환
+            2) 만약 특정단어가 여러개일 경우 첫번째로 발견한 것만 치환
+            3) 원본데이터에는 영향을 미치지 않는다.(불변)
+
+        3. 문자열.replaceAll()
+            치환할 단어가 여러개일 경우 모두 치환처리함
+    </pre>
+
+    <hr>
+
+    <script>
+        const greeting = '        Hello World       ';
+        console.log(`${greeting}~!`);
+
+        //1. trim()으로 좌우의 공백 제거
+        const newGreeting = greeting.trim();
+        console.log(`${newGreeting}~!`);
+
+
+        //2. replace()로 치환
+        const fruites = 'apple watermelon mango pineapple banana mangoFashion';
+        const newFruites = fruites.replace('apple', 'strawberry');
+        const allChangeruites = fruites.replaceAll('apple', 'orange');
+        console.log(`frites = ${fruites}`);//원본에 영향을 주지 않는다.
+        console.log(`newFruites = ${newFruites}`);
+        console.log(`newFruites = ${allChangeruites}`);
+
+    </script>
+</body>
+</html>

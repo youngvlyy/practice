@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오류 강제발생</h1>
+
+    <pre>
+        1. 자바스크립트는 오류가 발생하면 프로그램이 정지된다.
+        2. 일단 오류가 발생하면 이후의 코드는 실행되지 않는다.
+        3. throw '에러메세지'
+            콘솔창에 에러메세지 출력과 동시에 프로그램을 강제로 종료시키는 키워드
+
+        4. 오류의 종류
+            1) 문법오류(syntaxError) - 자동으로 발견되기 때문에 수정이 가장 쉽다.
+            2) 논리오류 - 코드 작성자의 잘못된 논리의 흐름으로 발생한 것이기 때문에 자동발견이 안됌, 가장 수정(발견)하기 어렵다.
+            3) 예외오류 - 인터넷 끊김으로 인한 서버데이터 전송오류, 저장장치에서 파일을 읽어오거나 저장할 때 물리적인 원인으로 발생하는 작성된 코드와 관계없이 발생하는 오류
+    </pre>
+
+    <hr>
+
+    <script>
+        //Uncaught - 오류가 발생했는데 ...
+        //console.log(number);
+
+        //문제) 두개의 매개변수 coin_1 coin_2를 갖는 saveFn 표현식함수를 작성하시오.
+        const saveFn = function(coin_1, coin_2){
+
+            //데이터타입 확인
+            console.log(typeof coin_1);
+            console.log(typeof coin_2);
+
+            //전달받은 데이터에 대한 검증작업 보완 => 유효성검사
+            //둘중의 하나라도 숫자가 아니면 에러를 강제로 발생시킨다.(던진다)
+            if(coin_1 !== 'number' || coin_1 !== 'number'){
+                alert('error');
+                throw '데이터는 반드시 number type 이어야 합니다.'; //콘솔창에 에러메세지 출력과 동시에 프로그램을 강제로 종료시킴
+            }
+
+            let sum = coin_1 + coin_2;
+            document.write(`sum = ${sum}원<br>`);
+        };
+
+        saveFn(1000, '이천');
+        saveFn(1000, 2000);
+    </script>
+</body>
+</html>

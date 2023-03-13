@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_bind()를_이용한_함수바인딩</title>
+</head>
+<body>
+    <h1>bind()를 이용한 함수바인딩</h1>
+
+    <p>여러 객체가 아무 상관없는 함수를 가져다 쓸 수 있도록 바인딩</p>
+
+    <hr>
+
+    <script>
+        //마침 가져다 쓰기에(바인딩 하기에) 딱 좋은 함수
+        function weather(){
+            document.write(`${this.when} 날씨는 ${this.state}<br>`);
+
+        }
+
+        //weather();
+
+        const today = {
+            when : '오늘',
+            state : '맑음'
+        };
+        //today 객체를 this에 바인딩한 새로운 함수를 생성
+        const weatherToday = weather.bind(today);
+        weatherToday();
+
+        const tomorrow = {
+            when : '내일',
+            state : '쾌창'
+        }
+
+        //tomorrow 객체를 this에 바인딩한 새로운 함수를 생성
+        const weatherTommorow = weather.bind(tomorrow);
+        weatherTommorow();
+
+    </script>
+</body>
+</html>

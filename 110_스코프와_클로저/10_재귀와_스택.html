@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_재귀와_스택</title>
+</head>
+<body>
+    <h1>재귀와 스택</h1>
+
+    <p>1~100까지의 합은 <span>?</span></p>
+
+    <pre>
+        1. 아래 재귀함수 sum()의 경우 100부터 1까지 순회하여
+        2. 호출스택에 쌓여 처리해 나가게 되는데
+        3. Stack(스택)은 입구와 출구가 하나인 
+        4. LIFO(Last In Frist Out) 방식이기 때문에
+        5. 제일 마지막에 쌓은 sum(1) 부터 sum(100)까지 순차적으로
+        6. 호출되어 값을 반환하게 된다.
+    </pre>
+
+    <script>
+        //1~100까지의 합을 구하는 재귀함수 구현
+        function sum(n){
+            if(n<=1) return 1//종료조건
+            return n + sum(n-1);//자기자신을 호출
+        }
+
+        const result = sum(100);
+        document.querySelector('span').textContent = result;
+    </script>
+</body>
+</html>
